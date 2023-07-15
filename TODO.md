@@ -1,0 +1,1 @@
+# Make hud_element_svg color be controled by the variable hud-element-color

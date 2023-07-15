@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+:root {
+  --hud-element-color: #ffffff;
+}
+
+.hud_element_text {
+	color: var(--hud-element-color);
+}
+
+.hud_element_svg {
+	filter: invert(100%);
+}

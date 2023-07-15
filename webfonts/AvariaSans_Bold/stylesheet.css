@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'AvariaSans-Bold';
+	src: url('AveriaSans-Bold.eot');
+	src: url('AveriaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('AveriaSans-Bold.woff') format('woff'),
+		url('AveriaSans-Bold.ttf') format('truetype');
+}

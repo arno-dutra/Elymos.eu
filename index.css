@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import url("nav.css");
+@import url("hud.css");
+/* CSS Document */
+
+#background {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+
+
+.home {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	left: 20;
+	top: 20;
+}
+
+#home_to_top {
+	position: fixed;
+}
+
+#top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}

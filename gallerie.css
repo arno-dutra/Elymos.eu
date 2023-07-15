@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+
+body {
+	background-color: #141111;
+}
+*/
+
+.panneau_gallerie {
+	background-color: #782828;
+	border-color: #782828;
+}
+
+.panneau_gallerie_img {
+	width: 100%
+	
+}
