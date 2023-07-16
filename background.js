@@ -8,9 +8,6 @@ const hexToRgb = hex =>
 
 
 function onLoad() {
-	
-	var canvas = document.getElementById("background");
-	var ctx = canvas.getContext("2d");
 
 	var body = document.body,
     html = document.documentElement;
@@ -18,38 +15,37 @@ function onLoad() {
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 	var width = Math.max( body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth );
 	
-	canvas.height = height;
-	canvas.width = width;
-	
 	window.tile_size = 256;
 	
 	window.buffer = {};
-	window.buffer.margin = 256;
+	window.buffer.margin = 250;
 	
-	window.buffer.x1 = window.screenX;
-	window.buffer.y1 = window.screenY;
+	window.buffer.x1 = window.scrollX;
+	window.buffer.y1 = window.scrollY;
 	window.buffer.x2 = window.buffer.x1 + window.screen.height;
 	window.buffer.y2 = window.buffer.y1 + window.screen.width;
 	
-	var n_tiles_x = Math.ceil((width + window.buffer.margin) / window.tile_size) + 3;
-	var n_tiles_y = Math.ceil((height + window.buffer.margin) / window.tile_size) + 3;
+	window.n_tiles_x = Math.ceil((width + window.buffer.margin) / window.tile_size) + 3;
+	window.n_tiles_y = Math.ceil((height + window.buffer.margin) / window.tile_size) + 3;
 	
 	var color = "#141111";
 	var c = hexToRgb(color);
 
-	console.log(n_tiles_x, n_tiles_y)
+	console.log(window.n_tiles_x, window.n_tiles_y)
+	
+	var background = document.getElementById("background");
 	
 	// manipulate tiles
-	for(var y = 0; y < n_tiles_y; y++) {
-		for(var x = 0; x < n_tiles_x; x++) {
-			var pos = (y * n_tiles_y + x); // position in buffer based on x and y
+	for(var y = 0; y < window.n_tiles_y; y++) {
+		for(var x = 0; x < window.n_tiles_x; x++) {
+			var pos = (y * window.n_tiles_y + x); // position in buffer based on x and y
 			var tile = createTile(c);
-			tile.id = pos.toString();
+			tile.id = "background_tile_".concat(pos.toString());
 			var left = window.buffer.x1 + (x - 1) * window.tile_size;
 			tile.style.left = left.toString().concat("px");
 			var top = window.buffer.y1 + (y - 1) * window.tile_size;
 			tile.style.top = top.toString().concat("px");
-			body.appendChild(tile);
+			background.appendChild(tile);
 			
 		}
 	}
@@ -62,11 +58,19 @@ onLoad()
 
 
 function onResize() {
-	// Potentiellement des parametres a transmettre
+
+	var body = document.body,
+    html = document.documentElement;
+
+	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+	var width = Math.max( body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth );
+	
+	window.n_tiles_x = Math.ceil((width + window.buffer.margin) / window.tile_size) + 3;
+	window.n_tiles_y = Math.ceil((height + window.buffer.margin) / window.tile_size) + 3;
+	
 	updateBackground()
 }
 function onScroll() {
-	// Potentiellement des parametres a transmettre
 	updateBackground()
 }
 
@@ -75,17 +79,91 @@ function updateBackground() {
 	// Ajouter les couleurs qui doivent etre generees en gardant toujours une marge "margin"
 	// Retirer les couleurs qui sont maintenant au delà de la marge "margin" pour ne pas surcharger la mémoire
 	
-	var x1 = window.screenX;
-	var y1 = window.screenY;
+	var x1 = window.scrollX;
+	var y1 = window.scrollY;
 	var x2 = x1 + window.screen.height;
 	var y2 = y1 + window.screen.width;
 	
-	if (x1 < window.buffer.x1 - window.buffer.margin) {
-		
+//	if (x1 < window.buffer.x1 - window.buffer.margin) {
+//		_updateBackground(x1, y1, x2, y2)
+//	} else if (y1 < window.buffer.y1 - window.buffer.margin) {
+//		_updateBackground(x1, y1, x2, y2)
+//	} else if (x2 > window.buffer.x2 + window.buffer.margin) {
+//		_updateBackground(x1, y1, x2, y2)
+//	} else if (y2 < window.buffer.y2 + window.buffer.margin) {
+//		_updateBackground(x1, y1, x2, y2)
+//	}
+//	
+	_updateBackground(x1, y1, x2, y2)
+	
+	
+}
+
+function _updateBackground(x1, y1, x2, y2) {
+	var x0 = 0;
+	var y0 = 0;
+	// Remove tiles too far
+	for(var y = 0; y < window.n_tiles_y; y++) {
+		for(var x = 0; x < window.n_tiles_x; x++) {
+			var pos = (y * window.n_tiles_y + x); // position in buffer based on x and y
+			var id = "background_tile_".concat(pos.toString());
+			var tile = document.getElementById(id);
+			
+//			if (tile.style.left + window.tile_size < x1 - window.buffer.margin) {
+//				tile.remove();
+//				console.log("tile deleted");
+//			} else if (tile.style.top + window.tile_size < y1 - window.buffer.margin) {
+//				tile.remove();
+//				console.log("tile deleted");
+//			} else if (tile.style.left > x2 + window.buffer.margin) {
+//				tile.remove();
+//				console.log("tile deleted");
+//			} else if (tile.style.top > y2 + window.buffer.margin) {
+//				tile.remove();
+//				console.log("tile deleted");
+//			} else {
+				x0 = eval(tile.style.left.replace("px", ""));
+				y0 = eval(tile.style.top.replace("px", ""));	
+//			}
+			
+		}
 	}
 	
 	
+	_fillWithTiles(x0, y0, x1, y1, x2, y2)
 	
+}
+
+function _fillWithTiles(x0, y0, x1, y1, x2, y2) {
+	// (x0, y0) are the coordinates of one an existing tile. This will be used to phase the grid
+	
+	
+	var background = document.getElementById("background");
+	
+	
+	var color = "#141111";  // to delete
+	var c = hexToRgb(color);  // to delete
+	
+	var x01 = x1 + ((x0 - x1) % window.tile_size);
+	var y01 = y1 + ((y0 - y1) % window.tile_size);
+	
+	// manipulate tiles
+	for(var y = 0; y < window.n_tiles_y; y++) {
+		for(var x = 0; x < window.n_tiles_x; x++) {
+			var left = x01 + (x - 1) * window.tile_size;
+			var top = y01 + (y - 1) * window.tile_size;
+			var id = "background_tile_".concat(left.toString(), "_", top.toString());
+			
+			if (document.getElementById(id) == null) {
+				var tile = createTile(c);
+				tile.id = id;
+				tile.style.left = left.toString().concat("px");
+				tile.style.top = top.toString().concat("px");
+				background.appendChild(tile);
+			}
+			
+		}
+	}
 }
 
 
@@ -105,7 +183,7 @@ function createTile(c) {
 
 	var imgData = ctx.getImageData(0, 0, tile.width, tile.height);
 	tile.data = imgData.data;
-	console.log(c)
+	
 	for(var y = 0; y < tile_size; y++) {
 		for(var x = 0; x < tile_size; x++) {
 			var pos = (y * tile_size + x) * 4; // position in buffer based on x and y
