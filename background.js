@@ -15,10 +15,10 @@ function onLoad() {
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 	var width = Math.max( body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth );
 	
-	window.tile_size = 256;
+	window.tile_size = 1024;
 	
 	window.buffer = {};
-	window.buffer.margin = 250;
+	window.buffer.margin = 1 * window.tile_size;
 	
 	window.buffer.x1 = window.scrollX;
 	window.buffer.y1 = window.scrollY;
@@ -84,49 +84,53 @@ function updateBackground() {
 	var x2 = x1 + window.screen.height;
 	var y2 = y1 + window.screen.width;
 	
-//	if (x1 < window.buffer.x1 - window.buffer.margin) {
-//		_updateBackground(x1, y1, x2, y2)
-//	} else if (y1 < window.buffer.y1 - window.buffer.margin) {
-//		_updateBackground(x1, y1, x2, y2)
-//	} else if (x2 > window.buffer.x2 + window.buffer.margin) {
-//		_updateBackground(x1, y1, x2, y2)
-//	} else if (y2 < window.buffer.y2 + window.buffer.margin) {
-//		_updateBackground(x1, y1, x2, y2)
-//	}
+	if (x1 < window.buffer.x1 - window.buffer.margin) {
+		_updateBackground(x1, y1, x2, y2)
+	} else if (y1 < window.buffer.y1 - window.buffer.margin) {
+		_updateBackground(x1, y1, x2, y2)
+	} else if (x2 > window.buffer.x2 + window.buffer.margin) {
+		_updateBackground(x1, y1, x2, y2)
+	} else if (y2 < window.buffer.y2 + window.buffer.margin) {
+		_updateBackground(x1, y1, x2, y2)
+	}
 //	
-	_updateBackground(x1, y1, x2, y2)
+//	_updateBackground(x1, y1, x2, y2)
 	
 	
 }
 
 function _updateBackground(x1, y1, x2, y2) {
+	
+	console.log(x1, y1, x2, y2)
+	
 	var x0 = 0;
 	var y0 = 0;
 	// Remove tiles too far
-	for(var y = 0; y < window.n_tiles_y; y++) {
-		for(var x = 0; x < window.n_tiles_x; x++) {
-			var pos = (y * window.n_tiles_y + x); // position in buffer based on x and y
-			var id = "background_tile_".concat(pos.toString());
-			var tile = document.getElementById(id);
-			
-//			if (tile.style.left + window.tile_size < x1 - window.buffer.margin) {
-//				tile.remove();
-//				console.log("tile deleted");
-//			} else if (tile.style.top + window.tile_size < y1 - window.buffer.margin) {
-//				tile.remove();
-//				console.log("tile deleted");
-//			} else if (tile.style.left > x2 + window.buffer.margin) {
-//				tile.remove();
-//				console.log("tile deleted");
-//			} else if (tile.style.top > y2 + window.buffer.margin) {
-//				tile.remove();
-//				console.log("tile deleted");
-//			} else {
-				x0 = eval(tile.style.left.replace("px", ""));
-				y0 = eval(tile.style.top.replace("px", ""));	
-//			}
-			
+	var tiles = document.getElementsByClassName("background_tile");
+	for (i = 0; i < tiles.length; i++) {
+	
+		var tile = tiles.item(i);
+		var left = eval(tile.style.left.replace("px", ""));
+		var top = eval(tile.style.top.replace("px", ""));
+		console.log(left, top);
+
+		if (left + window.tile_size < x1 - window.buffer.margin) {  // too at left
+			tile.remove();
+			console.log("tile deleted");
+		} else if (top + window.tile_size < y1 - window.buffer.margin) {  // too on top
+			tile.remove();
+			console.log("tile deleted");
+		} else if (left > x2 + window.buffer.margin) {  // too at right
+			tile.remove();
+			console.log("tile deleted");
+		} else if (top > y2 + window.buffer.margin) {  // too at bottom
+			tile.remove();
+			console.log("tile deleted");
+		} else {
+			x0 = left;
+			y0 = top;
 		}
+			
 	}
 	
 	
