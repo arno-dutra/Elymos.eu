@@ -3,6 +3,10 @@
 @import url("hud.css");
 /* CSS Document */
 
+#body {
+	background-color: black;
+}
+
 #background {
 	position: absolute;
 	z-index: -1;

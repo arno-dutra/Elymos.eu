@@ -15,7 +15,7 @@ function onLoad() {
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 	var width = Math.max( body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth );
 	
-	window.tile_size = 1024;
+	window.tile_size = 256;
 	
 	window.buffer = {};
 	window.buffer.margin = 1 * window.tile_size;
@@ -29,9 +29,7 @@ function onLoad() {
 	window.n_tiles_y = Math.ceil((height + window.buffer.margin) / window.tile_size) + 3;
 	
 	var color = "#141111";
-	var c = hexToRgb(color);
-
-	console.log(window.n_tiles_x, window.n_tiles_y)
+	document.getElementById("body").style.backgroundColor = color;
 	
 	var background = document.getElementById("background");
 	
@@ -39,7 +37,7 @@ function onLoad() {
 	for(var y = 0; y < window.n_tiles_y; y++) {
 		for(var x = 0; x < window.n_tiles_x; x++) {
 			var pos = (y * window.n_tiles_y + x); // position in buffer based on x and y
-			var tile = createTile(c);
+			var tile = createTile();
 			tile.id = "background_tile_".concat(pos.toString());
 			var left = window.buffer.x1 + (x - 1) * window.tile_size;
 			tile.style.left = left.toString().concat("px");
@@ -101,8 +99,6 @@ function updateBackground() {
 
 function _updateBackground(x1, y1, x2, y2) {
 	
-	console.log(x1, y1, x2, y2)
-	
 	var x0 = 0;
 	var y0 = 0;
 	// Remove tiles too far
@@ -112,20 +108,15 @@ function _updateBackground(x1, y1, x2, y2) {
 		var tile = tiles.item(i);
 		var left = eval(tile.style.left.replace("px", ""));
 		var top = eval(tile.style.top.replace("px", ""));
-		console.log(left, top);
 
 		if (left + window.tile_size < x1 - window.buffer.margin) {  // too at left
 			tile.remove();
-			console.log("tile deleted");
 		} else if (top + window.tile_size < y1 - window.buffer.margin) {  // too on top
 			tile.remove();
-			console.log("tile deleted");
 		} else if (left > x2 + window.buffer.margin) {  // too at right
 			tile.remove();
-			console.log("tile deleted");
 		} else if (top > y2 + window.buffer.margin) {  // too at bottom
 			tile.remove();
-			console.log("tile deleted");
 		} else {
 			x0 = left;
 			y0 = top;
@@ -159,7 +150,7 @@ function _fillWithTiles(x0, y0, x1, y1, x2, y2) {
 			var id = "background_tile_".concat(left.toString(), "_", top.toString());
 			
 			if (document.getElementById(id) == null) {
-				var tile = createTile(c);
+				var tile = createTile();
 				tile.id = id;
 				tile.style.left = left.toString().concat("px");
 				tile.style.top = top.toString().concat("px");
@@ -171,7 +162,7 @@ function _fillWithTiles(x0, y0, x1, y1, x2, y2) {
 }
 
 
-function createTile(c) {
+function createTile() {
 	var tile_size = window.tile_size;
 	
 	var tile = document.createElement('canvas')
@@ -192,10 +183,11 @@ function createTile(c) {
 		for(var x = 0; x < tile_size; x++) {
 			var pos = (y * tile_size + x) * 4; // position in buffer based on x and y
 			var r = (Math.random() - 0.5) * 10;
-			tile.data[pos  ] = Math.min(Math.max(c[0] + r, 0), 255);           // some R value [0, 255]
-			tile.data[pos+1] = Math.min(Math.max(c[1] + r, 0), 255);           // some G value
-			tile.data[pos+2] = Math.min(Math.max(c[2] + r, 0), 255);           // some B value
-			tile.data[pos+3] = 255;           // set alpha channel
+			r = Math.min(Math.max(r, 0), 255);
+			tile.data[pos  ] = r;           // some R value [0, 255]
+			tile.data[pos+1] = r;          // some G value
+			tile.data[pos+2] = r;           // some B value
+			tile.data[pos+3] = 100 * r;           // set alpha channel
 		}
 	}
 
