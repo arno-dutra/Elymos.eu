@@ -32,13 +32,12 @@ function make_element(element, id) {
 
 function make_image(element, id) {
 	var div = document.createElement('div');
-	var espace = document.getElementById("espace_fil");
+	div.classList.add("group")
+	var espace = document.getElementById(`espace_fil_${element.espace}`);
 	espace.appendChild(div);
 	
 	var img = document.createElement('img');
 	
-	img.style.left = element.left;
-	img.style.top = element.top;
 	img.id = id;
 	img.classList.add("panneau");
 	img.classList.add(`panneau_${element.espace}`);
@@ -47,8 +46,8 @@ function make_image(element, id) {
 	
 	if (typeof element.legend !== 'undefined') {
 		var legend = document.createElement('h2');
-		legend.style.left = (eval(element.left.replace("px", "")) + 75).toString().concat("px");
-		legend.style.top = (eval(element.top.replace("px", "")) - 20).toString().concat("px");
+		legend.style.left = "75px";
+		legend.style.top = "-20px";
 		legend.id = id + "-legend";
 		legend.classList.add("legend");
 		legend.classList.add(`legend_${element.espace}`);

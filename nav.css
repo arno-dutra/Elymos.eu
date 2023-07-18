@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+#nav {
+	position: absolute;
+}
+
 .nav {
 	position: relative;
 }

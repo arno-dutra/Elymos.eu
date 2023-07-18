@@ -16,3 +16,12 @@
 .legend {
 	font-family: AveriaSans;
 }
+
+.group {
+	position: relative;
+	margin-bottom: 200px;
+}
+
+.espace {
+	position: absolute;
+}
