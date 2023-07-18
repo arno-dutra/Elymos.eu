@@ -179,15 +179,18 @@ function createTile() {
 	var imgData = ctx.getImageData(0, 0, tile.width, tile.height);
 	tile.data = imgData.data;
 	
+	var color = "#141111";  // to delete
+	var c = hexToRgb(color);  // to delete
+	
 	for(var y = 0; y < tile_size; y++) {
 		for(var x = 0; x < tile_size; x++) {
 			var pos = (y * tile_size + x) * 4; // position in buffer based on x and y
 			var r = (Math.random() - 0.5) * 10;
 			r = Math.min(Math.max(r, 0), 255);
-			tile.data[pos  ] = r;           // some R value [0, 255]
-			tile.data[pos+1] = r;          // some G value
-			tile.data[pos+2] = r;           // some B value
-			tile.data[pos+3] = 100 * r;           // set alpha channel
+			tile.data[pos  ] = c[0] + r;           // some R value [0, 255]
+			tile.data[pos+1] = c[1] + r;          // some G value
+			tile.data[pos+2] = c[2] + r;           // some B value
+			tile.data[pos+3] = 255;           // set alpha channel
 		}
 	}
 
