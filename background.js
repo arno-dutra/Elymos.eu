@@ -101,6 +101,9 @@ function _updateBackground(x1, y1, x2, y2) {
 	
 	var x0 = 0;
 	var y0 = 0;
+	
+	var elements_a_recycler = [];
+	
 	// Remove tiles too far
 	var tiles = document.getElementsByClassName("background_tile");
 	for (i = 0; i < tiles.length; i++) {
@@ -110,13 +113,13 @@ function _updateBackground(x1, y1, x2, y2) {
 		var top = eval(tile.style.top.replace("px", ""));
 
 		if (left + window.tile_size < x1 - window.buffer.margin) {  // too at left
-			tile.remove();
+			elements_a_recycler.push(tile.id);
 		} else if (top + window.tile_size < y1 - window.buffer.margin) {  // too on top
-			tile.remove();
+			elements_a_recycler.push(tile.id);
 		} else if (left > x2 + window.buffer.margin) {  // too at right
-			tile.remove();
+			elements_a_recycler.push(tile.id);
 		} else if (top > y2 + window.buffer.margin) {  // too at bottom
-			tile.remove();
+			elements_a_recycler.push(tile.id);
 		} else {
 			x0 = left;
 			y0 = top;
@@ -125,11 +128,11 @@ function _updateBackground(x1, y1, x2, y2) {
 	}
 	
 	
-	_fillWithTiles(x0, y0, x1, y1, x2, y2)
+	_fillWithTiles(x0, y0, x1, y1, x2, y2, elements_a_recycler)
 	
 }
 
-function _fillWithTiles(x0, y0, x1, y1, x2, y2) {
+function _fillWithTiles(x0, y0, x1, y1, x2, y2, elements_a_recycler) {
 	// (x0, y0) are the coordinates of one an existing tile. This will be used to phase the grid
 	
 	
@@ -150,7 +153,11 @@ function _fillWithTiles(x0, y0, x1, y1, x2, y2) {
 			var id = "background_tile_".concat(left.toString(), "_", top.toString());
 			
 			if (document.getElementById(id) == null) {
-				var tile = createTile();
+				if (elements_a_recycler.length == 0) {
+					var tile = createTile();
+				} else {
+					var tile = elements_a_recycler.pop();
+				}
 				tile.id = id;
 				tile.style.left = left.toString().concat("px");
 				tile.style.top = top.toString().concat("px");
