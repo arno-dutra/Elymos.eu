@@ -1,0 +1,62 @@
+window.espaces = `
+
+
+{
+	"code": {
+		"backgroundColor": "#1a1f23",
+		"x": "300",
+		"y": "300",
+		"top": "0",
+		"left": "0",
+		"width": "2000"
+	},
+
+	"polypapier": {
+		"backgroundColor": "#f5f1d3",
+		"x": "2300",
+		"y": "300",
+		"top": "0",
+		"left": "2000",
+		"width": "2000"
+	},
+
+	"minecraft": {
+		"backgroundColor": "#223f21",
+		"x": "4300",
+		"y": "300",
+		"top": "0",
+		"left": "4000",
+		"width": "2000"
+	},
+
+	"gallerie": {
+		"backgroundColor": "#141111",
+		"x": "6300",
+		"y": "300",
+		"top": "0",
+		"left": "6000",
+		"width": "2000"
+	},
+
+	"compos": {
+		"backgroundColor": "#260c2b",
+		"x": "8300",
+		"y": "300",
+		"top": "0",
+		"left": "8000",
+		"width": "2000"
+	},
+
+	"farnnight": {
+		"backgroundColor": "#02051c",
+		"x": "10300",
+		"y": "300",
+		"top": "0",
+		"left": "10000",
+		"width": "2000"
+	}
+}
+
+
+
+`

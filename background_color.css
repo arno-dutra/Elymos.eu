@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.background_color_element {
+	position: absolute;
+	z-index: -3;
+	height: 100%;
+}

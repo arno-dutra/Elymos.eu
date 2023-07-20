@@ -1,5 +1,5 @@
-// JavaScript Document
-//
+// Adding and managing the noise in the color background
+
 //const hexToRgb = hex =>
 //  hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
 //             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
@@ -29,9 +29,6 @@ function onLoad() {
 	
 	window.n_tiles_x = Math.ceil((width + window.buffer.margin) / window.tile_size) + 3;
 	window.n_tiles_y = Math.ceil((height + window.buffer.margin) / window.tile_size) + 3;
-	
-	var color = "#BB1313";
-	document.getElementById("body").style.backgroundColor = color;
 	
 	window.elements_a_recycler = [];
 	
@@ -134,8 +131,6 @@ function _fillWithTiles(x0, y0, x1, y1) {
 	var tile_id = "";
 	var tile = background;  // Only to initialize the variable
 	
-	console.log(window.elements_a_recycler);
-	
 	// manipulate tiles
 	for(var y = 0; y < window.n_tiles_y; y++) {
 		for(var x = 0; x < window.n_tiles_x; x++) {
@@ -164,7 +159,7 @@ function _fillWithTiles(x0, y0, x1, y1) {
 function createTile() {
 	var tile_size = window.tile_size;
 	
-	var tile = document.createElement('canvas')
+	var tile = document.createElement('canvas');
 	
 	tile.width = tile_size;
 	tile.height = tile_size;

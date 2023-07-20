@@ -1,19 +1,19 @@
-window.contenu = '{\
-  "gallerie-1": {\
-    "espace": "gallerie",\
-    "left": "300px",\
-    "top": "0px",\
-    "type": "image",\
-	"src": "Basse_v1.0.jpg",\
-    "legend": "Mon tuba wagnérien"\
-  },\
-  \
-  "gallerie-2": {\
-    "espace": "gallerie",\
-    "left": "300px",\
-    "top": "0px",\
-    "type": "image",\
-	"src": "MicrosoftTeams-image.png",\
-    "legend": "Un instrument de saison : le butterfleur"\
-  }\
-}';
+window.contenu = `{
+  "gallerie-1": {
+    "espace": "gallerie",
+    "left": "300px",
+    "top": "0px",
+    "type": "image",
+	"src": "Basse_v1.0.jpg",
+    "legend": "Mon tuba wagnérien"
+  },
+  
+  "gallerie-2": {
+    "espace": "gallerie",
+    "left": "300px",
+    "top": "0px",
+    "type": "image",
+	"src": "MicrosoftTeams-image.png",
+    "legend": "Un instrument de saison : le butterfleur"
+  }
+}`;
