@@ -9,6 +9,7 @@ load_background_color();
 function load_background_color() {
 	
 	var background_color = document.getElementById("background_color");
+	var anchors = document.getElementById("anchors");
 	
 	for (const [key, value] of Object.entries(window.espaces)) {
 		
@@ -22,7 +23,13 @@ function load_background_color() {
 		
 		background_color.appendChild(div);
 		
+		var anchor = document.createElement('div');
+		anchor.id = key.concat("-anchor");
+		anchor.style.left = value.x.toString().concat("px");
+		anchor.style.top = value.y.toString().concat("px");
+		anchor.classList.add("anchor");
 		
+		anchors.appendChild(anchor);
 	}
 	
 }
