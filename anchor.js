@@ -25,13 +25,14 @@ function _espace_courrant() {
 	var x = window.scrollX;
 	var y = window.scrollY;
 	
+	
 	for (var [key, value] of Object.entries(window.espaces)) {
 		
-		
-		if ((value.left < x) & (x < value.left + value.width)) {
-			if (value.top < y) {
-				return key;
-			}
+		if (y < value.y) {
+			return "sommaire";
+		} else if ((value.left < x) & (x < value.left + value.width)) {
+			console.log(y, value)
+			return key;
 			
 		}
 		

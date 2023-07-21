@@ -6,7 +6,9 @@ window.espaces = `
 		"issommaire": "true",
 		"backgroundColor": "#D4D4D4",
 		"top": 0,
-		"left": 0
+		"left": 0,
+		"x": 1000,
+		"y": 0
 	},
 
 	"code": {
