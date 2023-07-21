@@ -8,11 +8,13 @@ function goTop() {
 	
 	//  Jumping to current space
 	
-//	window.scrollTo({top: window.espaces[espace_courrant].y, left: window.espaces[espace_courrant].x, behavior: 'smooth'});
 	if (typeof espace_courrant !== "undefined") {
 		
-		const anchor = espace_courrant.concat("-anchor");
-		document.getElementById(anchor).scrollIntoView();
+		window.scrollTo({
+			top: window.espaces[espace_courrant].y,
+			left: window.espaces[espace_courrant].x,
+			behavior: 'smooth',
+		});
 		
 	}
 	
@@ -37,11 +39,11 @@ function _espace_courrant() {
 }
 
 
-function move_home_top() { // NOT WORKING
+function move_home_top() {
 	const espace_courrant = _espace_courrant();
 	
 	$("#home_top").animate({ 
-        top: espace_courrant.y,
-		left: espace_courrant.x,
+        top: window.espaces[espace_courrant].y,
+		left: window.espaces[espace_courrant].x,
       }, 1000);
 }
