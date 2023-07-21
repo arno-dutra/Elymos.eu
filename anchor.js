@@ -42,8 +42,14 @@ function _espace_courrant() {
 function move_home_top() {
 	const espace_courrant = _espace_courrant();
 	
+	var element = document.getElementById('home_to_top');
+    var style = window.getComputedStyle(element);
+    var top = eval(style.getPropertyValue('top').replace("px", ""));
+    var left = eval(style.getPropertyValue('left').replace("px", ""));
+	
+	
 	$("#home_top").animate({ 
-        top: window.espaces[espace_courrant].y,
-		left: window.espaces[espace_courrant].x,
+        top: window.espaces[espace_courrant].y + top,
+		left: window.espaces[espace_courrant].x + left,
       }, 1000);
 }

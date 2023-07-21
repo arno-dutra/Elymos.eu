@@ -22,14 +22,6 @@ function load_background_color() {
 		div.classList.add("background_color_element");
 		
 		background_color.appendChild(div);
-		
-		var anchor = document.createElement('div');
-		anchor.id = key.concat("-anchor");
-		anchor.style.left = value.x.toString().concat("px");
-		anchor.style.top = value.y.toString().concat("px");
-		anchor.classList.add("anchor");
-		
-		anchors.appendChild(anchor);
 	}
 	
 }
