@@ -3,6 +3,17 @@ console.log(window.contenu);
 var content = JSON.parse(window.contenu);
 put_elements(content);
 
+//
+//function place_espace() {
+//	
+//	for (var [key, value] of Object.entries(window.espaces)) {
+//		
+//		var espace = document.getElementById("espace_".concat(key));
+//		espace.style.left = 
+//		
+//	}
+//}
+
 
 
 function put_elements(content) {

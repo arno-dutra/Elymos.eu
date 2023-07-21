@@ -10,7 +10,7 @@
 }
 
 #espace_fil {
-	margin-top: 100px;
+	margin-top: 200px;
 }
 
 .legend {
@@ -23,6 +23,6 @@
 }
 
 .espace {
-	position: absolute;
+	/* position: absolute; */
 	z-index: 0;
 }

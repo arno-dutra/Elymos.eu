@@ -11,9 +11,12 @@ function load_background_color() {
 	var background_color = document.getElementById("background_color");
 	var anchors = document.getElementById("anchors");
 	
+	var map_width = 0;
+	
 	for (const [key, value] of Object.entries(window.espaces)) {
 		
-		var div = document.createElement('div');
+		if (typeof value.issommaire == 'undefined') {
+			var div = document.createElement('div');
 		div.id = key;
 		div.style.backgroundColor = value.backgroundColor;
 		div.style.left = value.left.toString().concat("px");
@@ -22,8 +25,20 @@ function load_background_color() {
 		div.classList.add("background_color_element");
 		
 		background_color.appendChild(div);
+		
+		map_width += value.width;
+		}
+		
 	}
 	
+	div = document.createElement('div');
+	div.id = "sommaire";
+	div.style.backgroundColor = window.espaces.sommaire.backgroundColor;
+	div.style.left = window.espaces.sommaire.left.toString().concat("px");
+	div.style.top = window.espaces.sommaire.top.toString().concat("px");
+	div.style.width = map_width.toString().concat("px");
+
+	background_color.appendChild(div);
 }
 
 
