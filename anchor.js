@@ -30,7 +30,7 @@ function _espace_courrant() {
 		
 		if (y < value.y) {
 			return "sommaire";
-		} else if ((value.left < x) & (x < value.left + value.width)) {
+		} else if ((value.left <= x) & (x < value.left + value.width)) {
 			console.log(y, value)
 			return key;
 			
