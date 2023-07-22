@@ -1,11 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-/*
-
-body {
-	background-color: #141111;
-}
-*/
 
 .panneau_gallerie {
 	background-color: #782828;
@@ -13,14 +7,9 @@ body {
 }
 
 .panneau_gallerie_img {
-	width: 100%
 	
 }
 
 .legend_gallerie {
-	position: relative;
-	left: 50px;
-	text-align: left;
-	font-style: italic;
 	color: #dd7c7c;
 }

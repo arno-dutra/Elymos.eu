@@ -5,8 +5,22 @@
 	width: 960px;
 	border: 1px solid;
 	border-radius: 56px;
+	overflow: hidden;
+	display: flex;
+}
+
+.panneau_gallerie {
 	-webkit-box-shadow: 0px 0px 100px #CF1D1F42;
-	box-shadow: 00px 0px 100px #CF1D1F42;
+	box-shadow: 0px 0px 100px #CF1D1F42;
+}
+
+.panneau_minecraft {
+	-webkit-box-shadow: 0px 0px 100px #b7e2b5;
+	box-shadow: 0px 0px 100px #b7e2b5;
+}
+
+td {
+	padding: 0px;
 }
 
 #espace_fil {
@@ -15,6 +29,24 @@
 
 .legend {
 	font-family: AveriaSans;
+	position: relative;
+	left: 50px;
+	text-align: left;
+	font-style: italic;
+}
+
+.panneau_img {
+	max-width: inherit;
+	max-height: inherit;
+	height: inherit;
+	width: inherit;
+	border-radius: 0px;
+ 	object-fit: cover;
+}
+
+.panneau_minecraft_arrow {
+	position: relative;
+	height: 92px;
 }
 
 .group {

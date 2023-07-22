@@ -15,5 +15,14 @@ window.contenu = `{
     "type": "image",
 	"src": "MicrosoftTeams-image.png",
     "legend": "Un instrument de saison : le butterfleur"
+  },
+  
+  "minecraft-1": {
+    "espace": "minecraft",
+    "left": "300px",
+    "top": "0px",
+    "type": "minecraft_carrousel",
+	"src": ["2019-12-20_19.40.40.png", "2020-05-14_19.38.15.png", "Rendu-4.png"],
+    "legend": "GrandeArchitecture"
   }
 }`;

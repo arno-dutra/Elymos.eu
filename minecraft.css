@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+.panneau_minecraft {
+	background-color: #89af87;
+	border-color: #528c4f;
+}
+
+.panneau_minecraft_img {
+	
+}
+
+.legend_minecraft {
+	color: #89af87;
+}
+
+#espace_minecraft_carrousel_container {
+	position: relative;
+	left: -46px;
+	border-spacing: 0px;
+}
