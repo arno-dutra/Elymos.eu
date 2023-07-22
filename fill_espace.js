@@ -76,13 +76,17 @@ function make_minecraft_carrousel(element, id) {
 			<tr>
 
 			  <td width="46px" align="center" valign="center">
-				<img id=${id.concat(`-btn-left`)} src=${"img/minecraft_carrousel_arrow_left.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_left"
+				<a href="javascript:carrousel_slide('${id}', 'left')">
+					<img id=${id.concat(`-btn-left`)} src=${"img/minecraft_carrousel_arrow_left.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_left">
+				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
 				  <div id="${id}" class="panneau panneau_${element.espace}"></div>
 				</td>
 			  <td width="46px" align="center" valign="center">
-				<img id=${id.concat(`-btn-right`)} src=${"img/minecraft_carrousel_arrow_right.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_right"
+				<a href="javascript:carrousel_slide('${id}', 'right')">
+					<img id=${id.concat(`-btn-right`)} src=${"img/minecraft_carrousel_arrow_right.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_right">
+				</a>
 				</td>
 			</tr>
 		  </tbody>
@@ -117,6 +121,26 @@ function make_minecraft_carrousel(element, id) {
 	
 }
 
+
+function carrousel_slide(id, direction) {
+	var img_container = document.getElementById(id);
+	
+	var d = {"left": -1, "right": 1}[direction];
+	
+	console.log(img_container.style.left);
+	
+	if ((img_container.style.left != 0) & (direction == "left")) {
+		
+		$(`#${id}`).animate({ 
+			left: `+=${d*img_container.style.width}`,
+		}, 1000);
+	} else if ((img_container.style.left != 0) & (direction == "left")) {
+		
+		$(`#${id}`).animate({ 
+			left: `+=${d*img_container.style.width}`,
+		}, 1000);
+	} 
+}
 
 
 

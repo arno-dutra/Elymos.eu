@@ -16,10 +16,10 @@ function make_espaces() {
 				`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: absolute; left: ${value.x}px; top: ${value.y + window.espaces.sommaire.height}px;">
 				  <tbody>
 					<tr>
-					  <td width="66%" align="center" valign="top">
+					  <td width="70%" align="center" valign="top">
 						  <div id="espace_${espace}"></div>
 						</td>
-					  <td width="34%" align="center" valign="top"></td>
+					  <td width="30%" align="center" valign="top"></td>
 					</tr>
 				  </tbody>
 				</table>`);
@@ -33,10 +33,10 @@ function make_espaces() {
 		`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: relative; left: ${value.x}px; top: ${value.y}px;">
 			  <tbody>
 				<tr>
-				  <td width="66%" align="center" valign="top">
+				  <td width="70%" align="center" valign="top">
 					  <div id="espace_${espace}"></div>
 					</td>
-				  <td width="34%" align="center" valign="top"></td>
+				  <td width="30%" align="center" valign="top"></td>
 				</tr>
 			  </tbody>
 		  </table>`);
