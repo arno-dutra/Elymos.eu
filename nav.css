@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+#nav_container {
+	position: absolute;
+	top: 0px;
+}
+
 #nav {
 	position: relative;
 	z-index: 1;

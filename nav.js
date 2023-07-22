@@ -40,3 +40,17 @@ function update_hud_color(event) {
 	}
 	
 }
+
+
+window.addEventListener('onEspaceChange', update_nav_top_position);
+
+function update_nav_top_position(event) {
+	var espace_courrant = event.detail;
+	
+	var fil = document.getElementById(`espace_${espace_courrant}_container`);
+	
+	$("#nav_container").animate({ 
+        top: fil.style.top,
+      }, 1000);
+	
+}
