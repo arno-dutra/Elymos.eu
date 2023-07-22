@@ -14,8 +14,13 @@ const hexToRgb = hex =>
     .substring(1).match(/.{2}/g)
     .map(x => parseInt(x, 16))
 
+
+
+
+window.addEventListener('onEspaceChange', update_hud_color);
 // Adapt the color of the hud elements depending on espace
-function update_hud_color(espace_courrant) {
+function update_hud_color(event) {
+	var espace_courrant = event.detail;
 	
 	var home_to_top = document.getElementById('home_to_top');
 	var home_top = document.getElementById('home_top');
