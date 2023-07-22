@@ -4,7 +4,7 @@ function goTop() {
 	
 	// Determine in which espace we are
 	
-	const espace_courrant = _espace_courrant();
+	var espace_courrant = window.espace_courrant;
 	
 	//  Jumping to current space
 	
@@ -31,7 +31,6 @@ function _espace_courrant() {
 		if (y < value.y) {
 			return "sommaire";
 		} else if ((value.left <= x) & (x < value.left + value.width)) {
-			console.log(y, value)
 			return key;
 			
 		}
@@ -40,8 +39,10 @@ function _espace_courrant() {
 }
 
 
-function move_home_top() {
-	const espace_courrant = _espace_courrant();
+window.addEventListener('onEspaceChange', move_home_top);
+
+function move_home_top(event) {
+	var espace_courrant = event.detail;
 	
 	var element = document.getElementById('home_to_top');
     var style = window.getComputedStyle(element);
