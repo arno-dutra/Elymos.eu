@@ -8,8 +8,13 @@ function make_espaces() {
 	
 	for (var [espace, value] of Object.entries(window.espaces)) {
 		
+		var top = value.y;
+		if (espace != "sommaire") {
+			top += window.espaces.sommaire.height;
+		}
+		
 		accumulateur = accumulateur.concat(
-`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: absolute; left: ${value.x}px; top: ${value.y}px;">
+`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: absolute; left: ${value.x}px; top: ${top}px;">
   <tbody>
     <tr>
       <td width="66%" align="center" valign="top">

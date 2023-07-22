@@ -20,7 +20,7 @@ function load_background_color() {
 		div.id = key;
 		div.style.backgroundColor = value.backgroundColor;
 		div.style.left = value.left.toString().concat("px");
-		div.style.top = value.top.toString().concat("px");
+		div.style.top = (value.top + window.espaces.sommaire.height).toString().concat("px");
 		div.style.width = value.width.toString().concat("px");
 		div.classList.add("background_color_element");
 		
@@ -37,6 +37,7 @@ function load_background_color() {
 	div.style.left = window.espaces.sommaire.left.toString().concat("px");
 	div.style.top = window.espaces.sommaire.top.toString().concat("px");
 	div.style.width = map_width.toString().concat("px");
+	div.style.height = window.espaces.sommaire.height.toString().concat("px");
 
 	background_color.appendChild(div);
 }

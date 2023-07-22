@@ -8,7 +8,15 @@ function goTop() {
 	
 	//  Jumping to current space
 	
-	if (typeof espace_courrant !== "undefined") {
+	if (espace_courrant !== "sommaire") {
+		
+		window.scrollTo({
+			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height,
+			left: window.espaces[espace_courrant].x,
+			behavior: 'smooth',
+		});
+		
+	} else {
 		
 		window.scrollTo({
 			top: window.espaces[espace_courrant].y,
@@ -50,8 +58,20 @@ function move_home_top(event) {
     var left = eval(style.getPropertyValue('left').replace("px", ""));
 	
 	
-	$("#home_top").animate({ 
-        top: window.espaces[espace_courrant].y + top,
-		left: window.espaces[espace_courrant].x + left,
-      }, 1000);
+	
+	if (espace_courrant !== "sommaire") {
+		
+		$("#home_top").animate({ 
+			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height + top,
+			left: window.espaces[espace_courrant].x + left,
+		}, 1000);
+		
+	} else {
+		
+		$("#home_top").animate({ 
+			top: window.espaces[espace_courrant].y + top,
+			left: window.espaces[espace_courrant].x + left,
+		}, 1000);
+		
+	}
 }
