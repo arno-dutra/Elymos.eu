@@ -137,7 +137,7 @@ function carrousel_slide(id, direction) {
 		
 		$(`#${id}-slider`).animate({ 
 			left: `+=${d}${width}`,
-		}, 1000);
+		}, 750);
 	}
 	
 	
