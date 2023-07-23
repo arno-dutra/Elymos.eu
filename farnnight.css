@@ -16,6 +16,11 @@
 	color: #efeee0;
 }
 
+.panneau_farnnight_arrow {
+	position: relative;
+	height: 92px;
+}
+
 #espace_farnnight_carrousel_container {
 	position: relative;
 	left: -46px;

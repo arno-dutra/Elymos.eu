@@ -24,8 +24,8 @@ function make_element(element, id) {
 		case "image":
 			make_image(element, id);
 			break;
-		case "minecraft_carrousel":
-			make_minecraft_carrousel(element, id);
+		case "carrousel":
+			make_carrousel(element, id);
 			break;
 		default:
 			alert(`element's type ${element.type} is not recognized`);
@@ -62,7 +62,7 @@ function make_image(element, id) {
 	}
 }
 
-function make_minecraft_carrousel(element, id) {
+function make_carrousel(element, id) {
 	var div = document.createElement('div');
 	div.classList.add("group");
 	var espace = document.getElementById(`espace_fil_${element.espace}`);
@@ -77,7 +77,7 @@ function make_minecraft_carrousel(element, id) {
 
 			  <td width="46px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'left')">
-					<img id=${id.concat(`-btn-left`)} src=${"img/minecraft_carrousel_arrow_left.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_left">
+					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left">
 				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
@@ -87,7 +87,7 @@ function make_minecraft_carrousel(element, id) {
 				</td>
 			  <td width="46px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'right')">
-					<img id=${id.concat(`-btn-right`)} src=${"img/minecraft_carrousel_arrow_right.svg"} class="panneau_minecraft_arrow panneau_minecraft_arrow_right">
+					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right">
 				</a>
 				</td>
 			</tr>

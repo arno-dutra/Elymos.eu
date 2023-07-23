@@ -35,11 +35,6 @@ td {
 	object-fit: cover;
 }
 
-.panneau_minecraft_arrow {
-	position: relative;
-	height: 92px;
-}
-
 .panneau_carrousel_slider {
 	position: relative;
 	display: flex;

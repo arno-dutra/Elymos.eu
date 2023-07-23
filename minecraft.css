@@ -16,6 +16,11 @@
 	color: #89af87;
 }
 
+.panneau_minecraft_arrow {
+	position: relative;
+	height: 92px;
+}
+
 #espace_minecraft_carrousel_container {
 	position: relative;
 	left: -46px;

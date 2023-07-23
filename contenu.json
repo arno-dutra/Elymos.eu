@@ -39,7 +39,7 @@ window.contenu = `{
     "espace": "minecraft",
     "left": "300px",
     "top": "0px",
-    "type": "minecraft_carrousel",
+    "type": "carrousel",
 	"src": ["2019-12-20_19.40.40.png", "2020-05-14_19.38.15.png", "Rendu-4.png"],
     "legend": "GrandeArchitecture"
   },
@@ -48,7 +48,7 @@ window.contenu = `{
     "espace": "minecraft",
     "left": "300px",
     "top": "0px",
-    "type": "minecraft_carrousel",
+    "type": "carrousel",
 	"src": ["2016-10-26_00.05.42.png", "2016-10-21_11.53.19.png", "2016-10-21_11.52.33.png"],
     "legend": "GrandeArchitecture : Tribunal"
   },
@@ -57,7 +57,7 @@ window.contenu = `{
     "espace": "minecraft",
     "left": "300px",
     "top": "0px",
-    "type": "minecraft_carrousel",
+    "type": "carrousel",
 	"src": ["2017-02-15_17.50.52.png", "2017-02-15_22.22.30.png", "2017-02-15_22.08.42.png" , "2016-10-24_00.25.23.png"],
     "legend": "GrandeArchitecture : Chambre des commerces"
   },
@@ -69,5 +69,14 @@ window.contenu = `{
     "type": "image",
 	"src": "20220423_000722.jpg",
     "legend": "Berlin - Jam au Kikisol"
+  },
+  
+  "farnnight-9": {
+    "espace": "farnnight",
+    "left": "300px",
+    "top": "0px",
+    "type": "carrousel",
+	"src": ["280690891_7379860525420437_2976532268147992914_n.jpg", "WhatsApp Image 2022-05-12 at 12.07.42 (1).jpeg"],
+    "legend": "Tišnov - interventions en écoles et lycées"
   }
 }`;
