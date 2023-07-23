@@ -81,7 +81,9 @@ function make_minecraft_carrousel(element, id) {
 				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
-				  <div id="${id}" class="panneau panneau_${element.espace}"></div>
+				  <div id="${id}" class="panneau panneau_${element.espace}">
+					<div id="${id}-slider" class="panneau_carrousel_slider" style="left: 0px;"></div>
+					</div>
 				</td>
 			  <td width="46px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'right')">
@@ -93,7 +95,7 @@ function make_minecraft_carrousel(element, id) {
 		</table>`;
 	div.appendChild(carrousel_container);
 	
-	var img_container = document.getElementById(id);
+	var img_container = document.getElementById(`${id}-slider`);
 	
 	for (var i = 0; i < element.src.length; i++) {
 		var img = document.createElement('img');
@@ -123,23 +125,22 @@ function make_minecraft_carrousel(element, id) {
 
 
 function carrousel_slide(id, direction) {
-	var img_container = document.getElementById(id);
+	var img_container = document.getElementById(`${id}-slider`);
 	
-	var d = {"left": -1, "right": 1}[direction];
+	var images = document.getElementsByClassName(`panneau_img_tag-${id}`);
+	var width = window.getComputedStyle(document.getElementById(id), null).getPropertyValue("width");
 	
-	console.log(img_container.style.left);
 	
-	if ((img_container.style.left != 0) & (direction == "left")) {
+	var d = {"left": "", "right":"-"}[direction];
+	
+	if (((img_container.style.left != "0px") & (direction == "left")) | ((img_container.style.left != `-${(images.length - 1) * eval(width.replace("px", ""))}px`) & (direction == "right"))) {
 		
-		$(`#${id}`).animate({ 
-			left: `+=${d*img_container.style.width}`,
+		$(`#${id}-slider`).animate({ 
+			left: `+=${d}${width}`,
 		}, 1000);
-	} else if ((img_container.style.left != 0) & (direction == "left")) {
-		
-		$(`#${id}`).animate({ 
-			left: `+=${d*img_container.style.width}`,
-		}, 1000);
-	} 
+	}
+	
+	
 }
 
 

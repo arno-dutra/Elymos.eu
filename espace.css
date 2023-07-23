@@ -1,8 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+:root {
+  --panneau-width: 960px;
+}
+
 .panneau {
-	width: 960px;
+	width: var(--panneau-width);
 	border: 1px solid;
 	border-radius: 56px;
 	overflow: hidden;
@@ -36,18 +40,26 @@ td {
 }
 
 .panneau_img {
+	position: relative;
 	max-width: inherit;
 	max-height: inherit;
 	height: inherit;
-	width: inherit;
+	width: var(--panneau-width);
 	border-radius: 0px;
- 	object-fit: cover;
+	object-fit: cover;
 }
 
 .panneau_minecraft_arrow {
 	position: relative;
 	height: 92px;
 }
+
+.panneau_carrousel_slider {
+	position: relative;
+	display: flex;
+}
+
+div#minecraft-1-slider {}
 
 .group {
 	position: relative;
