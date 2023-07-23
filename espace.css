@@ -13,16 +13,6 @@
 	display: flex;
 }
 
-.panneau_gallerie {
-	-webkit-box-shadow: 0px 0px 100px #CF1D1F42;
-	box-shadow: 0px 0px 100px #CF1D1F42;
-}
-
-.panneau_minecraft {
-	-webkit-box-shadow: 0px 0px 100px #b7e2b5;
-	box-shadow: 0px 0px 100px #b7e2b5;
-}
-
 td {
 	padding: 0px;
 }

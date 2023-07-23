@@ -4,6 +4,8 @@
 .panneau_minecraft {
 	background-color: #89af87;
 	border-color: #528c4f;
+	-webkit-box-shadow: 0px 0px 100px #b7e2b5;
+	box-shadow: 0px 0px 100px #b7e2b5;
 }
 
 .panneau_minecraft_img {
