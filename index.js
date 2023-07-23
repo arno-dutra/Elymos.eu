@@ -17,7 +17,7 @@ function make_espaces() {
 				  <tbody>
 					<tr>
 					  <td width="70%" align="center" valign="top">
-						  <div id="espace_${espace}"></div>
+						  <div id="espace_fil_${espace}" class="espace"></div>
 						</td>
 					  <td width="30%" align="center" valign="top"></td>
 					</tr>
@@ -34,7 +34,7 @@ function make_espaces() {
 			  <tbody>
 				<tr>
 				  <td width="70%" align="center" valign="top">
-					  <div id="espace_${espace}"></div>
+					  <div id="espace_fil_${espace}"></div>
 					</td>
 				  <td width="30%" align="center" valign="top"></td>
 				</tr>

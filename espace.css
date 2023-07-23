@@ -27,10 +27,6 @@ td {
 	padding: 0px;
 }
 
-#espace_fil {
-	margin-top: 200px;
-}
-
 .legend {
 	font-family: AveriaSans;
 	position: relative;
@@ -70,4 +66,5 @@ div#minecraft-1-slider {}
 .espace {
 	/* position: absolute; */
 	z-index: 0;
+	margin-top: 200px;
 }
