@@ -154,11 +154,12 @@ function make_html(element, id) {
 	var html_container = document.createElement('div');
 	
 	html_container.id = id;
+	html_container.innerHTML = `<iframe src="html/${element.espace}/${element.src}" scrolling="no" onload="resizeIframe(this)"></iframe>`
 	html_container.classList.add("panneau");
 	html_container.classList.add(`panneau_${element.espace}`);
-	div.appendChild(html_container);	
+	div.appendChild(html_container);
 	
-	$(`#${id}`).load(`html/${element.espace}/${element.src}`);	
+//	$(`#${id}`).load(`html/${element.espace}/${element.src}`);	
 }
 
 

@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'ExpletusSans';
+	src: url('expletussans-semibold.eot');
+	src: url('expletussans-semibold.eot?#iefix') format('embedded-opentype'),
+		url('expletussans-semibold.woff') format('woff');
+}

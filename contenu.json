@@ -70,6 +70,22 @@ window.contenu = `{
 	"src": "farnnight-1.html"
   },
   
+  "farnnight-2": {
+    "espace": "farnnight",
+    "left": "300px",
+    "top": "0px",
+    "type": "html",
+	"src": "farnnight-2.html"
+  },
+  
+  "farnnight-3": {
+    "espace": "farnnight",
+    "left": "300px",
+    "top": "0px",
+    "type": "html",
+	"src": "farnnight-3.html"
+  },
+  
   "farnnight-8": {
     "espace": "farnnight",
     "left": "300px",
