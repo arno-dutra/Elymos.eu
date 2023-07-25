@@ -27,6 +27,9 @@ function make_element(element, id) {
 		case "carrousel":
 			make_carrousel(element, id);
 			break;
+		case "html":
+			make_html(element, id);
+			break;
 		default:
 			alert(`element's type ${element.type} is not recognized`);
 	}
@@ -123,7 +126,6 @@ function make_carrousel(element, id) {
 	
 }
 
-
 function carrousel_slide(id, direction) {
 	var img_container = document.getElementById(`${id}-slider`);
 	
@@ -143,7 +145,21 @@ function carrousel_slide(id, direction) {
 	
 }
 
-
+function make_html(element, id) {
+	var div = document.createElement('div');
+	div.classList.add("group")
+	var espace = document.getElementById(`espace_fil_${element.espace}`);
+	espace.appendChild(div);
+	
+	var html_container = document.createElement('div');
+	
+	html_container.id = id;
+	html_container.classList.add("panneau");
+	html_container.classList.add(`panneau_${element.espace}`);
+	div.appendChild(html_container);	
+	
+	$(`#${id}`).load(`html/${element.espace}/${element.src}`);	
+}
 
 
 

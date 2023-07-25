@@ -62,6 +62,14 @@ window.contenu = `{
     "legend": "GrandeArchitecture : Chambre des commerces"
   },
   
+  "farnnight-1": {
+    "espace": "farnnight",
+    "left": "300px",
+    "top": "0px",
+    "type": "html",
+	"src": "farnnight-1.html"
+  },
+  
   "farnnight-8": {
     "espace": "farnnight",
     "left": "300px",
