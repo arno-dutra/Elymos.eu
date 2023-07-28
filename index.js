@@ -13,7 +13,7 @@ function make_espaces() {
 		if (espace != "sommaire") {
 		
 			accumulateur = accumulateur.concat(
-				`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: absolute; left: ${value.x}px; top: ${value.y + window.espaces.sommaire.height}px;">
+				`<table width="100%" border="0" id="espace_${espace}_container" style="z-index: 0; position: absolute; left: ${value.x}px; top: ${value.y + window.espaces.sommaire.height}px;" class="espace_container">
 				  <tbody>
 					<tr>
 					  <td width="70%" align="center" valign="top">

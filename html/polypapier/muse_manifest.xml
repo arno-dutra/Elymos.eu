@@ -1,0 +1,55 @@
+<manifest alg="2" build="2018.1.1.386" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="elymos.eu/Polypapier" resolutions="1x" timestamp="1681394361520">
+  <folder name="phone">
+    <folder name="css">
+      <file name="index.css" crc="4264825274" ref="phone>index"/>
+    </folder>
+    <file name="index.html" crc="3993580247" seo="true" mt="1681394355990" redirect="true"/>
+  </folder>
+  <folder name="css">
+    <file name="site_global.css" crc="175917437"/>
+    <file name="index.css" crc="4213641033" ref="index"/>
+  </folder>
+  <folder name="assets">
+    <file name="titre.eps" crc="260607116" seo="true" mt="1681233296000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:phone>index"/>
+    <file name="museutils.js" crc="3939489907" ref="index:phone>index"/>
+    <file name="whatinput.js" crc="86476730" ref="index:phone>index"/>
+    <file name="museconfig.js" crc="3936894949" ref="index:phone>index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="85124417" ref="index:phone>index"/>
+    <file name="jquery.watch.js" crc="522499760" ref="index:phone>index"/>
+    <file name="require.js" crc="4177726516" ref="index:phone>index"/>
+  </folder>
+  <folder name="images">
+    <file name="titre.svg" crc="167617574" seo="true" ref="index:phone>index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="titre_poster_.png" crc="265986492" ref="phone>index"/>
+    <file name="5dca17d60b137ab7667c1c66_9261-scroll-down.gif" crc="117146556" seo="true" ref="index:phone>index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="comparaison-papier.png" crc="4066823632" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="2022_05_27_trafacka_koncert-15.jpg" crc="3930060039" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="boutton-exemple-normal-u282-fr.png" crc="482095590" ref="index"/>
+    <file name="boutton-exemple-hover-u282-r-fr.png" crc="496207350" ref="index"/>
+    <file name="boutton-exemple-clic-u282-m-fr.png" crc="190452563" ref="index"/>
+    <file name="favicon.ico" crc="4234479150" ref="phone>index"/>
+    <file name="2022_05_27_trafacka_koncert-15-u420-fr.jpg" crc="4027005080" ref="phone>index"/>
+    <file name="comparaison-papier-u423-fr.png" crc="456085001" ref="phone>index"/>
+    <file name="boutton-exemple-normal-u432-fr.png" crc="326592870" ref="phone>index"/>
+    <file name="boutton-exemple-hover-u432-r-fr.png" crc="3974146023" ref="phone>index"/>
+    <file name="boutton-exemple-clic-u432-m-fr.png" crc="30258195" ref="phone>index"/>
+    <file name="boutton-telecharger-normal-u438-fr.png" crc="410487947" ref="phone>index:index"/>
+    <file name="boutton-telecharger-hover-u438-r-fr.png" crc="296918301" ref="phone>index:index"/>
+    <file name="boutton-telecharger-clic-u438-m-fr.png" crc="147383938" ref="phone>index:index"/>
+    <file name="boutton-precommander-normal-u439-fr.png" crc="279630002" ref="phone>index:index"/>
+    <file name="boutton-precommander-hover-u439-r-fr.png" crc="420614325" ref="phone>index:index"/>
+    <file name="boutton-precommander-clic-u439-m-fr.png" crc="218211800" ref="phone>index:index"/>
+  </folder>
+  <file name="index.html" crc="298648445" seo="true" mt="1681393911839" redirect="true"/>
+</manifest>

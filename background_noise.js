@@ -32,7 +32,7 @@ function onLoad() {
 	window.addEventListener("resize", onResize)
 	window.addEventListener("scroll", onScroll)
 }
-onLoad()
+//onLoad()
 
 
 

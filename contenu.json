@@ -1,4 +1,12 @@
 window.contenu = `{
+  "polypapier-1": {
+    "espace": "polypapier",
+    "left": "300px",
+    "top": "0px",
+    "type": "html",
+	"src": "index.html"
+  },
+
   "gallerie-1": {
     "espace": "gallerie",
     "left": "300px",

@@ -40,6 +40,8 @@ function load_background_color() {
 	div.style.height = window.espaces.sommaire.height.toString().concat("px");
 
 	background_color.appendChild(div);
+	
+	window.map_width = map_width;
 }
 
 
