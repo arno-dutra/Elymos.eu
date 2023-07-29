@@ -129,7 +129,7 @@ function go(id) {
 //});
 	switch (window.content[id].nav_type) {
 		case "timespan":
-			var top = $(`#${id}`).offset().top - 200;
+			var top = $(`#${id}`).offset().top - 200 - 2;
 			break;
 		case "instant":
 			var top = $(`#${id}`).offset().top + (eval(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);

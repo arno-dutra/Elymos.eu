@@ -16,10 +16,10 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "image",
-	"src": "Basse_v1.0.jpg",
-    "legend": "Mon tuba wagnérien",
+	"src": "IMG_3385.jpg",
+    "legend": "Pamillon",
 	"nav_type": "instant",
-	"nav_date": "14/11/2021"
+	"nav_date": "31/07/2022"
   },
   
   "gallerie-2": {
@@ -32,8 +32,19 @@ window.contenu = `{
 	"nav_type": "instant",
 	"nav_date": "14/03/2022"
   },
-  
+
   "gallerie-3": {
+    "espace": "gallerie",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "Basse_v1.0.jpg",
+    "legend": "Mon tuba wagnérien",
+	"nav_type": "instant",
+	"nav_date": "14/11/2021"
+  },
+  
+  "gallerie-4": {
     "espace": "gallerie",
     "left": "0px",
     "top": "0px",
@@ -42,17 +53,6 @@ window.contenu = `{
     "legend": "Ma jungle",
 	"nav_type": "instant",
 	"nav_date": "05/07/2021"
-  },
-
-  "gallerie-4": {
-    "espace": "gallerie",
-    "left": "0px",
-    "top": "0px",
-    "type": "image",
-	"src": "IMG_3385.jpg",
-    "legend": "Pamillon",
-	"nav_type": "instant",
-	"nav_date": "31/07/2022"
   },
   
   "minecraft-1": {
