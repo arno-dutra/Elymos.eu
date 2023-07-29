@@ -1,7 +1,6 @@
 // Defining the color of the background
 
 
-console.log(window.espaces);
 window.espaces = JSON.parse(window.espaces);
 
 load_background_color();

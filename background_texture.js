@@ -11,7 +11,6 @@ function set_espace_height() {
 	Object.keys(window.espaces).forEach(function(espace) {
 		hh = eval(window.getComputedStyle(document.getElementById(`espace_${espace}_container`)).getPropertyValue("height").replace("px", ""));
 		margin_top = eval(window.getComputedStyle(document.getElementById(`espace_fil_${espace}`)).getPropertyValue("margin-top").replace("px", ""));
-		console.log(espace, hh + margin_top);
 		h = Math.max(h, hh + margin_top);
    
 	});

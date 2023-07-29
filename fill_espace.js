@@ -1,5 +1,4 @@
 
-console.log(window.contenu);
 var content = JSON.parse(window.contenu);
 put_elements(content);
 
