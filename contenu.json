@@ -148,7 +148,7 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "carrousel",
-	"src": ["280690891_7379860525420437_2976532268147992914_n.jpg", "WhatsApp Image 2022-05-12 at 12.07.42 (1).jpeg"],
+	"src": ["280690891_7379860525420437_2976532268147992914_n.jpg", "WhatsApp-Image-2022-05-12-at-12.07.jpg"],
     "legend": "Tišnov - interventions en écoles et lycées",
 	"nav_type": "timespan",
 	"nav_class": "-a",
