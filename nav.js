@@ -1,4 +1,30 @@
 
+function load_nav() {
+	var container = document.getElementById("_nav_container");
+	
+	container.innerHTML = `<table id="nav_container" width="100%" border="0">
+	  <tbody>
+		<tr>
+		  <td width="${window.prop*100}%" align="center" valign="top"></td>
+		  <td width="${(1 - window.prop)*100}%"" align="center" valign="top">
+			  <div id="nav"></div>
+			</td>
+		</tr>
+	  </tbody>
+	</table>`;
+	
+	
+	$(function(){
+	  $("#nav").load("nav.html"); 
+	});
+	
+}
+
+load_nav()
+
+
+
+
 // Make nav following us along x
 $(window).on('scroll', function () {
 

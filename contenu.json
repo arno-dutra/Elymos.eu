@@ -1,7 +1,7 @@
 window.contenu = `{
   "polypapier-1": {
     "espace": "polypapier",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "html",
 	"src": "index.html"
@@ -9,7 +9,7 @@ window.contenu = `{
 
   "gallerie-1": {
     "espace": "gallerie",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "Basse_v1.0.jpg",
@@ -18,7 +18,7 @@ window.contenu = `{
   
   "gallerie-2": {
     "espace": "gallerie",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "MicrosoftTeams-image.png",
@@ -27,7 +27,7 @@ window.contenu = `{
   
   "gallerie-3": {
     "espace": "gallerie",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "Ma_jungle.jpg",
@@ -36,7 +36,7 @@ window.contenu = `{
 
   "gallerie-4": {
     "espace": "gallerie",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "IMG_3385.jpg",
@@ -45,7 +45,7 @@ window.contenu = `{
   
   "minecraft-1": {
     "espace": "minecraft",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["2019-12-20_19.40.40.png", "2020-05-14_19.38.15.png", "Rendu-4.png"],
@@ -54,7 +54,7 @@ window.contenu = `{
   
   "minecraft-2": {
     "espace": "minecraft",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["2016-10-26_00.05.42.png", "2016-10-21_11.53.19.png", "2016-10-21_11.52.33.png"],
@@ -63,7 +63,7 @@ window.contenu = `{
   
   "minecraft-3": {
     "espace": "minecraft",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["2017-02-15_17.50.52.png", "2017-02-15_22.22.30.png", "2017-02-15_22.08.42.png" , "2016-10-24_00.25.23.png"],
@@ -72,7 +72,7 @@ window.contenu = `{
   
   "farnnight-1": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "html",
 	"src": "farnnight-1.html"
@@ -80,7 +80,7 @@ window.contenu = `{
   
   "farnnight-2": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "html",
 	"src": "farnnight-2.html"
@@ -88,7 +88,7 @@ window.contenu = `{
   
   "farnnight-3": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "html",
 	"src": "farnnight-3.html"
@@ -96,7 +96,7 @@ window.contenu = `{
   
   "farnnight-8": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "20220423_000722.jpg",
@@ -105,7 +105,7 @@ window.contenu = `{
   
   "farnnight-9": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["280690891_7379860525420437_2976532268147992914_n.jpg", "WhatsApp Image 2022-05-12 at 12.07.42 (1).jpeg"],
@@ -114,7 +114,7 @@ window.contenu = `{
   
   "farnnight-10": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "2022_05_27_TRAFACKA_koncert-1.jpg",
@@ -123,7 +123,7 @@ window.contenu = `{
   
   "farnnight-11": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["IMG_1668.jpg", "IMG_20220531_120000.jpg", "VID_20220602_113813 - frame at 0m6s.jpg", "DSC_3363.jpg"],
@@ -132,7 +132,7 @@ window.contenu = `{
   
   "farnnight-12": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["20220622_191940.jpg", "20220617_211425.jpg", "IMG_20220626_123053.jpg"],
@@ -141,7 +141,7 @@ window.contenu = `{
   
   "farnnight-13": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["294021571_2196971337131828_325882374112691093_n.jpg", "20220715_200749.jpg", "20220712_103007.jpg"],
@@ -150,7 +150,7 @@ window.contenu = `{
   
   "farnnight-15": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "image",
 	"src": "IMG_3299_.jpg",
@@ -159,7 +159,7 @@ window.contenu = `{
   
   "farnnight-16": {
     "espace": "farnnight",
-    "left": "300px",
+    "left": "0px",
     "top": "0px",
     "type": "carrousel",
 	"src": ["297618108_482796803847317_7102328218131397039_n.jpg", "IMG_3571.jpg", "IMG_3547.jpg", "IMG_3553.jpg"],

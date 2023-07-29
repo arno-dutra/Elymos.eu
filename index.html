@@ -9,11 +9,6 @@
 	<link href="background_color.css" rel="stylesheet" type="text/css">
 	<link href="background_texture.css" rel="stylesheet" type="text/css">
 <script src="script/jquery-3.7.0.min.js"></script> 
-	<script> 
-	$(function(){
-	  $("#nav").load("nav.html"); 
-	});
-	</script> 
 	<script>
 	  function resizeIframe(obj) {
 		obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
@@ -62,16 +57,9 @@
 	
 	
 <!-- Navigator -->
-<table id="nav_container" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td width="66%" align="center" valign="top"></td>
-      <td width="34%" align="center" valign="top">
-		  <div id="nav"></div>
-		</td>
-    </tr>
-  </tbody>
-</table>
+	<div id="_nav_container"></div>
+	<script src="nav.js"></script>
+
 
 </body>
 </html>
