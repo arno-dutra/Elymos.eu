@@ -4,7 +4,11 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "html",
-	"src": "index.html"
+	"src": "index.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "01/09/2022",
+	"nav_ending_date": "03/05/2023"
   },
 
   "gallerie-1": {
@@ -13,7 +17,9 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "Basse_v1.0.jpg",
-    "legend": "Mon tuba wagnérien"
+    "legend": "Mon tuba wagnérien",
+	"nav_type": "instant",
+	"nav_date": "14/11/2021"
   },
   
   "gallerie-2": {
@@ -22,7 +28,9 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "MicrosoftTeams-image.png",
-    "legend": "Un instrument de saison : le butterfleur"
+    "legend": "Un instrument de saison : le butterfleur",
+	"nav_type": "instant",
+	"nav_date": "14/03/2022"
   },
   
   "gallerie-3": {
@@ -31,7 +39,9 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "Ma_jungle.jpg",
-    "legend": "Ma jungle"
+    "legend": "Ma jungle",
+	"nav_type": "instant",
+	"nav_date": "05/07/2021"
   },
 
   "gallerie-4": {
@@ -40,7 +50,9 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "IMG_3385.jpg",
-    "legend": "Pamillon"
+    "legend": "Pamillon",
+	"nav_type": "instant",
+	"nav_date": "31/07/2022"
   },
   
   "minecraft-1": {
@@ -49,7 +61,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["2019-12-20_19.40.40.png", "2020-05-14_19.38.15.png", "Rendu-4.png"],
-    "legend": "GrandeArchitecture"
+    "legend": "GrandeArchitecture",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "01/01/2012",
+	"nav_ending_date": "14/05/2020"
   },
   
   "minecraft-2": {
@@ -58,7 +74,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["2016-10-26_00.05.42.png", "2016-10-21_11.53.19.png", "2016-10-21_11.52.33.png"],
-    "legend": "GrandeArchitecture : Tribunal"
+    "legend": "GrandeArchitecture : Tribunal",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "01/01/2012",
+	"nav_ending_date": "14/05/2020"
   },
   
   "minecraft-3": {
@@ -67,7 +87,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["2017-02-15_17.50.52.png", "2017-02-15_22.22.30.png", "2017-02-15_22.08.42.png" , "2016-10-24_00.25.23.png"],
-    "legend": "GrandeArchitecture : Chambre des commerces"
+    "legend": "GrandeArchitecture : Chambre des commerces",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "01/01/2012",
+	"nav_ending_date": "14/05/2020"
   },
   
   "farnnight-1": {
@@ -75,7 +99,11 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "html",
-	"src": "farnnight-1.html"
+	"src": "farnnight-1.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-2": {
@@ -83,7 +111,11 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "html",
-	"src": "farnnight-2.html"
+	"src": "farnnight-2.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-3": {
@@ -91,7 +123,11 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "html",
-	"src": "farnnight-3.html"
+	"src": "farnnight-3.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-8": {
@@ -100,7 +136,11 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "20220423_000722.jpg",
-    "legend": "Berlin - Jam au Kikisol"
+    "legend": "Berlin - Jam au Kikisol",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-9": {
@@ -109,7 +149,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["280690891_7379860525420437_2976532268147992914_n.jpg", "WhatsApp Image 2022-05-12 at 12.07.42 (1).jpeg"],
-    "legend": "Tišnov - interventions en écoles et lycées"
+    "legend": "Tišnov - interventions en écoles et lycées",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-10": {
@@ -118,7 +162,11 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "2022_05_27_TRAFACKA_koncert-1.jpg",
-    "legend": "Nitra - Intervention au centre culturel Trafacka"
+    "legend": "Nitra - Intervention au centre culturel Trafacka",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-11": {
@@ -127,7 +175,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["IMG_1668.jpg", "IMG_20220531_120000.jpg", "VID_20220602_113813 - frame at 0m6s.jpg", "DSC_3363.jpg"],
-    "legend": "Sekier - Wwoofing et prestations"
+    "legend": "Sekier - Wwoofing et prestations",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-12": {
@@ -136,7 +188,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["20220622_191940.jpg", "20220617_211425.jpg", "IMG_20220626_123053.jpg"],
-    "legend": "Belgrade - Prestations et éveil musical"
+    "legend": "Belgrade - Prestations et éveil musical",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-13": {
@@ -145,7 +201,11 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["294021571_2196971337131828_325882374112691093_n.jpg", "20220715_200749.jpg", "20220712_103007.jpg"],
-    "legend": "Jajce - Masterclass d’improvisation"
+    "legend": "Jajce - Masterclass d’improvisation",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-15": {
@@ -154,7 +214,11 @@ window.contenu = `{
     "top": "0px",
     "type": "image",
 	"src": "IMG_3299_.jpg",
-    "legend": "Komin - Animation de la fête du poisson"
+    "legend": "Komin - Animation de la fête du poisson",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   },
   
   "farnnight-16": {
@@ -163,6 +227,10 @@ window.contenu = `{
     "top": "0px",
     "type": "carrousel",
 	"src": ["297618108_482796803847317_7102328218131397039_n.jpg", "IMG_3571.jpg", "IMG_3547.jpg", "IMG_3553.jpg"],
-    "legend": "Floating Castle Festival"
+    "legend": "Floating Castle Festival",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
   }
 }`;

@@ -35,45 +35,54 @@
 	border-radius: 11.25px;
 	position: relative;
 }
+/*
 
 .nav_timepoint_point {
 	height: 12px;
 }
+*/
 
 .nav_timepoint_code {
 	background-color: #1a1f23;
 	border-color: #2d85b2;
 }
 
+/*
 #nav_code-1 {
 	top: 200px;
 	height: 50px;
 }
+*/
 
 .nav_timepoint_polypapier {
 	background-color: #f5f1d3;
 	border-color: #6eb52c;
 }
 
+/*
 #nav_polypapier-1 {
 	top: 20px;
 	height: 100px;
 }
+*/
 
 .nav_timepoint_minecraft {
 	background-color: #223f21;
 	border-color: #528c4f;
 }
 
+/*
 #nav_minecraft-1 {
 	top: 400px;
 	height: 300px;
 }
+*/
 
 .nav_timepoint_gallerie {
 	background-color: #141111;
 	border-color: #dd7c7c;
 }
+/*
 
 #nav_gallerie-1 {
 	top: 0px;
@@ -90,11 +99,13 @@
 #nav_gallerie-4 {
 	top: 300px;
 }
+*/
 
 .nav_timepoint_compos {
 	background-color: #260c2b;
 	border-color: #962eaf;
 }
+/*
 
 #nav_compos-1 {
 	top: 0px;
@@ -111,16 +122,19 @@
 #nav_compos-4 {
 	top: 200px;
 }
+*/
 
 .nav_timepoint_farnnight {
 	background-color: #02051c;
 	border-color: #ffff00;
 }
+/*
 
 #nav_farnnight-1 {
 	top: 100px;
 	height: 100px;
 }
+*/
 
 .nav_timepoint_sco_inge {
 	background-color: #023311;
