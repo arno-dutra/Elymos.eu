@@ -77,9 +77,9 @@ function make_carrousel(element, id) {
 		  <tbody>
 			<tr>
 
-			  <td width="46px" align="center" valign="center">
+			  <td width="30px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'left')">
-					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left">
+					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left" width="30px">
 				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
@@ -87,9 +87,9 @@ function make_carrousel(element, id) {
 					<div id="${id}-slider" class="panneau_carrousel_slider" style="left: 0px;"></div>
 					</div>
 				</td>
-			  <td width="46px" align="center" valign="center">
+			  <td width="30px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'right')">
-					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right">
+					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right" width="30px">
 				</a>
 				</td>
 			</tr>
@@ -157,8 +157,6 @@ function make_html(element, id) {
 	html_container.classList.add("panneau");
 	html_container.classList.add(`panneau_${element.espace}`);
 	div.appendChild(html_container);
-	
-//	$(`#${id}`).load(`html/${element.espace}/${element.src}`);	
 }
 
 
