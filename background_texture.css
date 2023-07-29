@@ -6,4 +6,7 @@
 	z-index: 0;
 	width: 1920px;
 	height: 1080px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }

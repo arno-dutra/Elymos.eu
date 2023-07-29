@@ -4,20 +4,27 @@
 
 function set_espace_height() {
 	
-	const espaces = document.getElementsByClassName("espace_container");
-	
 	var h = 0;
+	var hh = 0;
+	var margin_top = 0;
 	
-	for (var i = 0; i < espaces.length; i++) {
-		h = Math.max(h, eval(window.getComputedStyle(espaces[i]).getPropertyValue("height").replace("px", "")));
-	}
+	Object.keys(window.espaces).forEach(function(espace) {
+		hh = eval(window.getComputedStyle(document.getElementById(`espace_${espace}_container`)).getPropertyValue("height").replace("px", ""));
+		margin_top = eval(window.getComputedStyle(document.getElementById(`espace_fil_${espace}`)).getPropertyValue("margin-top").replace("px", ""));
+		console.log(espace, hh + margin_top);
+		h = Math.max(h, hh + margin_top);
+   
+	});
 	
-	window.map_height = h;
+	const sommaire_h = eval(window.getComputedStyle(document.getElementById("sommaire")).getPropertyValue("height").replace("px", ""));
+	const groupe_margin_bottom = eval(window.getComputedStyle(document.getElementsByClassName("group")[0]).getPropertyValue("margin-bottom").replace("px", ""));
+	
+	window.map_height = h + sommaire_h + groupe_margin_bottom;
 	
 	const color_tiles = document.getElementsByClassName("background_color_element");
 	
 	for (var j = 0; j < color_tiles.length; j++) {
-		color_tiles[j].style.height = `${h}px`;
+		color_tiles[j].style.height = `${h + groupe_margin_bottom}px`;
 	}
 	
 }
@@ -26,13 +33,16 @@ set_espace_height();
 
 function set_noise_size() {
 	
-bg = document.getElementById("background_texture");
+	bg = document.getElementById("background_texture");
 
-body = document.getElementById("body");
+	body = document.getElementById("body");
 
-bg.style.width = `${window.map_width}px`;
-bg.style.height = `${window.map_height}px`;
+	bg.style.width = `${window.map_width}px`;	
+	bg.style.height = `${window.map_height}px`;
 	
 }
 
 set_noise_size()
+
+window.addEventListener('onEspaceChange', set_espace_height);
+window.addEventListener('onEspaceChange', set_noise_size);
