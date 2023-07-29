@@ -39,6 +39,9 @@ function _nav_preprocessing(content) {
 				} else {
 					elements[id] = {};
 					elements[id].espace = content[k].espace;
+					if (k.localeCompare(elements[id].href) < 0) {
+						elements[id].href = k;
+					}
 					elements[id].nav_type = content[k].nav_type;
 					elements[id].nav_starting_date = content[k].nav_starting_date;
 					elements[id].nav_ending_date = content[k].nav_ending_date;
@@ -50,6 +53,7 @@ function _nav_preprocessing(content) {
 				
 				elements[id] = {};
 				elements[id].espace = content[k].espace;
+				elements[id].href = k;
 				elements[id].nav_type = content[k].nav_type;
 				elements[id].nav_date = content[k].nav_date;
 				break;
@@ -74,6 +78,9 @@ function make_nav(content) {
 	var keys = Object.keys(content);
 	for (var i=0; i < keys.length; i++) {
 		var k = keys[i];
+		
+		var a = document.createElement('a');
+		a.href = `javascript:go("${content[k].href}")`;
 
 		var div = document.createElement('div');
 		div.id = k;
@@ -83,8 +90,6 @@ function make_nav(content) {
 		switch (content[k].nav_type)  {
 			case "timespan":
 				height = Math.max(12, (_parse_date(content[k].nav_ending_date) - _parse_date(content[k].nav_starting_date)) / 2678400000 * nav_month_height);
-				console.log(height, _parse_date(content[k].nav_ending_date), content[k].nav_ending_date, _parse_date(content[k].nav_starting_date), content[k].nav_starting_date, nav_month_height, (_parse_date(content[k].nav_ending_date) - _parse_date(content[k].nav_starting_date)));
-				
 				top = (current_date - _parse_date(content[k].nav_ending_date)) / 2678400000 * nav_month_height;
 				break;
 				
@@ -94,11 +99,13 @@ function make_nav(content) {
 				break;
 				
 		}
+		
 				
 		div.style.top = `${top}px`;
 		div.style.height = `${height}px`;
+		a.appendChild(div);
 		var espace = document.getElementById(`nav_container_${content[k].espace}`);
-		espace.appendChild(div);
+		espace.appendChild(a);
 	
 	}
 
@@ -116,7 +123,29 @@ function _parse_date(str) {
 
 
 
-
+function go(id) {
+//	document.querySelector(`#${id}`).scrollIntoView({
+//  behavior: 'smooth'
+//});
+	switch (window.content[id].nav_type) {
+		case "timespan":
+			var top = $(`#${id}`).offset().top - 200;
+			break;
+		case "instant":
+			var top = $(`#${id}`).offset().top + (eval(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);
+			break;
+	}
+	
+	
+	var left = window.espaces[window.content[id].espace].x;
+		
+		window.scrollTo({
+			top: top,
+			left: left,
+			behavior: 'smooth',
+		});
+	
+}
 
 
 
