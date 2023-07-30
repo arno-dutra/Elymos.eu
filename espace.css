@@ -25,12 +25,26 @@ iframe {
 	border: 0;
 }
 
+.legend_container {
+	position: relative;
+	left: 75px;
+	top: -20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 .legend {
 	font-family: AveriaSans;
 	position: relative;
-	left: 50px;
 	text-align: left;
 	font-style: italic;
+}
+
+.link {
+	height: 17px;
+	margin-top: 5px;
+	margin-left: 10px;
 }
 
 .panneau_img {

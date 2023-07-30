@@ -130,6 +130,62 @@ window.contenu = `{
 	"nav_ending_date": "14/08/2022"
   },
   
+  "farnnight-4": {
+    "espace": "farnnight",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "aix.jpg",
+    "legend": "Représentation à Aix-en-Provence",
+	"link": "https://www.youtube.com/watch?v=6XOl1ZA2YsI",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
+  },
+  
+  "farnnight-5": {
+    "espace": "farnnight",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "la-revanche.jpg",
+    "legend": "Clip - La revanche",
+	"link": "https://www.youtube.com/watch?v=unDpa0qwc7E",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
+  },
+  
+  "farnnight-6": {
+    "espace": "farnnight",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "Itinéraire_FNN.jpg",
+    "legend": "Itinéraire",
+	"link": "https://www.polarsteps.com/farnnnight/4779347-road-trip-en-europe",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
+  },
+  
+  "farnnight-7": {
+    "espace": "farnnight",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "like-it.jpg",
+    "legend": "Clip - Like it",
+	"link": "https://www.youtube.com/watch?v=1YFGxPPzh8g",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
+  },
+  
   "farnnight-8": {
     "espace": "farnnight",
     "left": "0px",
@@ -202,6 +258,20 @@ window.contenu = `{
     "type": "carrousel",
 	"src": ["294021571_2196971337131828_325882374112691093_n.jpg", "20220715_200749.jpg", "20220712_103007.jpg"],
     "legend": "Jajce - Masterclass d’improvisation",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/04/2022",
+	"nav_ending_date": "14/08/2022"
+  },
+  
+  "farnnight-14": {
+    "espace": "farnnight",
+    "left": "0px",
+    "top": "0px",
+    "type": "image",
+	"src": "nous-sommes.jpg",
+    "legend": "Clip - Nous sommes",
+	"link": "https://www.youtube.com/watch?v=Er3kGup5r9A",
 	"nav_type": "timespan",
 	"nav_class": "-a",
 	"nav_starting_date": "08/04/2022",

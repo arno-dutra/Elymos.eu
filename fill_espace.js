@@ -52,15 +52,37 @@ function make_image(element, id) {
 	img.classList.add("panneau_img");
 	img_container.appendChild(img);
 	
-	if (typeof element.legend !== 'undefined') {
-		var legend = document.createElement('h2');
-		legend.style.left = "75px";
-		legend.style.top = "-20px";
-		legend.id = id + "-legend";
-		legend.classList.add("legend");
-		legend.classList.add(`legend_${element.espace}`);
-		legend.innerHTML = element.legend;
-		div.appendChild(legend);
+	if ((typeof element.legend !== 'undefined') | (typeof element.link !== 'undefined')) {
+		var legend_container = document.createElement('div');
+		legend_container.classList.add("legend_container");
+		
+		if (typeof element.legend !== 'undefined') {
+			var legend = document.createElement('h2');
+			legend.id = id + "-legend";
+			legend.classList.add("legend");
+			legend.classList.add(`legend_${element.espace}`);
+			legend.innerHTML = element.legend;
+			legend_container.appendChild(legend);
+		}
+	
+		if (typeof element.link !== 'undefined') {
+			var a = document.createElement('a');
+			a.href = element.link;
+			a.target = "_blank";
+			
+			var link = document.createElement('img');
+			link.id = id + "-link";
+			link.src = `img/${element.espace}_link.svg`;
+			link.classList.add("link");
+			link.classList.add(`link_${element.espace}`);
+			link.innerHTML = element.legend;
+			
+			a.appendChild(link);
+			legend_container.appendChild(a);
+		}
+		
+		div.appendChild(legend_container);
+		
 	}
 }
 
