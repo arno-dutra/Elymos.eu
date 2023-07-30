@@ -70,6 +70,14 @@ function make_carrousel(element, id) {
 	var espace = document.getElementById(`espace_fil_${element.espace}`);
 	espace.appendChild(div);
 	
+	switch (element.espace) {
+		case "minecraft":
+			var arrow_width = 46;
+			break;
+		case "farnnight":
+			var arrow_width = 30;
+			break;
+	}
 	
 	var carrousel_container = document.createElement('div');
 	carrousel_container.innerHTML = `
@@ -77,9 +85,9 @@ function make_carrousel(element, id) {
 		  <tbody>
 			<tr>
 
-			  <td width="30px" align="center" valign="center">
+			  <td width="${arrow_width}px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'left')">
-					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left" width="30px">
+					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left" width="${arrow_width}px">
 				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
@@ -87,9 +95,9 @@ function make_carrousel(element, id) {
 					<div id="${id}-slider" class="panneau_carrousel_slider" style="left: 0px;"></div>
 					</div>
 				</td>
-			  <td width="30px" align="center" valign="center">
+			  <td width="${arrow_width}px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'right')">
-					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right" width="30px">
+					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right" width="${arrow_width}px">
 				</a>
 				</td>
 			</tr>
