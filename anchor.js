@@ -24,6 +24,14 @@ anchor_onLoad()
 
 // Managing anchors
 
+function goSommaire() {
+	window.scrollTo({
+		top: window.espaces["sommaire"].y,
+		left: window.espaces["sommaire"].x,
+		behavior: 'smooth',
+	});
+}
+
 function goTop() {
 	
 	// Determine in which espace we are

@@ -22,14 +22,15 @@
 	position: absolute;
 	left: 20px;
 	top: 20px;
-	z-index: 2;
 }
 
-#home_to_top {
+#home_to_top_button {
+	z-index: 2;
 	position: fixed;
 }
 
-#top {
+#home_top_button {
+	z-index: 3;
 	position: absolute;
 }
 
