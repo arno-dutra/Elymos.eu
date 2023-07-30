@@ -60,7 +60,7 @@ function _espace_courrant() {
 	
 	for (var [key, value] of Object.entries(window.espaces)) {
 		
-		if (y < value.y) {
+		if (y < window.espaces.sommaire.height) {
 			return "sommaire";
 		} else if ((value.left <= x) & (x < value.left + value.width)) {
 			return key;
