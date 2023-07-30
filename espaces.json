@@ -7,63 +7,63 @@ window.espaces = `
 		"backgroundColor": "#D4D4D4",
 		"top": 0,
 		"left": 0,
-		"x": 1000,
+		"x": 6000,
 		"y": 0,
 		"height": 2000
 	},
 
 	"code": {
 		"backgroundColor": "#1a1f23",
-		"x": 300,
-		"y": 300,
+		"x": 500,
+		"y": 500,
 		"top": 0,
 		"left": 0,
-		"width": 3000
+		"width": 5000
 	},
 
 	"polypapier": {
 		"backgroundColor": "#f5f1d3",
-		"x": 3300,
-		"y": 300,
+		"x": 5500,
+		"y": 500,
 		"top": 0,
-		"left": 3000,
-		"width": 3000
+		"left": 5000,
+		"width": 5000
 	},
 
 	"minecraft": {
 		"backgroundColor": "#223f21",
-		"x": 6300,
-		"y": 300,
+		"x": 10500,
+		"y": 500,
 		"top": 0,
-		"left": 6000,
-		"width": 3000
+		"left": 10000,
+		"width": 5000
 	},
 
 	"gallerie": {
 		"backgroundColor": "#141111",
-		"x": 9300,
-		"y": 300,
+		"x": 15500,
+		"y": 500,
 		"top": 0,
-		"left": 9000,
-		"width": 3000
+		"left": 15000,
+		"width": 5000
 	},
 
 	"compos": {
 		"backgroundColor": "#260c2b",
-		"x": 12300,
-		"y": 300,
+		"x": 20500,
+		"y": 500,
 		"top": 0,
-		"left": 12000,
-		"width": 3000
+		"left": 20000,
+		"width": 5000
 	},
 
 	"farnnight": {
 		"backgroundColor": "#02051c",
-		"x": 15300,
-		"y": 300,
+		"x": 25500,
+		"y": 500,
 		"top": 0,
-		"left": 15000,
-		"width": 3000
+		"left": 25000,
+		"width": 5000
 	}
 }
 
