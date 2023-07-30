@@ -1,3 +1,27 @@
+function anchor_onLoad() {
+//	
+//	var home_to_top = document.getElementById('home_to_top');
+//	home_to_top.style.left = window.espaces.sommaire.left.toString().concat("px");
+//	home_to_top.style.top = window.espaces.sommaire.top.toString().concat("px");
+	var element = document.getElementById('home_to_top');
+    var style = window.getComputedStyle(element);
+    var top = eval(style.getPropertyValue('top').replace("px", ""));
+    var left = eval(style.getPropertyValue('left').replace("px", ""));
+	
+	var home_top = document.getElementById('home_top');
+	home_top.style.left = `${window.espaces.sommaire.x + left}px`;
+	home_top.style.top = `${window.espaces.sommaire.y + top}px`;
+	
+	window.scrollTo({
+		top: window.espaces[espace_courrant].y,
+		left: window.espaces[espace_courrant].x,
+		behavior: 'instant',
+	});
+}
+
+anchor_onLoad()
+
+
 // Managing anchors
 
 function goTop() {
