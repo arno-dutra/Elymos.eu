@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import url("webfonts/AveriaSans_Light/stylesheet.css");
+
+/* CSS Document */
+
+h1 {
+	font-family: AveriaSans;
+	color: #fff;
+	font-size: 50px;
+	margin: 0px;
+}
+
+.h2_sommaire {
+	font-family: AveriaSans;
+	color: #fff;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: AveriaSans-Light;
+	color: #000;
+	opacity: 0.5;
+	font-size: 40px;
+}
+
+
+h4 {
+	font-family: AveriaSans-Light;
+	color: #000;
+	opacity: 0.5;
+	font-size: 30px;
+}

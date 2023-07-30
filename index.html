@@ -5,6 +5,8 @@
 	<title>Elymos.eu</title>
 	<link rel="icon" type="image/x-icon" href="./favicon.png">
 	
+	<link href="sommaire.css" rel="stylesheet" type="text/css">
+	
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<link href="background_color.css" rel="stylesheet" type="text/css">
 	<link href="background_texture.css" rel="stylesheet" type="text/css">
@@ -26,6 +28,62 @@
 	
 	
 <body id="body">
+	<!-- Sommaire -->
+	<script>
+	  window.prop = 0.73;
+	</script>
+	
+	<table width="73%" height="100%" border="0" id="espace_sommaire_container" style="z-index: 1; position: absolute; left: 0px; top: 0px; border-spacing: 0px;">
+			  <tbody>
+				<tr>
+					<td width="100%" align="left" valign="top"> 
+				  		<div style="display: flex;justify-content: flex-start;left: 50px; position: relative; top: 22px;">
+							  <img src="img/SOMMAIRE/left_arrow.svg" style="width: 300px;"></img>
+						  		<h4 style="position: relative; top: -35px; left: 10px;">Retourne aux menus</h4>
+						  </div>
+					</td>
+				  </tr>
+				<tr>
+					
+				  <td width="40%" align="center" valign="middle">
+					  <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+						  <img src="img/SOMMAIRE/Foccen.png" style="position: relative; width: 500px;"></img>
+							<div style="position: relative; width: 600px; height: 112px; background-color: #2b2b28; border-radius: 56px; border-width: 3px; border-color: #000; display: flex; flex-direction: column; justify-content: flex-start; align-items: center">
+					  			<h1>Arno Dutra</h1>
+								<h1 class="h2_sommaire" style="position: relative;">Artiste ingénieur</h1>
+					  		</div>
+						</div>
+					</td>
+				  <td width="33%" align="right" valign="top">
+					  <div id="espace_fil_sommaire"></div>
+					  
+					  <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center">
+				  		<div style="display: flex;justify-content: flex-end;left: 50px; position: relative; top: 22px;">
+						  		<h4 style="position: relative; top: -35px; width: 300px; right: 10px;">La timeline t’emmène vers les posts en un clic</h4>
+							  <img src="img/SOMMAIRE/right_arrow.svg" style="height: 120px;"></img>
+						  </div>
+					  
+					  	<div style="display: flex; flex-direction: column; align-items: center; position: relative; left: -15%;">
+							<div style="display: flex; justify-content: center; flex-direction: row;">
+							  <img src="img/SOMMAIRE/tips.svg" style="width: 100px;"></img>
+								<h3 style="text-align: initial;margin-left: 20px;">Déplace toi avec ton clavier</h3>
+							</div>
+							  <img src="img/SOMMAIRE/keys.svg" style="width: 300px;"></img>
+					  </div>
+					  
+					  </div>
+					  
+					  
+					</td>
+				  <td width="27%" align="center" valign="top"></td>
+				</tr>
+			  </tbody>
+		  </table>
+	
+	
+	<!-- Map -->
+	
+	
 	<div id="background"></div>
 	<div id="background_texture"></div>
 	<div id="background_color"></div>
@@ -45,7 +103,14 @@
 
 <script src="anchor.js"></script>
 	
-		
+
+	
+	
+	
+	
+	
+	
+	
 <!-- Espaces -->
 	<div id="espace_containers"></div>
 		

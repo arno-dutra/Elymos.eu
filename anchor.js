@@ -12,6 +12,11 @@ function anchor_onLoad() {
 	home_top.style.left = `${window.espaces.sommaire.x + left}px`;
 	home_top.style.top = `${window.espaces.sommaire.y + top}px`;
 	
+	var sommaire = document.getElementById('espace_sommaire_container');
+	sommaire.style.left = `${window.espaces.sommaire.x}px`;
+	sommaire.style.top = `${window.espaces.sommaire.y}px`;
+	
+	
 	window.scrollTo({
 		top: window.espaces[espace_courrant].y,
 		left: window.espaces[espace_courrant].x,

@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+h2 {
+	font-family: AveriaSans;
+	font-size: 40px;
+}
+
 #nav_container {
 	position: absolute;
 	top: 0px;
