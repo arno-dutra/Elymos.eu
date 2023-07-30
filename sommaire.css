@@ -4,23 +4,23 @@
 /* CSS Document */
 
 h1 {
-	font-family: AveriaSans;
+	font-family: AveriaSans-Light;
 	color: #fff;
-	font-size: 50px;
+	font-size: 45px;
 	margin: 0px;
 }
 
 .h2_sommaire {
-	font-family: AveriaSans;
+	font-family: AveriaSans-Light;
 	color: #fff;
-	font-size: 30px;
+	font-size: 25px;
 }
 
 h3 {
 	font-family: AveriaSans-Light;
 	color: #000;
 	opacity: 0.5;
-	font-size: 40px;
+	font-size: 35px;
 }
 
 
