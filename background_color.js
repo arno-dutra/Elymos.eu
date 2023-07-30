@@ -8,7 +8,6 @@ load_background_color();
 function load_background_color() {
 	
 	var background_color = document.getElementById("background_color");
-	var anchors = document.getElementById("anchors");
 	
 	var map_width = 0;
 	
