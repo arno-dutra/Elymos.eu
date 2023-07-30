@@ -30,3 +30,14 @@ h4 {
 	opacity: 0.5;
 	font-size: 30px;
 }
+
+.contact {
+	font-family: AveriaSans-Light;
+	color: #000;
+	font-size: 25px;
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+}
