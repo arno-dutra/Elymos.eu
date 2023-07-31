@@ -91,8 +91,10 @@ function make_nav(content) {
 			case "timespan":
 				if (content[k].nav_ending_date == "now") {
 					var nav_ending_date = current_date;
+					var alt = `depuis le ${content[k].nav_starting_date}`;
 				} else {
 					var nav_ending_date = _parse_date(content[k].nav_ending_date);
+					var alt = `du ${content[k].nav_starting_date} au ${content[k].nav_ending_date}`
 				}
 				height = Math.max(12, (nav_ending_date - _parse_date(content[k].nav_starting_date)) / 2678400000 * nav_month_height);
 				top = (current_date - nav_ending_date) / 2678400000 * nav_month_height;
@@ -101,6 +103,7 @@ function make_nav(content) {
 			case "instant":
 				height = 12;
 				top = (current_date - _parse_date(content[k].nav_date)) / 2678400000 * nav_month_height;
+				var alt = `le ${content[k].nav_date}`;
 				break;
 				
 		}
@@ -108,6 +111,7 @@ function make_nav(content) {
 				
 		div.style.top = `${top}px`;
 		div.style.height = `${height}px`;
+		div.title = alt;
 		a.appendChild(div);
 		var espace = document.getElementById(`nav_container_${content[k].espace}`);
 		espace.appendChild(a);
