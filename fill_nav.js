@@ -89,8 +89,13 @@ function make_nav(content) {
 		
 		switch (content[k].nav_type)  {
 			case "timespan":
-				height = Math.max(12, (_parse_date(content[k].nav_ending_date) - _parse_date(content[k].nav_starting_date)) / 2678400000 * nav_month_height);
-				top = (current_date - _parse_date(content[k].nav_ending_date)) / 2678400000 * nav_month_height;
+				if (content[k].nav_ending_date == "now") {
+					var nav_ending_date = current_date;
+				} else {
+					var nav_ending_date = _parse_date(content[k].nav_ending_date);
+				}
+				height = Math.max(12, (nav_ending_date - _parse_date(content[k].nav_starting_date)) / 2678400000 * nav_month_height);
+				top = (current_date - nav_ending_date) / 2678400000 * nav_month_height;
 				break;
 				
 			case "instant":

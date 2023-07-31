@@ -2,16 +2,19 @@
 function load_nav() {
 	var container = document.getElementById("_nav_container");
 	
-	container.innerHTML = `<table id="nav_container" width="100%" border="0">
-	  <tbody>
-		<tr>
-		  <td width="${window.prop*100}%" align="center" valign="top"></td>
-		  <td width="${(1 - window.prop)*100}%"" align="center" valign="top">
+	container.innerHTML = `<div id="nav_container" style="display: flex; flex-direction: column; justify-content: center; width: ${(1 - window.prop)*100}%; left: ${window.prop*100}%;">
 			  <div id="nav"></div>
-			</td>
-		</tr>
-	  </tbody>
-	</table>`;
+	</div>`;
+//	container.innerHTML = `<table id="nav_container" width="100%" border="0">
+//	  <tbody>
+//		<tr>
+//		  <td width="${window.prop*100}%" align="center" valign="top"></td>
+//		  <td width="${(1 - window.prop)*100}%"" align="center" valign="top">
+//			  <div id="nav"></div>
+//			</td>
+//		</tr>
+//	  </tbody>
+//	</table>`;
 	
 	
 	$(function(){

@@ -1,4 +1,16 @@
 window.contenu = `{
+  "code-1": {
+    "espace": "code",
+    "left": "0px",
+    "top": "0px",
+    "type": "html",
+	"src": "code-1.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "08/07/2023",
+	"nav_ending_date": "now"
+  },
+
   "polypapier-1": {
     "espace": "polypapier",
     "left": "0px",

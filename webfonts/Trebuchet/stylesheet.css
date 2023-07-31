@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Trebuchet';
+	src: url('trebuc.eot');
+	src: url('trebuc.eot?#iefix') format('embedded-opentype'),
+		url('trebuc.woff') format('woff');
+}
