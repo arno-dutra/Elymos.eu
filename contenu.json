@@ -326,5 +326,53 @@ window.contenu = `{
 	"nav_class": "-a",
 	"nav_starting_date": "19/07/2021",
 	"nav_ending_date": "11/02/2022"
+  },
+
+  "pro_inge-2": {
+    "espace": "pro_inge",
+    "left": "0px",
+    "top": "0px",
+    "type": "html",
+	"src": "icube.html",
+	"nav_type": "timespan",
+	"nav_class": "-b",
+	"nav_starting_date": "29/05/2023",
+	"nav_ending_date": "30/09/2023"
+  },
+
+  "sco_inge-1": {
+    "espace": "sco_inge",
+    "left": "0px",
+    "top": "0px",
+    "type": "html",
+	"src": "ecm_1A2A.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "02/09/2019",
+	"nav_ending_date": "30/06/2021"
+  },
+
+  "sco_inge-2": {
+    "espace": "sco_inge",
+    "left": "0px",
+    "top": "0px",
+    "type": "html",
+	"src": "ecm_3A_IAAA.html",
+	"nav_type": "timespan",
+	"nav_class": "-b",
+	"nav_starting_date": "02/09/2022",
+	"nav_ending_date": "07/03/2023"
+  },
+
+  "musico-1": {
+    "espace": "musico",
+    "left": "0px",
+    "top": "0px",
+    "type": "html",
+	"src": "licence.html",
+	"nav_type": "timespan",
+	"nav_class": "-a",
+	"nav_starting_date": "06/09/2021",
+	"nav_ending_date": "30/05/2023"
   }
 }`;

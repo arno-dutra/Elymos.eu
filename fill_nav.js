@@ -89,7 +89,7 @@ function make_nav(content) {
 		
 		switch (content[k].nav_type)  {
 			case "timespan":
-				if (content[k].nav_ending_date == "now") {
+				if ((content[k].nav_ending_date == "now") | (_parse_date(content[k].nav_ending_date) > current_date)) {
 					var nav_ending_date = current_date;
 					var alt = `depuis le ${content[k].nav_starting_date}`;
 				} else {

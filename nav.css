@@ -67,14 +67,28 @@
 }
 
 .nav_timepoint_sco_inge {
+	background-color: #d9d8ea;
+	border-color: #41417c;
+}
+
+/*
+.nav_timepoint_sco_inge {
 	background-color: #023311;
 	border-color: #038b38;
 }
+*/
+
+.nav_timepoint_musico {
+	background-color: #edd6ed;
+	border-color: #804482;
+}
+/*
 
 .nav_timepoint_musico {
 	background-color: #0f2435;
 	border-color: #265b87;
 }
+*/
 
 .nav_timepoint_pro_inge {
 	background-color: #d5efde;
