@@ -9,7 +9,8 @@ window.espaces = `
 		"left": 0,
 		"x": 6000,
 		"y": 0,
-		"height": 2000
+		"height": 2000,
+		"type": "Sommaire"
 	},
 
 	"code": {
@@ -18,7 +19,8 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 0,
-		"width": 5000
+		"width": 5000,
+		"type": "Portfolio"
 	},
 
 	"polypapier": {
@@ -27,7 +29,8 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 5000,
-		"width": 5000
+		"width": 5000,
+		"type": "Portfolio"
 	},
 
 	"minecraft": {
@@ -45,7 +48,8 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 15000,
-		"width": 5000
+		"width": 5000,
+		"type": "Portfolio"
 	},
 
 	"compos": {
@@ -54,7 +58,8 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 20000,
-		"width": 5000
+		"width": 5000,
+		"type": "Portfolio"
 	},
 
 	"farnnight": {
@@ -63,7 +68,38 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 25000,
-		"width": 5000
+		"width": 5000,
+		"type": "Portfolio"
+	},
+
+	"sco_inge": {
+		"backgroundColor": "#d9d8ea",
+		"x": 30500,
+		"y": 500,
+		"top": 0,
+		"left": 30000,
+		"width": 5000,
+		"type": "Carriere"
+	},
+
+	"musico": {
+		"backgroundColor": "#edd6ed",
+		"x": 35500,
+		"y": 500,
+		"top": 0,
+		"left": 35000,
+		"width": 5000,
+		"type": "Carriere"
+	},
+
+	"pro_inge": {
+		"backgroundColor": "#d5efde",
+		"x": 40500,
+		"y": 500,
+		"top": 0,
+		"left": 40000,
+		"width": 5000,
+		"type": "Carriere"
 	}
 }
 

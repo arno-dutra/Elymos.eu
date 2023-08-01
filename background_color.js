@@ -13,7 +13,7 @@ function load_background_color() {
 	
 	for (const [key, value] of Object.entries(window.espaces)) {
 		
-		if (typeof value.issommaire == 'undefined') {
+		if (value.type != 'Sommaire') {
 			var div = document.createElement('div');
 		div.id = key;
 		div.style.backgroundColor = value.backgroundColor;

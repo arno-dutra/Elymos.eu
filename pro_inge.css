@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import url("webfonts/Trebuchet/stylesheet.css");
+
+/* CSS Document */
+
+.panneau_pro_inge {
+	background-color: #f0f0f0;
+	border-color: #038a38;
+	border-width: 3px;
+	-webkit-box-shadow: 0px 0px 100px #76ce877f;
+	box-shadow: 0px 0px 100px #76ce877f;
+}
+
+.panneau_pro_inge_img {
+	
+}
+
+.legend_pro_inge {
+
+}
+
+.p_pro_inge {
+    color: #000;
+	font-family: Trebuchet;
+}
+
+.highlight_pro_inge {
+	color: #028a38;
+	font-family: Trebuchet;
+ 	font-weight: bold;
+}
+
+.link_pro_inge {
+	color: #ec6066;
+ 	font-weight: bold;
+	text-decoration: none;
+}
+
+.title_pro_inge {
+	color: #000;
+	font-family: Trebuchet;
+}
+
+.subtitle_pro_inge {
+	color: #000;
+	font-family: Trebuchet;
+}
