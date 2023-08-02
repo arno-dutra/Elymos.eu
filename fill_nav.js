@@ -70,7 +70,7 @@ function _nav_preprocessing(content) {
 function make_nav(content) {
 	
 	var current_date = Date.parse(Date());
-	var nav_month_height = 15;
+	var nav_month_height = 25;
 	
 	var height = 0;
 	var top = 0;
