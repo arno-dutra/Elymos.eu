@@ -17,26 +17,6 @@ function make_order(content) {
 			content[arr[j].id].order = j;  // Défini l'ordre dans lequel les elements doivent apparaitre dans les fils
 		}
 		
-		var arr_nav = filterByEspace(content, espace);
-		
-		var buffer = [];
-		
-		for (var j = 0; j < arr_nav.length; j++) {
-			if (buffer.includes(arr_nav[j].nav_class)) {
-				arr_nav.pop(j);
-			} else {
-				buffer.push(arr_nav[j].nav_class);
-			}
-		}
-		
-		arr_nav.sort(_order);
-
-		for (var j = 0; j < arr_nav.length; j++) {
-			content[arr_nav[j].id].nav_order = j;  // Défini l'ordre dans lequel les elements doivent apparaitre dans le nav
-		}
-		
-		
-		
 	}
 	
 	return content;
