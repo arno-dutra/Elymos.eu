@@ -73,7 +73,7 @@ window.espaces = `
 	},
 
 	"sco_inge": {
-		"backgroundColor": "#d9d8ea",
+		"backgroundColor": "#5f718f",
 		"x": 30500,
 		"y": 500,
 		"top": 0,
@@ -83,7 +83,7 @@ window.espaces = `
 	},
 
 	"musico": {
-		"backgroundColor": "#edd6ed",
+		"backgroundColor": "#8adaf3",
 		"x": 35500,
 		"y": 500,
 		"top": 0,

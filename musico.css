@@ -5,10 +5,10 @@
 
 .panneau_musico {
 	background-color: #f0f0f0;
-	border-color: #804482;
+	border-color: #0d73ba;
 	border-width: 3px;
-	-webkit-box-shadow: 0px 0px 100px #ca97cc7f;
-	box-shadow: 0px 0px 100px #ca97cc7f;
+	-webkit-box-shadow: 0px 0px 100px #f2c1007f;
+	box-shadow: 0px 0px 100px #f2c1007f;
 }
 
 .panneau_musico_img {
@@ -25,7 +25,7 @@
 }
 
 .highlight_musico {
-	color: #804482;
+	color: #0d73ba;
 	font-family: Trebuchet;
  	font-weight: bold;
 }

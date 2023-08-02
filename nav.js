@@ -58,7 +58,7 @@ function update_hud_color(event) {
 	
 	var brightness = Math.max(...hexToRgb(hex_color));
 	
-	if (brightness < 100) {
+	if (brightness < 150) {
 		document.documentElement.style.setProperty("--hud-element-color", "#fff");
 		home_to_top.style.filter = "invert(100%)";
 		home_top.style.filter = "invert(100%)";
