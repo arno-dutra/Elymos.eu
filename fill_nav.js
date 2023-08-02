@@ -82,10 +82,9 @@ function make_nav(content) {
 		var a = document.createElement('a');
 		a.href = `javascript:go("${content[k].href}")`;
 
-		var div = document.createElement('div');
-		div.id = k;
-		div.classList.add(`nav_timepoint`);
-		div.classList.add(`nav_timepoint_${content[k].espace}`);
+		a.id = k;
+		a.classList.add(`nav_timepoint`);
+		a.classList.add(`nav_timepoint_${content[k].espace}`);
 		
 		switch (content[k].nav_type)  {
 			case "timespan":
@@ -109,10 +108,10 @@ function make_nav(content) {
 		}
 		
 				
-		div.style.top = `${top}px`;
-		div.style.height = `${height}px`;
-		div.title = alt;
-		a.appendChild(div);
+		a.style.top = `${top}px`;
+		a.style.height = `${height}px`;
+		a.title = alt;
+//		a.appendChild(div);
 		var espace = document.getElementById(`nav_container_${content[k].espace}`);
 		espace.appendChild(a);
 	

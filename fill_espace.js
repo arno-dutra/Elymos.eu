@@ -1,16 +1,103 @@
 
 var content = JSON.parse(window.contenu);
+
+content = make_order(content);
+
+function make_order(content) {
+
+	var espaces = Object.keys(window.espaces);
+	for (var i=0; i < espaces.length; i++) {
+		var espace = espaces[i];
+		
+		var arr = filterByEspace(content, espace);
+		
+		arr.sort(_order);
+
+		for (var j = 0; j < arr.length; j++) {
+			content[arr[j].id].order = j;  // Défini l'ordre dans lequel les elements doivent apparaitre dans les fils
+		}
+		
+		var arr_nav = filterByEspace(content, espace);
+		
+		var buffer = [];
+		
+		for (var j = 0; j < arr_nav.length; j++) {
+			if (buffer.includes(arr_nav[j].nav_class)) {
+				arr_nav.pop(j);
+			} else {
+				buffer.push(arr_nav[j].nav_class);
+			}
+		}
+		
+		arr_nav.sort(_order);
+
+		for (var j = 0; j < arr_nav.length; j++) {
+			content[arr_nav[j].id].nav_order = j;  // Défini l'ordre dans lequel les elements doivent apparaitre dans le nav
+		}
+		
+		
+		
+	}
+	
+	return content;
+}
+
+function _order(a,b) {
+	switch (a.nav_type) {
+		case "timespan":
+			var a_date = _parse_date(a.nav_starting_date) - eval(a.id.split('-').reverse()[0]);
+			break;
+		case "instant":
+			var a_date = _parse_date(a.nav_date) - eval(a.id.split('-').reverse()[0]);
+			break;
+	}
+	switch (b.nav_type) {
+		case "timespan":
+			var b_date = _parse_date(b.nav_starting_date) - eval(b.id.split('-').reverse()[0]);
+			break;
+		case "instant":
+			var b_date = _parse_date(b.nav_date) - eval(b.id.split('-').reverse()[0]);
+			break;
+	}
+	return b_date - a_date;
+}
+
+function _parse_date(str) {
+	var parts = str.split("/");
+	var dt = new Date(parseInt(parts[2], 10),
+                  parseInt(parts[1], 10) - 1,
+                  parseInt(parts[0], 10));
+	return Date.parse(dt);
+}
+
+function filterByEspace(dictionary, k) {
+  const filteredItems = [];
+  for (const key in dictionary) {
+    if (dictionary.hasOwnProperty(key) && dictionary[key].espace === k) {
+		dictionary[key].id = key;
+        filteredItems.push(dictionary[key]);
+    }
+  }
+  return filteredItems;
+}
+
 put_elements(content);
 
 
 function put_elements(content) {
-	
-	
 
 	var keys = Object.keys(content);
-	console.log(keys);
 	for (var i=0; i < keys.length; i++) {
-		var k = keys[i];
+		var key = keys[i];
+		content[key].id = key;
+	}
+	
+	var arr = Object.values(content);
+	
+	arr.sort(function(a, b) {return a.order - b.order;});
+	
+	for (var j = 0; j < arr.length; j++) {
+		var k = arr[j].id;
 		
 		make_element(content[k], k);
 		
