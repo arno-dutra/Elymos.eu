@@ -16,7 +16,6 @@ function anchor_onLoad() {
 	sommaire.style.left = `${window.espaces.sommaire.x}px`;
 	sommaire.style.top = `${window.espaces.sommaire.y}px`;
 	
-	
 	window.scrollTo({
 		top: window.espaces[espace_courrant].y,
 		left: window.espaces[espace_courrant].x,

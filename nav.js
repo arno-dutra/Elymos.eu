@@ -17,6 +17,9 @@ function load_nav() {
 //	</table>`;
 	
 	
+	var nav = document.getElementById('nav');
+	nav.style.left = `${window.espaces[espace_courrant].x}px`;
+	
 	$(function(){
 	  $("#nav").load("nav.html"); 
 	});
