@@ -96,6 +96,8 @@ function make_element(element, id) {
 		case "html":
 			make_html(element, id);
 			break;
+		case "score":
+			make_score(element, id);
 		default:
 			alert(`element's type ${element.type} is not recognized`);
 	}
@@ -255,6 +257,16 @@ function make_html(element, id) {
 	html_container.classList.add(`panneau_${element.espace}`);
 	div.appendChild(html_container);
 }
+
+
+function make_score(element, id) {
+	
+}
+
+
+
+
+
 
 
 

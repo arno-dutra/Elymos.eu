@@ -374,5 +374,18 @@ window.contenu = `{
 	"nav_class": "-a",
 	"nav_starting_date": "06/09/2021",
 	"nav_ending_date": "30/05/2023"
+  },
+
+  "compos-1": {
+    "espace": "compos",
+    "left": "0px",
+    "top": "0px",
+    "type": "score",
+	"src_audio": "remotivation.mp3",
+	"src_img": "remotivation.png",
+	"src_measures": "remotivation.json",
+	"src_score": "remotivation.mscz",
+	"nav_type": "instant",
+	"nav_date": "26/07/2021"
   }
 }`;

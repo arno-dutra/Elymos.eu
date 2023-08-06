@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>score</title>
+<link href="espace.css" rel="stylesheet" type="text/css">
+<link href="score.css" rel="stylesheet" type="text/css">
+<script src="script/jquery-3.7.0.min.js"></script> 
+</head>
+
+<body>
+	
+	<div class="panneau panneau_compos">
+	
+		<div class="score_container">
+			<img id="score" src="score/Remotivation/Remotivation-1.png" height="600px" style="position: relative;"></img>
+		</div>
+	
+		
+		<!-- ########################################## -->
+	
+		<div class="holder">
+		  <div class="audio green-audio-player" id="player_">
+			  
+			  
+			<div class="controls">
+			  <div class="slider" data-direction="horizontal">
+				<div class="progress">
+				  <div class="pin current-time" id="progress-pin" data-method="rewind">0:00</div>
+				</div>
+			  </div>
+			  <span class="total-time">0:00</span>
+			</div>
+			  
+			
+			<div class="panel">
+				
+				<p class="p_compos">Composition : Arno Dutra</p>
+				
+				<div class="bttns_container">
+
+					<a href="score/Remotivation/Remotivation.mscz"><img src="icon/download.svg" alt="Télécharger en .mscz" width=20px style="margin-left: 25px;"></img></a>
+
+					<div>  
+						<div class="loading">
+						  <div class="spinner"></div>
+						</div>
+						<div class="play-pause-btn">  
+							<img src="icon/play.svg" class="play-pause-icon" id="play" width=40px></img>
+							<img src="icon/pause.svg" class="play-pause-icon" id="pause" width=40px style="display: none;"></img>
+						</div>
+					</div>
+
+					<a href="https://musescore.com/user/34442206/scores/11399155/s/5GFniu"><img src="icon/link_compos.svg" alt="Voir sur musescore.com" width=20px style="margin-right: 25px;"></img></a>
+
+				</div>
+				
+				<p class="p_compos">Interprétation : MuseScore</p>
+	
+			</div>
+
+
+			<audio crossorigin>
+			  <source src="score/Remotivation/Remotivation.mp3" type="audio/mpeg">
+			</audio>
+		  </div>
+		</div>
+		<script src="score.js"></script> 
+	
+	
+	
+	
+	</div>
+	
+</body>
+</html>
