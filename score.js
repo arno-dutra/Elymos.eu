@@ -78,7 +78,7 @@ function updateProgress() {
 
   console.log(window.getComputedStyle(document.getElementById("score")).width);
   var w_score = eval(window.getComputedStyle(document.getElementById("score")).width.replace("px", ""));
-  document.getElementById("score").style.left =  -percent/100*(w_score - 960) + 'px';
+  document.getElementById("score").style.left =  -Math.min(percent/100*(w_score), w_score - 960) + 'px';
   
 //	$("#score").animate({ 
 //        left: -percent/100*(w_score - 960) + 'px',
