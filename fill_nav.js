@@ -82,7 +82,7 @@ function make_nav(content) {
 		var a = document.createElement('a');
 		a.href = `javascript:go("${content[k].href}")`;
 
-		a.id = k;
+		a.id = `${k}_nav`;
 		a.classList.add(`nav_timepoint`);
 		a.classList.add(`nav_timepoint_${content[k].espace}`);
 		

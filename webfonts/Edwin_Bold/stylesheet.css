@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Edwin-Bold';
+	src: url('Edwin-Bold.eot');
+	src: url('Edwin-Bold.eot?#iefix') format('embedded-opentype'),
+		url('Edwin-Bold.woff') format('woff');
+}

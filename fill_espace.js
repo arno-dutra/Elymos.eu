@@ -98,6 +98,7 @@ function make_element(element, id) {
 			break;
 		case "score":
 			make_score(element, id);
+			break;
 		default:
 			alert(`element's type ${element.type} is not recognized`);
 	}
@@ -260,11 +261,43 @@ function make_html(element, id) {
 
 
 function make_score(element, id) {
+	var div = document.createElement('div');
+	div.classList.add("group")
+	var espace = document.getElementById(`espace_fil_${element.espace}`);
+	espace.appendChild(div);
+	
+	var html_container = document.createElement('div');
+	
+	html_container.id = id;
+	html_container.innerHTML = `<iframe src="score.html?id=${id}&src_audio=${element.src_audio}" id="${id}_iframe" scrolling="no" onload="score_onLoad(this)"></iframe>`
+	html_container.classList.add("panneau");
+	html_container.classList.add(`panneau_${element.espace}`);
+	div.appendChild(html_container);
 	
 }
 
 
+function score_onLoad(e) {
+	resizeIframe(e);
+	
+	var id = e.id.replace("_iframe", "");
+	var element = window.content[id];
+	
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("titre").innerHTML = element.titre;
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("composer").innerHTML = element.composer;
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("player").innerHTML = element.player;
 
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("link").src = element.link;
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("src_score").src = `score/${id}/${element.src_score}`;
+
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("score").src = `score/${id}/${element.src_img}`;
+	
+	
+//  	var x = document.createElement("AUDIO");
+//    x.setAttribute("src",`score/${id}/${element.src_audio}`);
+//	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("iframe_listener_1").appendChild(x);
+//	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("iframe_listener_2").innerHTML = `<script src="score.js"></script>`;
+}
 
 
 

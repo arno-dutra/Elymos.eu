@@ -381,11 +381,62 @@ window.contenu = `{
     "left": "0px",
     "top": "0px",
     "type": "score",
-	"src_audio": "remotivation.mp3",
-	"src_img": "remotivation.png",
-	"src_measures": "remotivation.json",
+	"src_audio": "Remotivation.mp3",
+	"src_img": "Remotivation.png",
 	"src_score": "remotivation.mscz",
+	"link": "https://musescore.com/user/34442206/scores/11399155/s/5GFniu",
+	"titre": "Remotivation",
+	"composer": "Arno Dutra",
+	"player": "MuseScore",
 	"nav_type": "instant",
 	"nav_date": "26/07/2021"
+  },
+
+  "compos-2": {
+    "espace": "compos",
+    "left": "0px",
+    "top": "0px",
+    "type": "score",
+	"src_audio": "Fruit medical_v1.1.mp3",
+	"src_img": "Fruit medical_v1.1.png",
+	"src_score": "Fruit medical_v1.1.mscz",
+	"link": "https://musescore.com/user/34442206/scores/11726314/s/PzIZNk",
+	"titre": "Fruit médical",
+	"composer": "Arno Dutra",
+	"player": "MuseScore",
+	"nav_type": "instant",
+	"nav_date": "17/05/2022"
+  },
+
+  "compos-3": {
+    "espace": "compos",
+    "left": "0px",
+    "top": "0px",
+    "type": "score",
+	"src_audio": "BilliesBounce.mp3",
+	"src_img": "BilliesBounce-1.png",
+	"src_score": "BilliesBounce.mscz",
+	"link": "https://musescore.com/user/34442206/scores/11728690/s/2qihMd",
+	"titre": "Billies Bounce",
+	"composer": "Arno Dutra",
+	"player": "MuseScore",
+	"nav_type": "instant",
+	"nav_date": "30/04/2023"
+  },
+
+  "compos-4": {
+    "espace": "compos",
+    "left": "0px",
+    "top": "0px",
+    "type": "score",
+	"src_audio": "Lama_fbrile_-_Arno_Dutra.mp3",
+	"src_img": "Lama_fbrile_-_Arno_Dutra.png",
+	"src_score": "Lama_fbrile_-_Arno_Dutra.mscz",
+	"link": "https://musescore.com/user/34442206/scores/10692190/s/C8yVHA",
+	"titre": "Lama fébrile",
+	"composer": "Arno Dutra",
+	"player": "MuseScore",
+	"nav_type": "instant",
+	"nav_date": "30/04/2023"
   }
 }`;

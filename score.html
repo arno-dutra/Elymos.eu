@@ -6,14 +6,15 @@
 <link href="espace.css" rel="stylesheet" type="text/css">
 <link href="score.css" rel="stylesheet" type="text/css">
 <script src="script/jquery-3.7.0.min.js"></script> 
+<!--<script src="script/jquery.pause.min.js"></script> -->
 </head>
 
 <body>
 	
-	<div class="panneau panneau_compos">
-	
+		<h1 class="titre_compos" id="titre">Remotivation</h1>
+		
 		<div class="score_container">
-			<img id="score" src="score/Remotivation/Remotivation-1.png" height="600px" style="position: relative;"></img>
+			<img id="score" src="" height="600px" style="position: relative; left: 0px;"></img>
 		</div>
 	
 		
@@ -35,11 +36,11 @@
 			
 			<div class="panel">
 				
-				<p class="p_compos">Composition : Arno Dutra</p>
+				<p class="p_compos">Composition : <span id="composer">Arno Dutra</span></p>
 				
 				<div class="bttns_container">
 
-					<a href="score/Remotivation/Remotivation.mscz"><img src="icon/download.svg" alt="Télécharger en .mscz" width=20px style="margin-left: 25px;"></img></a>
+					<a href="" id="src_score"><img src="icon/download.svg" alt="Télécharger en .mscz" width=20px style="margin-left: 25px;"></img></a>
 
 					<div>  
 						<div class="loading">
@@ -51,26 +52,21 @@
 						</div>
 					</div>
 
-					<a href="https://musescore.com/user/34442206/scores/11399155/s/5GFniu"><img src="icon/link_compos.svg" alt="Voir sur musescore.com" width=20px style="margin-right: 25px;"></img></a>
+					<a href="" id="link"><img src="icon/link_compos.svg" alt="Voir sur musescore.com" width=20px style="margin-right: 25px;"></img></a>
 
 				</div>
 				
-				<p class="p_compos">Interprétation : MuseScore</p>
+				<p class="p_compos">Interprétation : <span id="player">MuseScore</span></p>
 	
 			</div>
 
-
-			<audio crossorigin>
-			  <source src="score/Remotivation/Remotivation.mp3" type="audio/mpeg">
-			</audio>
+			<script src="score.js"></script> 
 		  </div>
 		</div>
-		<script src="score.js"></script> 
 	
 	
 	
 	
-	</div>
 	
 </body>
 </html>

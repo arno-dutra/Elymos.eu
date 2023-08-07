@@ -5,10 +5,16 @@ var playpauseBtn = audioPlayer.querySelector('.play-pause-btn');
 var loading = audioPlayer.querySelector('.loading');
 var progress = audioPlayer.querySelector('.progress');
 var sliders = audioPlayer.querySelectorAll('.slider');
-var player = audioPlayer.querySelector('audio');
 var currentTime = audioPlayer.querySelector('.current-time');
 var totalTime = audioPlayer.querySelector('.total-time');
 var score = audioPlayer.querySelector('#score');
+
+const params_ = new URLSearchParams(window.location);
+const params = new URLSearchParams(params_.get("search"));
+
+var player = document.createElement("audio");
+player.setAttribute("src",`score/${params.get("id")}/${params.get("src_audio")}`);
+$("#player_")[0].appendChild(player);
 
 var draggableClasses = ['pin'];
 var currentlyDragged = null;
@@ -19,13 +25,16 @@ window.addEventListener('mousedown', function(event) {
   
   currentlyDragged = event.target;
   let handleMethod = currentlyDragged.dataset.method;
+  onGrab();
   
   this.addEventListener('mousemove', window[handleMethod], false);
+  this.addEventListener('mousemove', whenDragging);
 
   window.addEventListener('mouseup', () => {
-    currentlyDragged = false;
-    window.removeEventListener('mousemove', window[handleMethod], false);
-  }, false);  
+	if (currentlyDragged) {onRelease()};
+	currentlyDragged = false;
+	window.removeEventListener('mousemove', window[handleMethod], false);
+  }, false);
 });
 
 playpauseBtn.addEventListener('click', togglePlay);
@@ -35,9 +44,10 @@ player.addEventListener('loadedmetadata', () => {
 });
 player.addEventListener('canplay', makePlay);
 player.addEventListener('ended', function(){
-  play.style.display = "block";
-  pause.style.display = "none";
-  player.currentTime = 0;
+	play.style.display = "block";
+	pause.style.display = "none";
+	player.currentTime = 0;
+	initPlay()
 });
 
 sliders.forEach(slider => {
@@ -76,15 +86,24 @@ function updateProgress() {
   var percent = (current / player.duration) * 100;
   progress.style.width = percent + '%';
 
-  console.log(window.getComputedStyle(document.getElementById("score")).width);
-  var w_score = eval(window.getComputedStyle(document.getElementById("score")).width.replace("px", ""));
-  document.getElementById("score").style.left =  -Math.min(percent/100*(w_score), w_score - 960) + 'px';
+//  var w_score = eval(window.getComputedStyle(document.getElementById("score")).width.replace("px", ""));
+//  document.getElementById("score").style.left =  -Math.min(percent/100*(w_score), w_score - 960) + 'px';
   
 //	$("#score").animate({ 
 //        left: -percent/100*(w_score - 960) + 'px',
 //      }, 260);
 	
   currentTime.innerHTML = formatTime(current);
+}
+
+function whenDragging() {
+	var current = player.currentTime;
+	var percent = (current / player.duration) * 100;
+	
+	var w_score = eval(window.getComputedStyle(document.getElementById("score")).width.replace("px", ""));
+	var w_panneau = eval(getComputedStyle($("body")[0]).getPropertyValue('--panneau-width').replace("px", ""));
+	
+	document.getElementById("score").style.left =  -Math.min(percent/100*(w_score), w_score - w_panneau) + 'px';
 }
 
 function getRangeBox(event) {
@@ -132,18 +151,50 @@ function formatTime(time) {
 }
 
 function togglePlay() {
-  if(player.paused) {
-    play.style.display = "none";
-    pause.style.display = "block";
-    player.play();
-  } else {
-    play.style.display = "block";
-    pause.style.display = "none";
-    player.pause();
-  }  
+	
+	if(player.paused) {
+		play.style.display = "none";
+		pause.style.display = "block";
+		player.play();
+		initPlay();
+	} else {
+		play.style.display = "block";
+		pause.style.display = "none";
+		player.pause();
+		$("#score").stop(true, false);
+	}  
 }
 
 function makePlay() {
-  playpauseBtn.style.display = 'block';
-  loading.style.display = 'none';
+	playpauseBtn.style.display = 'block';
+	loading.style.display = 'none';
+}
+
+function initPlay() {
+	
+	var w_score = eval(window.getComputedStyle(document.getElementById("score")).width.replace("px", ""));
+	var w_panneau = eval(getComputedStyle($("body")[0]).getPropertyValue('--panneau-width').replace("px", ""));
+	
+	$("#score").animate({ 
+							left: -(w_score - w_panneau) + 'px',
+						}, {
+							duration: (player.duration * (1 - (w_panneau / w_score)) - player.currentTime) * 1000, 
+							easing: "linear", 
+							progress: function() {
+								if (player.currentTime >= player.duration * (1 - (w_panneau / w_score))) {
+									$("#score").stop(true, true);
+								}
+							}
+						});
+}
+
+function onGrab() {
+	$("#score").stop(true, false);
+}
+
+function onRelease() {
+	
+	if(!player.paused) {
+		initPlay();
+	}
 }

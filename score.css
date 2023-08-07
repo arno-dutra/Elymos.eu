@@ -1,5 +1,7 @@
 @charset "utf-8";
 @import url("webfonts/Trebuchet/stylesheet.css");
+@import url("webfonts/Edwin_Bold/stylesheet.css");
+
 
 /* CSS Document */
 
@@ -20,47 +22,20 @@
 	font-family: Trebuchet;
 }
 
-.progress_bar {
-	position: absolute;
-	width: 90%;
-	left: 5%;
+.titre_compos {
+    text-align: center;
+    font-family: Edwin-Bold;
 }
 
-.bar {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	height: 5px;
-	background-color: #962eaf;
-	border-radius: 3px;
-}
-
-.point {
-	position: absolute;
-	top: -10.5px;
-	height: 18px;
-	border: 3px solid;
-	border-radius: 25px;
-	background-color: #fff;
-	border-color: #962eaf;
-	padding: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
-    color: #000;
-	font-family: Trebuchet;
-	display: inline-block;
+.score_container {
+	/* margin-top: 30px; */
+	margin-bottom: 30px;
 }
 
 /* ####################################################### */
 
 body {
 	margin: 0;
-}
-
-.holder {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
 .audio.green-audio-player {/*	box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .07);*/width: 90%;padding-left: 5%;padding-right: 5%;display: flex;align-items: center;user-select: none;-webkit-user-select: none;flex-direction: column;}
@@ -164,20 +139,6 @@ svg, img {
 	display: block;
 }
 
-html, body {
-	height: 100%;
-}
-
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #F8FFAE;
-	background: -webkit-linear-gradient(-65deg, #43C6AC, #F8FFAE);
-	background: linear-gradient(-65deg, #43C6AC, #F8FFAE);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 @keyframes spin {
 	from {
@@ -187,5 +148,3 @@ body {
 		transform: rotateZ(1turn);
 	}
 }
-
-
