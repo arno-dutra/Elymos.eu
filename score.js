@@ -47,7 +47,7 @@ player.addEventListener('ended', function(){
 	play.style.display = "block";
 	pause.style.display = "none";
 	player.currentTime = 0;
-	initPlay()
+	document.getElementById("score").style.left =  0 + 'px';
 });
 
 sliders.forEach(slider => {
