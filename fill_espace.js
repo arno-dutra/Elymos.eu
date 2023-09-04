@@ -287,8 +287,8 @@ function score_onLoad(e) {
 	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("composer").innerHTML = element.composer;
 	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("player").innerHTML = element.player;
 
-	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("link").src = element.link;
-	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("src_score").src = `score/${id}/${element.src_score}`;
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("link").href = element.link;
+	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("src_score").href = `score/${id}/${element.src_score}`;
 
 	$(`#${id}_iframe`)[0].contentWindow.document.getElementById("score").src = `score/${id}/${element.src_img}`;
 	

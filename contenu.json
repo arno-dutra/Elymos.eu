@@ -398,7 +398,7 @@ window.contenu = `{
     "top": "0px",
     "type": "score",
 	"src_audio": "Fruit-medical_v1.1.mp3",
-	"src_img": "Fruit-medical.gif",
+	"src_img": "Fruit-medical.png",
 	"src_score": "Fruit-medical_v1.1.mscz",
 	"link": "https://musescore.com/user/34442206/scores/11726314/s/PzIZNk",
 	"titre": "Fruit médical",
