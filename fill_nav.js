@@ -18,6 +18,7 @@ function nav_put_elements(content) {
 	
 }
 
+
 function _nav_preprocessing(content) {
 	
 	var elements = {};
@@ -71,6 +72,7 @@ function make_nav(content) {
 	
 	var current_date = Date.parse(Date());
 	var nav_month_height = 25;
+	var first = current_date;
 	
 	var height = 0;
 	var top = 0;
@@ -95,14 +97,20 @@ function make_nav(content) {
 					var nav_ending_date = _parse_date(content[k].nav_ending_date);
 					var alt = `du ${content[k].nav_starting_date} au ${content[k].nav_ending_date}`
 				}
-				height = Math.max(12, (nav_ending_date - _parse_date(content[k].nav_starting_date)) / 2678400000 * nav_month_height);
+				var nav_starting_date = _parse_date(content[k].nav_starting_date);
+				height = Math.max(12, (nav_ending_date - nav_starting_date) / 2678400000 * nav_month_height);
 				top = (current_date - nav_ending_date) / 2678400000 * nav_month_height;
+				
+				first = Math.min(first, nav_starting_date);
 				break;
 				
 			case "instant":
 				height = 12;
-				top = (current_date - _parse_date(content[k].nav_date)) / 2678400000 * nav_month_height;
+				var nav_ending_date = _parse_date(content[k].nav_date);
+				top = (current_date - nav_ending_date) / 2678400000 * nav_month_height;
 				var alt = `le ${content[k].nav_date}`;
+				
+				first = Math.min(first, nav_ending_date);
 				break;
 				
 		}
@@ -116,7 +124,34 @@ function make_nav(content) {
 		espace.appendChild(a);
 	
 	}
+	
+	// Make time ticks
+	first = new Date(first);
+	var last = new Date(current_date);
+	var first_year = first.getFullYear();
+	var last_year = last.getFullYear();
+	
+	for (var year=first_year; year <= last_year; year++) {
+		
+		
+		var d = new Date(year, 1, 1)
+		var height = 24;  // Parameter
+		var top = (current_date - Date.parse(d)) / 2678400000 * nav_month_height - height / 2;
+		
+		
+		var a = document.createElement('div');
+		a.innerHTML = `${year} —`;
 
+		a.id = `${k}_nav`;
+		a.classList.add(`nav_timetick`);
+		
+		a.style.top = `${top}px`;
+		a.style.height = `${height}px`;
+//		a.appendChild(div);
+		var espace = document.getElementById(`nav_container_time_ticks`);
+		espace.appendChild(a);
+	}
+	
 }
 
 
@@ -152,6 +187,8 @@ function go(id) {
 			left: left,
 			behavior: 'smooth',
 		});
+	
+	timetick_off();
 	
 }
 

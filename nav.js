@@ -70,9 +70,13 @@ function update_hud_color(event) {
 		home_to_top.style.filter = "invert(0%)";
 		home_top.style.filter = "invert(0%)";
 	}
+	if (espace_courrant == "sommaire") {		// Mettre ces animations sur les anchors pour que les timeticks partent plus tôt à la sortie de sommaire et arrivent plus tard à l'entrée de sommaire
+		timetick_on();
+	} else {	
+		timetick_off();
+	}
 	
 }
-
 
 window.addEventListener('onEspaceChange', update_nav_top_position);
 
