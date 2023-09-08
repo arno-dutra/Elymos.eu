@@ -34,6 +34,7 @@ function goSommaire() {
 		left: window.espaces["sommaire"].x,
 		behavior: 'smooth',
 	});
+	timetick_on();
 }
 
 function goTop() {

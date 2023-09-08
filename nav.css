@@ -35,6 +35,14 @@
 	left: 0px;
 }
 
+.nav_timetick {
+	position: absolute;
+	font-family: AveriaSans;
+	font-size: 20px;
+	opacity: 0.5;
+	white-space: nowrap;
+}
+
 .nav_timepoint {
 	border: 1px solid;
 	width: 12px;
