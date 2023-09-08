@@ -9,9 +9,11 @@ function set_espace_height() {
 	var margin_top = 0;
 	
 	Object.keys(window.espaces).forEach(function(espace) {
-		hh = eval(window.getComputedStyle(document.getElementById(`espace_${espace}_container`)).getPropertyValue("height").replace("px", ""));
-		margin_top = eval(window.getComputedStyle(document.getElementById(`espace_fil_${espace}`)).getPropertyValue("margin-top").replace("px", ""));
-		h = Math.max(h, hh + margin_top);
+		if (espace != "sommaire") {
+			hh = eval(window.getComputedStyle(document.getElementById(`espace_${espace}_container`)).getPropertyValue("height").replace("px", ""));
+			margin_top = eval(window.getComputedStyle(document.getElementById(`espace_fil_${espace}`)).getPropertyValue("margin-top").replace("px", ""));
+			h = Math.max(h, hh + margin_top);
+		}
    
 	});
 	

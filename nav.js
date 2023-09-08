@@ -71,9 +71,9 @@ function update_hud_color(event) {
 		home_top.style.filter = "invert(0%)";
 	}
 	if (espace_courrant == "sommaire") {		// Mettre ces animations sur les anchors pour que les timeticks partent plus tôt à la sortie de sommaire et arrivent plus tard à l'entrée de sommaire
-		timetick_on();
+		timetick_on(true);
 	} else {	
-		timetick_off();
+		timetick_off(true);
 	}
 	
 }
