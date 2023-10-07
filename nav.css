@@ -9,6 +9,8 @@
 
 .nav_container {
 	position: relative;
+	display: flex;
+    justify-content: center;
 }
 
 #nav {
