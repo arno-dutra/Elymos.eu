@@ -1,6 +1,29 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+:root {
+  --code_bg: #1a1f23;
+  --code_bdr: #2d85b2;
+  --polypapier_bg: #f5f1d3;
+  --polypapier_bdr: #6eb52c;
+  --minecraft_bg: #223f21;
+  --minecraft_bdr: #528c4f;
+  --gallerie_bg: #141111;
+  --gallerie_bdr: #dd7c7c;
+  --compos_bg: #260c2b;
+  --compos_bdr: #962eaf;
+  --farnnight_bg: #02051c;
+  --farnnight_bdr: #ffff00;
+
+  --sco_inge_bg: #5f718f;
+  --sco_inge_bdr: #0a0f30;
+  --musico_bg: #8adaf3;
+  --musico_bdr: #0c71b9;
+  --pro_inge_bg: #d5efde;
+  --pro_inge_bdr: #038A36;
+}
+
 #nav_container {
 	position: absolute;
 	top: 0px;
@@ -51,7 +74,15 @@
 .nav_container_line_for_hover {
 	position: relative;
 	width: 100%;
-	height: 1000px;
+	height: 1500px;
+}
+
+.nav_line_for_hover {
+	position: absolute;
+	top: 0px;
+	height: 0px;
+	border: 1px solid;
+	opacity: 0;
 }
 
 #nav_text_portfolio {
@@ -79,65 +110,83 @@
 }
 
 .nav_timepoint_code {
-	background-color: #1a1f23;
-	border-color: #2d85b2;
+	background-color: var(--code_bg);
+	border-color: var(--code_bdr);
 }
 
 .nav_timepoint_polypapier {
-	background-color: #f5f1d3;
-	border-color: #6eb52c;
+	background-color: var(--polypapier_bg);
+	border-color: var(--polypapier_bdr);
 }
 
 .nav_timepoint_minecraft {
-	background-color: #223f21;
-	border-color: #528c4f;
+	background-color: var(--minecraft_bg);
+	border-color: var(--minecraft_bdr);
 }
 
 .nav_timepoint_gallerie {
-	background-color: #141111;
-	border-color: #dd7c7c;
+	background-color: var(--gallerie_bg);
+	border-color: var(--gallerie_bdr);
 }
 
 .nav_timepoint_compos {
-	background-color: #260c2b;
-	border-color: #962eaf;
+	background-color: var(--compos_bg);
+	border-color: var(--compos_bdr);
 }
 .nav_timepoint_farnnight {
-	background-color: #02051c;
-	border-color: #ffff00;
+	background-color: var(--farnnight_bg);
+	border-color: var(--farnnight_bdr);
 }
 
 .nav_timepoint_sco_inge {
-	background-color: #5f718f;
-	border-color: #0a0f30;
+	background-color: var(--sco_inge_bg);
+	border-color: var(--sco_inge_bdr);
 }
-
-/*
-.nav_timepoint_sco_inge {
-	background-color: #023311;
-	border-color: #038b38;
-}
-*/
 
 .nav_timepoint_musico {
-	background-color: #8adaf3;
-	border-color: #0c71b9;
+	background-color: var(--musico_bg);
+	border-color: var(--musico_bdr);
 }
-/*
-
-.nav_timepoint_musico {
-	background-color: #0f2435;
-	border-color: #265b87;
-}
-*/
 
 .nav_timepoint_pro_inge {
-	background-color: #d5efde;
-	border-color: #038A36;
+	background-color: var(--pro_inge_bg);
+	border-color: var(--pro_inge_bdr);
 }
-/*
-.nav_timepoint_pro_inge {
-	background-color: #330e10;
-	border-color: #ac2e30;
+
+
+
+
+#nav_line_for_hover_code {
+	border-color: var(--code_bdr);
 }
-*/
+
+#nav_line_for_hover_polypapier {
+	border-color: var(--polypapier_bdr);
+}
+
+#nav_line_for_hover_minecraft {
+	border-color: var(--minecraft_bdr);
+}
+
+#nav_line_for_hover_gallerie {
+	border-color: var(--gallerie_bdr);
+}
+
+#nav_line_for_hover_compos {
+	border-color: var(--compos_bdr);
+}
+#nav_line_for_hover_farnnight {
+	border-color: var(--farnnight_bdr);
+}
+
+#nav_line_for_hover_sco_inge {
+	border-color: var(--sco_inge_bdr);
+}
+
+#nav_line_for_hover_musico {
+	border-color: var(--musico_bdr);
+}
+
+#nav_line_for_hover_pro_inge {
+	border-color: var(--pro_inge_bdr);
+}

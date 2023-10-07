@@ -110,6 +110,7 @@ function on_mousehover_timeline(espace) {
         opacity: 1,
       }, 100);
 	
+	// Donne la bonne couleur au texte
 	var hex_color = window.espaces[espace].backgroundColor;
 	
 	var brightness = Math.max(...hexToRgb(hex_color));
@@ -121,6 +122,22 @@ function on_mousehover_timeline(espace) {
 	}
 	
 	document.getElementById(`nav_text_${type}_hover`).innerHTML = window.espaces[espace].name;
+	
+	// Animation de la ligne
+	var ma = 0;
+	var timepoints = document.getElementsByClassName(`nav_timepoint_${espace}`);
+	for (var i = 0; i < timepoints.length; i++) {
+		var m = eval(getComputedStyle(timepoints.item(i)).top.replace("px", "")); 
+		if (ma < m) {
+			ma = m;
+		}
+	}
+	
+	document.getElementById(`nav_line_for_hover_${espace}`).style.opacity = 1;
+	$(`#nav_line_for_hover_${espace}`).stop().animate({ 
+        height: `${ma}px`,
+      }, {duration:300});
+	
 }
 
 function on_mouseout_timeline(espace) {
@@ -137,5 +154,9 @@ function on_mouseout_timeline(espace) {
         opacity: 0,
 		backgroundColor: window.espaces[window.espace_courrant].backgroundColor,
       }, 100);
+	
+	$(`#nav_line_for_hover_${espace}`).stop().animate({ 
+        height: "0px",
+      }, {duration:300, complete: function() {document.getElementById(`nav_line_for_hover_${espace}`).style.opacity = 0}});
 	
 }
