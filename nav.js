@@ -106,7 +106,7 @@ function on_mousehover_timeline(espace) {
 	document.getElementById(`nav_hover_box_${type}`).style.backgroundColor = window.espaces[espace].backgroundColor;
 	document.getElementById(`nav_hover_box_${type}`).style.borderColor = getComputedStyle(document.getElementsByClassName(`panneau_${espace}`)[0]).borderColor;
 //	document.getElementById(`nav_hover_box_${type}`).style.opacity = 1;
-	$(`#nav_hover_box_${type}`).animate({ 
+	$(`#nav_hover_box_${type}`).stop().animate({ 
         opacity: 1,
       }, 100);
 	
@@ -133,17 +133,7 @@ function on_mouseout_timeline(espace) {
 			break;
 	}
 	
-//	document.getElementById(`nav_hover_box_${type}`).style.backgroundColor = window.espaces[window.espace_courrant].backgroundColor;
-//	switch (window.espace_courrant) {
-//		case "sommaire":
-//			document.getElementById(`nav_hover_box_${type}`).style.borderColor = "black";
-//			break;
-//		default:
-//			document.getElementById(`nav_hover_box_${type}`).style.borderColor = getComputedStyle(document.getElementsByClassName(`panneau_${espace}`)[0]).borderColor;
-//			break;
-//	}
-	
-	$(`#nav_hover_box_${type}`).animate({ 
+	$(`#nav_hover_box_${type}`).stop().animate({ 
         opacity: 0,
 		backgroundColor: window.espaces[window.espace_courrant].backgroundColor,
       }, 100);

@@ -43,6 +43,7 @@ window.espaces = `
 		"top": 0,
 		"left": 10000,
 		"width": 5000,
+		"type": "Portfolio",
 		"name": "Minecraft"
 	},
 
