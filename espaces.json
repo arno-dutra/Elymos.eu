@@ -10,7 +10,8 @@ window.espaces = `
 		"x": 6000,
 		"y": 0,
 		"height": 2000,
-		"type": "Sommaire"
+		"type": "Sommaire",
+		"name": "Sommaire"
 	},
 
 	"code": {
@@ -20,7 +21,8 @@ window.espaces = `
 		"top": 0,
 		"left": 0,
 		"width": 5000,
-		"type": "Portfolio"
+		"type": "Portfolio",
+		"name": "Programmation"
 	},
 
 	"polypapier": {
@@ -30,7 +32,8 @@ window.espaces = `
 		"top": 0,
 		"left": 5000,
 		"width": 5000,
-		"type": "Portfolio"
+		"type": "Portfolio",
+		"name": "Polypapier"
 	},
 
 	"minecraft": {
@@ -39,7 +42,8 @@ window.espaces = `
 		"y": 500,
 		"top": 0,
 		"left": 10000,
-		"width": 5000
+		"width": 5000,
+		"name": "Minecraft"
 	},
 
 	"gallerie": {
@@ -49,7 +53,8 @@ window.espaces = `
 		"top": 0,
 		"left": 15000,
 		"width": 5000,
-		"type": "Portfolio"
+		"type": "Portfolio",
+		"name": "Gallerie"
 	},
 
 	"compos": {
@@ -59,7 +64,8 @@ window.espaces = `
 		"top": 0,
 		"left": 20000,
 		"width": 5000,
-		"type": "Portfolio"
+		"type": "Portfolio",
+		"name": "Compositions"
 	},
 
 	"farnnight": {
@@ -69,7 +75,8 @@ window.espaces = `
 		"top": 0,
 		"left": 25000,
 		"width": 5000,
-		"type": "Portfolio"
+		"type": "Portfolio",
+		"name": "Far'N'Night"
 	},
 
 	"sco_inge": {
@@ -79,7 +86,8 @@ window.espaces = `
 		"top": 0,
 		"left": 30000,
 		"width": 5000,
-		"type": "Carriere"
+		"type": "Carriere",
+		"name": "Centrale Med."
 	},
 
 	"musico": {
@@ -89,7 +97,8 @@ window.espaces = `
 		"top": 0,
 		"left": 35000,
 		"width": 5000,
-		"type": "Carriere"
+		"type": "Carriere",
+		"name": "Musicologie"
 	},
 
 	"pro_inge": {
@@ -99,7 +108,8 @@ window.espaces = `
 		"top": 0,
 		"left": 40000,
 		"width": 5000,
-		"type": "Carriere"
+		"type": "Carriere",
+		"name": "Ingénieur"
 	}
 }
 

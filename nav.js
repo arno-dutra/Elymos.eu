@@ -70,7 +70,7 @@ function update_hud_color(event) {
 		home_to_top.style.filter = "invert(0%)";
 		home_top.style.filter = "invert(0%)";
 	}
-	if (espace_courrant == "sommaire") {		// Mettre ces animations sur les anchors pour que les timeticks partent plus tôt à la sortie de sommaire et arrivent plus tard à l'entrée de sommaire
+	if (espace_courrant == "sommaire") {
 		timetick_on(true);
 	} else {	
 		timetick_off(true);
@@ -88,5 +88,64 @@ function update_nav_top_position(event) {
 	$("#nav_container").animate({ 
         top: fil.style.top,
       }, 1000);
+	
+}
+
+// Gestion des titres des espaces
+
+function on_mousehover_timeline(espace) {
+	switch (window.espaces[espace].type) {
+		case "Portfolio":
+			var type = "portfolio";
+			break;
+		case "Carriere":
+			var type = "carriere";
+			break;
+	}
+	
+	document.getElementById(`nav_hover_box_${type}`).style.backgroundColor = window.espaces[espace].backgroundColor;
+	document.getElementById(`nav_hover_box_${type}`).style.borderColor = getComputedStyle(document.getElementsByClassName(`panneau_${espace}`)[0]).borderColor;
+//	document.getElementById(`nav_hover_box_${type}`).style.opacity = 1;
+	$(`#nav_hover_box_${type}`).animate({ 
+        opacity: 1,
+      }, 100);
+	
+	var hex_color = window.espaces[espace].backgroundColor;
+	
+	var brightness = Math.max(...hexToRgb(hex_color));
+	
+	if (brightness < 150) {
+		document.getElementById(`nav_text_${type}_hover`).style.color = "white";
+	} else {
+		document.getElementById(`nav_text_${type}_hover`).style.color = "black";
+	}
+	
+	document.getElementById(`nav_text_${type}_hover`).innerHTML = window.espaces[espace].name;
+}
+
+function on_mouseout_timeline(espace) {
+	switch (window.espaces[espace].type) {
+		case "Portfolio":
+			var type = "portfolio";
+			break;
+		case "Carriere":
+			var type = "carriere";
+			break;
+	}
+	
+//	document.getElementById(`nav_hover_box_${type}`).style.backgroundColor = window.espaces[window.espace_courrant].backgroundColor;
+//	switch (window.espace_courrant) {
+//		case "sommaire":
+//			document.getElementById(`nav_hover_box_${type}`).style.borderColor = "black";
+//			break;
+//		default:
+//			document.getElementById(`nav_hover_box_${type}`).style.borderColor = getComputedStyle(document.getElementsByClassName(`panneau_${espace}`)[0]).borderColor;
+//			break;
+//	}
+	
+	$(`#nav_hover_box_${type}`).animate({ 
+        opacity: 0,
+		backgroundColor: window.espaces[window.espace_courrant].backgroundColor,
+      }, 100);
 	
 }

@@ -22,9 +22,25 @@
 }
 
 .nav_text {
-/*	width: 100px;*/
 	font-family: AveriaSans;
 	font-size: 40px;
+	margin-block-end: 0.2em;
+}
+
+.nav_text_hover {
+    font-family: AveriaSans-Light;
+    font-size: 20px;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+}
+
+.nav_hover_box {
+	position: relative;
+	width: 150px;
+	height: 34px;
+	border: 1px solid;
+	white-space: normal;
+	border-radius: 11.25px;
 }
 
 #nav_text_portfolio {
