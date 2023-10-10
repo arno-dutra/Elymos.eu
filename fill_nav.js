@@ -142,7 +142,6 @@ function make_nav(content) {
 		var a = document.createElement('div');
 		a.innerHTML = `${year} —`;
 
-		a.id = `${k}_nav`;
 		a.classList.add(`nav_timetick`);
 		
 		a.style.top = `${top}px`;
