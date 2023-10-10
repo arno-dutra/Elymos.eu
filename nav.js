@@ -93,7 +93,8 @@ function update_nav_top_position(event) {
 
 // Gestion des titres des espaces
 
-function on_mousehover_timeline(espace) {
+function activate_espace_hover_text(espace) {
+		
 	switch (window.espaces[espace].type) {
 		case "Portfolio":
 			var type = "portfolio";
@@ -102,27 +103,31 @@ function on_mousehover_timeline(espace) {
 			var type = "carriere";
 			break;
 	}
-	
+
 	document.getElementById(`nav_hover_box_${type}`).style.backgroundColor = window.espaces[espace].backgroundColor;
 	document.getElementById(`nav_hover_box_${type}`).style.borderColor = getComputedStyle(document.getElementsByClassName(`panneau_${espace}`)[0]).borderColor;
-//	document.getElementById(`nav_hover_box_${type}`).style.opacity = 1;
+
 	$(`#nav_hover_box_${type}`).stop().animate({ 
-        opacity: 1,
-      }, 100);
-	
+		opacity: 1,
+	  }, 100);
+
 	// Donne la bonne couleur au texte
 	var hex_color = window.espaces[espace].backgroundColor;
-	
+
 	var brightness = Math.max(...hexToRgb(hex_color));
-	
+
 	if (brightness < 150) {
 		document.getElementById(`nav_text_${type}_hover`).style.color = "white";
 	} else {
 		document.getElementById(`nav_text_${type}_hover`).style.color = "black";
 	}
-	
+
 	document.getElementById(`nav_text_${type}_hover`).innerHTML = window.espaces[espace].name;
-	
+
+}
+
+function activate_espace_hover_line(espace) {
+
 	// Animation de la ligne
 	var ma = 0;
 	var timepoints = document.getElementsByClassName(`nav_timepoint_${espace}`);
@@ -132,15 +137,16 @@ function on_mousehover_timeline(espace) {
 			ma = m;
 		}
 	}
-	
+
 	document.getElementById(`nav_line_for_hover_${espace}`).style.opacity = 1;
 	$(`#nav_line_for_hover_${espace}`).stop().animate({ 
-        height: `${ma}px`,
-      }, {duration:300});
+		height: `${ma}px`,
+	  }, {duration: 300});
 	
 }
 
-function on_mouseout_timeline(espace) {
+function deactivate_espace_hover_text(espace) {
+	
 	switch (window.espaces[espace].type) {
 		case "Portfolio":
 			var type = "portfolio";
@@ -149,14 +155,73 @@ function on_mouseout_timeline(espace) {
 			var type = "carriere";
 			break;
 	}
-	
+
 	$(`#nav_hover_box_${type}`).stop().animate({ 
-        opacity: 0,
+		opacity: 0,
 		backgroundColor: window.espaces[window.espace_courrant].backgroundColor,
-      }, 100);
-	
-	$(`#nav_line_for_hover_${espace}`).stop().animate({ 
-        height: "0px",
-      }, {duration:300, complete: function() {document.getElementById(`nav_line_for_hover_${espace}`).style.opacity = 0}});
+	  }, 100);
 	
 }
+
+function deactivate_espace_hover_line(espace) {
+
+	$(`#nav_line_for_hover_${espace}`).stop().animate({ 
+		height: "0px",
+	  }, {duration: 300, complete: function() {document.getElementById(`nav_line_for_hover_${espace}`).style.opacity = 0}});
+	
+}
+
+function on_mouseout_timeline(espace) {
+	
+	if (espace != window.espace_courrant) {
+		deactivate_espace_hover_text(espace);
+		deactivate_espace_hover_line(espace);
+	} 
+	if (window.espace_courrant != "sommaire") {
+		activate_espace_hover_text(window.espace_courrant);
+	}
+	
+}
+
+function on_mousehover_timeline(espace) {
+	
+	activate_espace_hover_text(espace);
+	activate_espace_hover_line(espace);
+		
+}
+
+function deactivate_hover_lines() {
+	var keys = Object.keys(window.espaces);
+	for (var i = 0; i < keys.length; i++) {
+		if (keys[i] != "sommaire") {
+			deactivate_espace_hover_line(keys[i])
+		}
+	}
+}
+
+function activate_hover_text_onEspaceChange(event) {
+	if (event.detail != "sommaire") {activate_espace_hover_text(event.detail)}
+}
+
+function deactivate_hover_text_onEspaceChange(event) {
+	var keys = Object.keys(window.espaces);
+	for (var i = 0; i < keys.length; i++) {
+		if (keys[i] != "sommaire") {
+			deactivate_espace_hover_text(keys[i])
+		}
+	}
+}
+
+function activate_hover_line_onEspaceChange(event) {
+	if (event.detail != "sommaire") {activate_espace_hover_line(event.detail)}
+}
+
+function deactivate_hover_line_onEspaceChange(event) {
+	if (event.detail != "sommaire") {deactivate_espace_hover_line(event.detail)}
+}
+
+
+window.addEventListener('onEspaceChange', deactivate_hover_text_onEspaceChange);
+window.addEventListener('onEspaceChange', activate_hover_text_onEspaceChange);
+window.addEventListener('onEspaceChange', deactivate_hover_lines);
+window.addEventListener('onEspaceChange', activate_hover_line_onEspaceChange);

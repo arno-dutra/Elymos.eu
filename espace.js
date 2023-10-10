@@ -24,6 +24,4 @@ window.addEventListener('onEspaceChange', onEspaceChange);
 
 function onEspaceChange(event) {
 	var espace_courrant = event.detail;
-	
-	console.log();
 }
