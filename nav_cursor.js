@@ -36,7 +36,6 @@ function allInView() {
 		
 		
 		if (isScrolledIntoView(elements_du_fil.item(i))) {
-			console.log(nav_el);
 			
 			nav_el.css("border-width", "3px");
 			
