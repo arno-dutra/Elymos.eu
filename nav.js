@@ -89,6 +89,16 @@ function update_nav_top_position(event) {
         top: fil.style.top,
       }, 1000);
 	
+	if (espace_courrant != "sommaire") {
+		$("#nav").animate({ 
+        	top: "-10px",
+      	}, 1000);
+	} else {
+		$("#nav").animate({ 
+        	top: "75px",
+      	}, 1000);
+	}
+	
 }
 
 // Gestion des titres des espaces

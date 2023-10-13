@@ -98,14 +98,14 @@ function move_home_top(event) {
 	
 	if (espace_courrant !== "sommaire") {
 		
-		$("#home_top").animate({ 
+		$("#home_top").stop().animate({ 
 			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height + top,
 			left: window.espaces[espace_courrant].x + left,
 		}, 1000);
 		
 	} else {
 		
-		$("#home_top").animate({ 
+		$("#home_top").stop().animate({ 
 			top: window.espaces[espace_courrant].y + top,
 			left: window.espaces[espace_courrant].x + left,
 		}, 1000);

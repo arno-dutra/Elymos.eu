@@ -6,6 +6,7 @@
 #body {
 	/* background-color: black; */
 	z-index: -4;
+	overflow-x: hidden;
 }
 
 #background {
