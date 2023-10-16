@@ -2,8 +2,7 @@
 function load_nav() {
 	var container = document.getElementById("_nav_container");
 	
-	container.innerHTML = `<div id="nav_container" style="display: flex; flex-direction: column; justify-content: center; width: ${(1 - window.prop)*100}%; left: ${window.prop*100}%;">
-			  <div id="nav"></div>
+	container.innerHTML = `<div id="nav" style="display: flex; flex-direction: column; justify-content: center; width: ${(1 - window.prop)*100}vw; left: ${window.prop*100}vw;">
 	</div>`;
 //	container.innerHTML = `<table id="nav_container" width="100%" border="0">
 //	  <tbody>
@@ -18,7 +17,7 @@ function load_nav() {
 	
 	
 	var nav = document.getElementById('nav');
-	nav.style.left = `${window.espaces[espace_courrant].x}px`;
+	nav.style.left = `calc(${window.espaces[espace_courrant].x}px + ${window.prop*100}vw)`;
 	
 	$(function(){
 	  $("#nav").load("nav.html"); 
@@ -35,7 +34,7 @@ load_nav()
 $(window).on('scroll', function () {
 
   var $w = $(window);
-  $('#nav').css('left', $w.scrollLeft());
+  $('#nav').css('left', $w.scrollLeft() + window.prop * window.innerWidth);
 
 });
 
@@ -79,23 +78,27 @@ function update_hud_color(event) {
 }
 
 window.addEventListener('onEspaceChange', update_nav_top_position);
+window.addEventListener('resize', update_nav_top_position);
 
 function update_nav_top_position(event) {
 	var espace_courrant = event.detail;
 	
 	var fil = document.getElementById(`espace_${espace_courrant}_container`);
-	
-	$("#nav_container").animate({ 
-        top: fil.style.top,
-      }, 1000);
-	
+//	
+//	$("#nav").animate({ 
+//        top: fil.style.top,
+//      }, 1000);
+//	console.log(`calc(${fil.style.top} - 10px)`);
+//	
 	if (espace_courrant != "sommaire") {
 		$("#nav").animate({ 
-        	top: "-10px",
+        	top: fil.style.top,
+        	paddingTop: `-10px`,
       	}, 1000);
 	} else {
 		$("#nav").animate({ 
-        	top: "75px",
+        	top: fil.style.top,
+        	paddingTop: `75px`,
       	}, 1000);
 	}
 	

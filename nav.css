@@ -39,7 +39,7 @@
 #nav {
 	position: relative;
 	z-index: 1;
-	top: 75px;
+	padding-top: 75px;
 }
 
 .nav {
