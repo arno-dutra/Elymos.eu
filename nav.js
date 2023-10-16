@@ -28,15 +28,16 @@ function load_nav() {
 load_nav()
 
 
-
-
-// Make nav following us along x
-$(window).on('scroll', function () {
+function update_left_position() {
 
   var $w = $(window);
   $('#nav').css('left', $w.scrollLeft() + window.prop * window.innerWidth);
 
-});
+}
+
+// Make nav following us along x
+$(window).on('scroll', update_left_position);
+$(window).on('resize', update_left_position);
 
 
 const hexToRgb = hex =>
