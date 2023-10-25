@@ -5,7 +5,7 @@
 
 .panneau_pro_inge {
 	background-color: #f0f0f0;
-	border-color: #038a38;
+	border-color: var(--pro_inge_bdr);
 	border-width: 3px;
 	-webkit-box-shadow: 0px 0px 100px #76ce877f;
 	box-shadow: 0px 0px 100px #76ce877f;

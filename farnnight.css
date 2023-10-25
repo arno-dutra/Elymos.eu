@@ -3,7 +3,7 @@
 
 .panneau_farnnight {
 	background-color: #efeee0;
-	border-color: #feea00;
+	border-color: var(--farnnight_bdr);
 	-webkit-box-shadow: 0px 0px 100px #efeee063;
 	box-shadow: 0px 0px 100px 0px #efeee063;
 }

@@ -3,7 +3,7 @@
 
 .panneau_polypapier {
 	background-color: #f7f4e2;
-	border-color: #6eb52c;
+	border-color: var(--polypapier_bdr);
 	border-width: 3px;
 	-webkit-box-shadow: 0px 0px 100px #b5af91;
 	box-shadow: 0px 0px 100px 0px #b5af91;

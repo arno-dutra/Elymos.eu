@@ -3,7 +3,7 @@
 
 .panneau_minecraft {
 	background-color: #89af87;
-	border-color: #528c4f;
+	border-color: var(--minecraft_bdr);
 	-webkit-box-shadow: 0px 0px 100px #b7e2b5;
 	box-shadow: 0px 0px 100px #b7e2b5;
 }

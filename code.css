@@ -5,7 +5,7 @@
 
 .panneau_code {
 	background-color: #303841;
-	border-color: #618fb4;
+	border-color: var(--code_bdr);
 	-webkit-box-shadow: 0px 0px 100px #90a8b23f;
 	box-shadow: 0px 0px 100px #90a8b23f;
 }

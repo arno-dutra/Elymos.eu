@@ -2,8 +2,8 @@
 /* CSS Document */
 
 .panneau_gallerie {
-	background-color: #782828;
-	border-color: #782828;
+	background-color: var(--gallerie_bdr);
+	border-color: var(--gallerie_bdr);
 	-webkit-box-shadow: 0px 0px 100px #CF1D1F42;
 	box-shadow: 0px 0px 100px #CF1D1F42;
 }

@@ -9,7 +9,7 @@ window.espaces = `
 		"left": 0,
 		"x": 6000,
 		"y": 0,
-		"height": 2000,
+		"height": 4000,
 		"type": "Sommaire",
 		"name": "Sommaire"
 	},
