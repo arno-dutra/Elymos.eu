@@ -22,8 +22,36 @@ function load_nav() {
 	$(function(){
 	  $("#nav").load("nav.html"); 
 	});
-	
 }
+
+// Place in header (do not use async or defer)
+document.addEventListener('readystatechange', event => {
+  switch (document.readyState) {
+    case "loading":
+      break;
+    case "interactive":
+      break;
+    case "complete":
+		  update_hud();
+      break;
+  }
+});
+
+function update_hud() {
+	var espace_courant = _espace_courrant();
+	
+	_update_hud_color(espace_courant);
+	_update_nav_top_position(espace_courant, "instant");
+	update_left_position();
+	
+	anchor_onLoad();
+}
+
+const hexToRgb = hex =>
+  hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
+    .substring(1).match(/.{2}/g)
+    .map(x => parseInt(x, 16));
 
 load_nav()
 
@@ -40,19 +68,16 @@ $(window).on('scroll', update_left_position);
 $(window).on('resize', update_left_position);
 
 
-const hexToRgb = hex =>
-  hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-    .substring(1).match(/.{2}/g)
-    .map(x => parseInt(x, 16))
-
-
-
 
 window.addEventListener('onEspaceChange', update_hud_color);
 // Adapt the color of the hud elements depending on espace
 function update_hud_color(event) {
 	var espace_courrant = event.detail;
+
+	_update_hud_color(espace_courrant);
+}
+	
+function _update_hud_color(espace_courrant) {
 	
 	var home_to_top = document.getElementById('home_to_top');
 	var home_top = document.getElementById('home_top');
@@ -79,10 +104,17 @@ function update_hud_color(event) {
 }
 
 window.addEventListener('onEspaceChange', update_nav_top_position);
-window.addEventListener('resize', update_nav_top_position);
+//window.addEventListener('resize', update_nav_top_position);
 
 function update_nav_top_position(event) {
+	
 	var espace_courrant = event.detail;
+	
+	_update_nav_top_position(espace_courrant, 1000);
+
+}
+	
+function _update_nav_top_position(espace_courrant, duration) {
 	
 	var fil = document.getElementById(`espace_${espace_courrant}_container`);
 //	
@@ -95,12 +127,12 @@ function update_nav_top_position(event) {
 		$("#nav").animate({ 
         	top: fil.style.top,
         	paddingTop: `-10px`,
-      	}, 1000);
+      	}, duration);
 	} else {
 		$("#nav").animate({ 
         	top: fil.style.top,
         	paddingTop: `75px`,
-      	}, 1000);
+      	}, duration);
 	}
 	
 }

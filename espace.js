@@ -8,7 +8,7 @@ function isOnEspaceChange() {
 	
 	var espace_courrant = _espace_courrant();
 	
-	if (espace_courrant != window.espace_courrant) {
+	if ((espace_courrant != window.espace_courrant) & (document.readyState == "complete")) {
 		window.espace_courrant = espace_courrant;
 	
 		var evt = new CustomEvent('onEspaceChange', {detail: espace_courrant});

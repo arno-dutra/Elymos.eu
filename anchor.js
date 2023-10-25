@@ -89,6 +89,11 @@ window.addEventListener('onEspaceChange', move_home_top);
 function move_home_top(event) {
 	var espace_courrant = event.detail;
 	
+	_move_home_top(espace_courrant, 1000);
+}
+
+function _move_home_top(espace_courrant, duration) {
+	
 	var element = document.getElementById('home_to_top');
     var style = window.getComputedStyle(element);
     var top = eval(style.getPropertyValue('top').replace("px", ""));
@@ -101,14 +106,14 @@ function move_home_top(event) {
 		$("#home_top").stop().animate({ 
 			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height + top,
 			left: window.espaces[espace_courrant].x + left,
-		}, 1000);
+		}, duration);
 		
 	} else {
 		
 		$("#home_top").stop().animate({ 
 			top: window.espaces[espace_courrant].y + top,
 			left: window.espaces[espace_courrant].x + left,
-		}, 1000);
+		}, duration);
 		
 	}
 }
