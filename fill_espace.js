@@ -3,6 +3,9 @@ var content = JSON.parse(window.contenu);
 
 content = make_order(content);
 
+put_elements(content);
+	
+
 function make_order(content) {
 
 	var espaces = Object.keys(window.espaces);
@@ -61,8 +64,6 @@ function filterByEspace(dictionary, k) {
   return filteredItems;
 }
 
-put_elements(content);
-
 
 function put_elements(content) {
 
@@ -82,6 +83,8 @@ function put_elements(content) {
 		make_element(content[k], k);
 		
 	}
+	
+	window.dispatchEvent(new CustomEvent("espaces_filled", {}));
 	
 }
 

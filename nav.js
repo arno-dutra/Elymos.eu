@@ -2,7 +2,7 @@
 function load_nav() {
 	var container = document.getElementById("_nav_container");
 	
-	container.innerHTML = `<div id="nav" style="display: flex; flex-direction: column; justify-content: center; width: ${(1 - window.prop)*100}vw; left: ${window.prop*100}vw;">
+	container.innerHTML = `<div id="nav" style="display: flex; flex-direction: column; justify-content: flex-start; width: calc(${(1 - window.prop)*100}vw - 14px); left: ${window.prop*100}vw;">
 	</div>`;
 //	container.innerHTML = `<table id="nav_container" width="100%" border="0">
 //	  <tbody>
@@ -17,7 +17,7 @@ function load_nav() {
 	
 	
 	var nav = document.getElementById('nav');
-	nav.style.left = `calc(${window.espaces[espace_courrant].x}px + ${window.prop*100}vw)`;
+	nav.style.left = `calc(${window.espaces[espace_actif].x}px + ${window.prop*100}vw)`;
 	
 	$(function(){
 	  $("#nav").load("nav.html"); 
@@ -61,6 +61,32 @@ function update_left_position() {
   var $w = $(window);
   $('#nav').css('left', $w.scrollLeft() + window.prop * window.innerWidth);
 
+}
+
+
+window.addEventListener('onNewActiveEspace', onNewActiveEspace);
+
+window.dispatchEvent(new CustomEvent("onNewActiveEspace", {detail: {newEspace: window.espace_actif}}));
+
+function onNewActiveEspace(e) {
+  const keys = Object.keys(window.espaces);
+	
+  for (let i=0; i < keys.length; i++) {
+	  var container = document.getElementById(`espace_${keys[i]}_container`);
+	  container.removeEventListener("scroll", synchronize_scroll_with_active_espace);
+  }
+	
+  var container = document.getElementById(`espace_${e.detail.newEspace}_container`);
+  
+  container.addEventListener("scroll", synchronize_scroll_with_active_espace);
+  container.addEventListener("scroll", synchronize_anchor_with_active_espace);
+}
+
+
+function synchronize_scroll_with_active_espace() {
+	
+  var container = document.getElementById(`espace_${window.espace_actif}_container`);
+  $('#nav').css('top', `calc(${container.style.top} - ${container.scrollTop}px)`);
 }
 
 // Make nav following us along x
@@ -108,22 +134,22 @@ window.addEventListener('onEspaceChange', update_nav_top_position);
 
 function update_nav_top_position(event) {
 	
-	var espace_courrant = event.detail;
+	var espace_actif = event.detail;
 	
-	_update_nav_top_position(espace_courrant, 1000);
+	_update_nav_top_position(espace_actif, 1000);
 
 }
 	
-function _update_nav_top_position(espace_courrant, duration) {
+function _update_nav_top_position(espace_actif, duration) {
 	
-	var fil = document.getElementById(`espace_${espace_courrant}_container`);
+	var fil = document.getElementById(`espace_${espace_actif}_container`);
 //	
 //	$("#nav").animate({ 
 //        top: fil.style.top,
 //      }, 1000);
 //	console.log(`calc(${fil.style.top} - 10px)`);
 //	
-	if (espace_courrant != "sommaire") {
+	if (espace_actif != "sommaire") {
 		$("#nav").animate({ 
         	top: fil.style.top,
         	paddingTop: `-10px`,
@@ -204,7 +230,7 @@ function deactivate_espace_hover_text(espace) {
 
 	$(`#nav_hover_box_${type}`).stop().animate({ 
 		opacity: 0,
-		backgroundColor: window.espaces[window.espace_courrant].backgroundColor,
+		backgroundColor: window.espaces[window.espace_actif].backgroundColor,
 	  }, 100);
 	
 }
@@ -219,12 +245,12 @@ function deactivate_espace_hover_line(espace) {
 
 function on_mouseout_timeline(espace) {
 	
-	if (espace != window.espace_courrant) {
+	if (espace != window.espace_actif) {
 		deactivate_espace_hover_text(espace);
 		deactivate_espace_hover_line(espace);
 	} 
-	if (window.espace_courrant != "sommaire") {
-		activate_espace_hover_text(window.espace_courrant);
+	if (window.espace_actif != "sommaire") {
+		activate_espace_hover_text(window.espace_actif);
 	}
 	
 }

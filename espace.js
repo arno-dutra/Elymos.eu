@@ -2,6 +2,7 @@
 
 window.addEventListener('scroll', isOnEspaceChange);
 window.espace_courrant = "sommaire";
+window.espace_actif = window.espace_courrant;
 
 
 function isOnEspaceChange() {

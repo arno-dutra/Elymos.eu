@@ -6,6 +6,8 @@ function nav_put_elements(content) {
 	var preprocessed_content = _nav_preprocessing(content);
 	
 	make_nav(preprocessed_content);
+	
+	window.dispatchEvent(new CustomEvent("nav_filled", {}));
 //	
 //	var keys = Object.keys(content);
 //	console.log(keys);
@@ -151,6 +153,10 @@ function make_nav(content) {
 		espace.appendChild(a);
 	}
 	
+	// nav sizer
+	var height = Math.abs(((last - first) / 2678400000 + 6) * nav_month_height + 90 + 50);
+	
+	document.getElementById("nav").style.height = `${height}px`;
 }
 
 
@@ -169,26 +175,63 @@ function go(id) {
 //	document.querySelector(`#${id}`).scrollIntoView({
 //  behavior: 'smooth'
 //});
-	switch (window.content[id].nav_type) {
-		case "timespan":
-			var top = $(`#${id}`).offset().top - 200 - 2;
-			break;
-		case "instant":
-			var top = $(`#${id}`).offset().top + (eval(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);
-			break;
-	}
+//	switch (window.content[id].nav_type) {
+//		case "timespan":
+//			var top = $(`#${id}`).offset().top - 200 - 2;
+//			break;
+//		case "instant":
+//			var top = $(`#${id}`).offset().top + (eval(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);
+//			break;
+//	}
+//	var top = $(`#${id}`).offset().top - 200 - 2;
+	var top = $(`#${id}`).offset().top - 200 - 2;
+	
+	var espace = window.espaces[window.content[id].espace];
+	var espace_container = document.getElementById(`espace_${window.content[id].espace}_container`);
+//	console.log(window.content[id].espace);
+	window.espace_actif = window.content[id].espace;
 	
 	
-	var left = window.espaces[window.content[id].espace].x;
+	
+	if (window.espace_actif !== "sommaire") {
 		
 		window.scrollTo({
-			top: top,
-			left: left,
+			top: window.espaces[window.espace_actif].y + window.espaces.sommaire.height,
+			left: window.espaces[window.espace_actif].x,
 			behavior: 'smooth',
 		});
+		
+		espace_container.scrollTo({
+			top: top - (window.espaces[window.espace_actif].y + window.espaces.sommaire.height),
+			behavior: 'smooth',
+		});
+		
+	} else {
+		
+		window.scrollTo({
+			top: window.espaces[window.espace_actif].y,
+			left: window.espaces[window.espace_actif].x,
+			behavior: 'smooth',
+		});
+		
+	}
+//	
+//	window.scrollTo({
+//		top: espace_container.style.top,
+//		left: espace_container.style.left,
+//		behavior: 'smooth',
+//	});
+		
 	
 	timetick_off();
 	
+	var newActiveEspaceEvent = new CustomEvent("onNewActiveEspace", {
+	  detail: {
+		newEspace: window.content[id].espace,
+	  },
+	});
+	
+	window.dispatchEvent(newActiveEspaceEvent);
 }
 
 

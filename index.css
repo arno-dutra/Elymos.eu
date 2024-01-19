@@ -38,3 +38,17 @@
 .anchor {
 	position: absolute;
 }
+
+.espace_container {
+	width: 100%; 
+	height: 100%; 
+	overflow-y: scroll; 
+	z-index: 1;
+/*	background-color: crimson;*/
+}
+
+.espace_sizer {
+	z-index: 0;
+	background-image: url("grain.png");
+	background-repeat: repeat;
+}

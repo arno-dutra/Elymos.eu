@@ -17,8 +17,8 @@ function anchor_onLoad() {
 	sommaire.style.top = `${window.espaces.sommaire.y}px`;
 	
 	window.scrollTo({
-		top: window.espaces[espace_courrant].y,
-		left: window.espaces[espace_courrant].x,
+		top: window.espaces[espace_actif].y,
+		left: window.espaces[espace_actif].x,
 		behavior: 'instant',
 	});
 }
@@ -29,39 +29,35 @@ anchor_onLoad()
 // Managing anchors
 
 function goSommaire() {
+	window.espace_actif = "sommaire";
+	
 	window.scrollTo({
 		top: window.espaces["sommaire"].y,
 		left: window.espaces["sommaire"].x,
 		behavior: 'smooth',
 	});
 	timetick_on();
+	
+	
+	
+	var newActiveEspaceEvent = new CustomEvent("onNewActiveEspace", {
+	  detail: {
+		newEspace: "sommaire",
+	  },
+	});
+	
+	window.dispatchEvent(newActiveEspaceEvent);
 }
 
 function goTop() {
 	
-	// Determine in which espace we are
-	
-	var espace_courrant = window.espace_courrant;
-	
-	//  Jumping to current space
-	
-	if (espace_courrant !== "sommaire") {
+	var container = document.getElementById(`espace_${window.espace_actif}_container`);
 		
-		window.scrollTo({
-			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height,
-			left: window.espaces[espace_courrant].x,
-			behavior: 'smooth',
-		});
-		
-	} else {
-		
-		window.scrollTo({
-			top: window.espaces[espace_courrant].y,
-			left: window.espaces[espace_courrant].x,
-			behavior: 'smooth',
-		});
-		
-	}
+	container.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: 'smooth',
+	});
 	
 }
 
@@ -87,12 +83,12 @@ function _espace_courrant() {
 window.addEventListener('onEspaceChange', move_home_top);
 
 function move_home_top(event) {
-	var espace_courrant = event.detail;
+	var espace_actif = event.detail;
 	
-	_move_home_top(espace_courrant, 1000);
+	_move_home_top(espace_actif, 1000);
 }
 
-function _move_home_top(espace_courrant, duration) {
+function _move_home_top(espace_actif, duration) {
 	
 	var element = document.getElementById('home_to_top');
     var style = window.getComputedStyle(element);
@@ -101,19 +97,26 @@ function _move_home_top(espace_courrant, duration) {
 	
 	
 	
-	if (espace_courrant !== "sommaire") {
+	if (espace_actif !== "sommaire") {
 		
 		$("#home_top").stop().animate({ 
-			top: window.espaces[espace_courrant].y + window.espaces.sommaire.height + top,
-			left: window.espaces[espace_courrant].x + left,
+			top: window.espaces[espace_actif].y + window.espaces.sommaire.height + top,
+			left: window.espaces[espace_actif].x + left,
 		}, duration);
 		
 	} else {
 		
 		$("#home_top").stop().animate({ 
-			top: window.espaces[espace_courrant].y + top,
-			left: window.espaces[espace_courrant].x + left,
+			top: window.espaces[espace_actif].y + top,
+			left: window.espaces[espace_actif].x + left,
 		}, duration);
 		
 	}
+}
+
+
+function synchronize_anchor_with_active_espace() {
+	
+  var container = document.getElementById(`espace_${window.espace_actif}_container`);
+  $('#home_top').css('top', `calc(${container.style.top} - ${container.scrollTop}px + 20px)`);
 }
