@@ -68,7 +68,7 @@
 }
 
 .scrollbarClass::-webkit-scrollbar-thumb {
-  border-radius: 6px;
+  border-radius: 4px 2px 2px 4px;
   background-color: #363A4D;
 }
 
