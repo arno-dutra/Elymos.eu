@@ -66,7 +66,7 @@ function update_left_position() {
 
 window.addEventListener('onNewActiveEspace', onNewActiveEspace);
 
-window.dispatchEvent(new CustomEvent("onNewActiveEspace", {detail: {newEspace: window.espace_actif}}));
+window.dispatchEvent(new CustomEvent("onNewActiveEspace", {detail: {newEspace: window.espace_actif, first_load: true}}));
 
 function onNewActiveEspace(e) {
   const keys = Object.keys(window.espaces);
@@ -74,15 +74,17 @@ function onNewActiveEspace(e) {
   for (let i=0; i < keys.length; i++) {
 	  var container = document.getElementById(`espace_${keys[i]}_container`);
 	  container.removeEventListener("scroll", synchronize_scroll_with_active_espace);
-  	  container.removeEventListener("scroll", synchronize_nav_cursor_with_active_espace);
+	  if (!e.detail.first_load) {container.removeEventListener("scroll", synchronize_nav_cursor_with_active_espace)};
   }
 	
   var container = document.getElementById(`espace_${e.detail.newEspace}_container`);
   
   container.addEventListener("scroll", synchronize_scroll_with_active_espace);
   container.addEventListener("scroll", synchronize_anchor_with_active_espace);
-  synchronize_nav_cursor_with_active_espace();
-  container.addEventListener("scroll", synchronize_nav_cursor_with_active_espace);
+  if (!e.detail.first_load) {
+    synchronize_nav_cursor_with_active_espace();
+  	container.addEventListener("scroll", synchronize_nav_cursor_with_active_espace);
+  }
 }
 
 

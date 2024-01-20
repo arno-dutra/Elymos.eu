@@ -228,6 +228,7 @@ function go(id) {
 	var newActiveEspaceEvent = new CustomEvent("onNewActiveEspace", {
 	  detail: {
 		newEspace: window.content[id].espace,
+		first_load: false,
 	  },
 	});
 	

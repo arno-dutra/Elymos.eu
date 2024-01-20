@@ -43,6 +43,7 @@ function goSommaire() {
 	var newActiveEspaceEvent = new CustomEvent("onNewActiveEspace", {
 	  detail: {
 		newEspace: "sommaire",
+		first_load: false,
 	  },
 	});
 	
