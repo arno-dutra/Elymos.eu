@@ -109,6 +109,24 @@
 	display: block;
 }
 
+.nav_timepoint:hover {
+	animation: hover 0.05s ease 0s 1 normal forwards;
+}
+
+@keyframes hover {
+	0% {
+/*		transform: scale(1);*/
+		border-width: 1px;
+		transform: translateY(0);
+	}
+
+	100% {
+/*		transform: scale(1.2);*/
+		border-width: 3px;
+		transform: translateY(-2px);
+	}
+}
+
 .nav_timepoint_code {
 	background-color: var(--code_bg);
 	border-color: var(--code_bdr);

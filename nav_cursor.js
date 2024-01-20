@@ -38,6 +38,7 @@ function allInView() {
 			visible_nav_els_set.add(nav_el);
 			
 			nav_el.style.borderWidth = "3px";
+			nav_el.style.transform = "translateY(-2px)";
 			
 		}
 		
@@ -46,7 +47,8 @@ function allInView() {
 	[].forEach.call($(".nav_timepoint"), function(nav_el) {
 		if (!visible_nav_els_set.has(nav_el)) {
 			
-			nav_el.style.borderWidth = "1px";
+			nav_el.style.borderWidth = "";
+			nav_el.style.transform = "";
 		}
 	})
 	
