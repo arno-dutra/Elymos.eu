@@ -107,6 +107,7 @@
 	border-radius: 11.25px;
 	position: absolute;
 	display: block;
+	margin-top: 2px;
 }
 
 .nav_timepoint:hover {

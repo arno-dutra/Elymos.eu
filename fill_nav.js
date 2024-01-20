@@ -138,7 +138,7 @@ function make_nav(content) {
 		
 		var d = new Date(year, 1, 1)
 		var height = 24;  // Parameter
-		var top = (current_date - Date.parse(d)) / 2678400000 * nav_month_height - height / 2;
+		var top = (current_date - Date.parse(d)) / 2678400000 * nav_month_height - height / 2 + 27;
 		
 		
 		var a = document.createElement('div');
