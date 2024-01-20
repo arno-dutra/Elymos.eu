@@ -13,7 +13,7 @@ function make_espaces() {
 		if (espace != "sommaire") {
 		
 			accumulateur = accumulateur.concat(
-				`<div style="position: absolute; left: ${value.x}px; top: ${value.y + window.espaces.sommaire.height}px;" id="espace_${espace}_container" class="espace_container">
+				`<div style="position: absolute; left: ${value.x}px; top: ${value.y + window.espaces.sommaire.height}px;" id="espace_${espace}_container" class="espace_container scrollbarClass">
 					<div id="${espace}_container_sizer" class="espace_sizer" style="background-color: ${window.espaces[espace].backgroundColor};">
 						<table width="100%" border="0" style="z-index: 0;" id="espace_${espace}_table">
 						  <tbody>
