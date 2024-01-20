@@ -38,7 +38,8 @@ function goSommaire() {
 	});
 	timetick_on();
 	
-	
+	update_nav_top_position(0);
+	move_home_top(0);
 	
 	var newActiveEspaceEvent = new CustomEvent("onNewActiveEspace", {
 	  detail: {
@@ -81,15 +82,15 @@ function _espace_courrant() {
 }
 
 
-window.addEventListener('onEspaceChange', move_home_top);
+//window.addEventListener('onEspaceChange', move_home_top);
 
-function move_home_top(event) {
-	var espace_actif = event.detail;
+function move_home_top(top_inside_container) {
+//	var espace_actif = event.detail;
 	
-	_move_home_top(espace_actif, 1000);
+	_move_home_top(window.espace_actif, 1000, top_inside_container);
 }
 
-function _move_home_top(espace_actif, duration) {
+function _move_home_top(espace_actif, duration, top_inside_container) {
 	
 	var element = document.getElementById('home_to_top');
     var style = window.getComputedStyle(element);
@@ -101,14 +102,14 @@ function _move_home_top(espace_actif, duration) {
 	if (espace_actif !== "sommaire") {
 		
 		$("#home_top").stop().animate({ 
-			top: window.espaces[espace_actif].y + window.espaces.sommaire.height + top,
+			top: window.espaces[espace_actif].y + window.espaces.sommaire.height + top - top_inside_container,
 			left: window.espaces[espace_actif].x + left,
 		}, duration);
 		
 	} else {
 		
 		$("#home_top").stop().animate({ 
-			top: window.espaces[espace_actif].y + top,
+			top: window.espaces[espace_actif].y + top - top_inside_container,
 			left: window.espaces[espace_actif].x + left,
 		}, duration);
 		

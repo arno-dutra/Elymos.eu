@@ -81,10 +81,11 @@ function onNewActiveEspace(e) {
   
   container.addEventListener("scroll", synchronize_scroll_with_active_espace);
   container.addEventListener("scroll", synchronize_anchor_with_active_espace);
-  if (!e.detail.first_load) {
-    synchronize_nav_cursor_with_active_espace();
-  	container.addEventListener("scroll", synchronize_nav_cursor_with_active_espace);
-  }
+	
+	if (!e.detail.first_load) {
+		synchronize_nav_cursor_with_active_espace();
+		container.addEventListener("scroll", synchronize_nav_cursor_with_active_espace);
+	}
 }
 
 
@@ -134,37 +135,54 @@ function _update_hud_color(espace_courrant) {
 	
 }
 
-window.addEventListener('onEspaceChange', update_nav_top_position);
+//window.addEventListener('onNewActiveEspace', update_nav_top_position);
 //window.addEventListener('resize', update_nav_top_position);
 
-function update_nav_top_position(event) {
+function update_nav_top_position(top_inside_container) {
 	
-	var espace_actif = event.detail;
-	
-	_update_nav_top_position(espace_actif, 1000);
+	_update_nav_top_position(window.espace_actif, 1000, top_inside_container);
 
 }
 	
-function _update_nav_top_position(espace_actif, duration) {
+function _update_nav_top_position(espace_actif, duration, top_inside_container) {
 	
-	var fil = document.getElementById(`espace_${espace_actif}_container`);
+//	var fil = document.getElementById(`espace_${espace_actif}_container`);
 //	
 //	$("#nav").animate({ 
 //        top: fil.style.top,
 //      }, 1000);
 //	console.log(`calc(${fil.style.top} - 10px)`);
-//	
+	
+	var container = document.getElementById(`espace_${espace_actif}_container`);
+	var top = parseFloat(container.style.top) - top_inside_container;
+	
 	if (espace_actif != "sommaire") {
 		$("#nav").animate({ 
-        	top: fil.style.top,
-        	paddingTop: `-10px`,
-      	}, duration);
+							top: `${top}px`,
+							paddingTop: `-10px`,
+						  }, 
+						  duration
+						 );
+						  
 	} else {
 		$("#nav").animate({ 
-        	top: fil.style.top,
-        	paddingTop: `75px`,
-      	}, duration);
+							top: `${top}px`,
+							paddingTop: `75px`,
+						  }, 
+						  duration
+						 );
 	}
+//	if (espace_actif != "sommaire") {
+//		$("#nav").animate({ 
+//        	top: fil.style.top,
+//        	paddingTop: `-10px`,
+//      	}, duration);
+//	} else {
+//		$("#nav").animate({ 
+//        	top: fil.style.top,
+//        	paddingTop: `75px`,
+//      	}, duration);
+//	}
 	
 }
 
