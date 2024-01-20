@@ -1,31 +1,27 @@
 $(allInView);
-$(window).scroll(allInView);
+//$(window).scroll(allInView);
+
+function synchronize_nav_cursor_with_active_espace() {
+	allInView()
+}
 
 
 function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+	
+    var docViewTop = 0;
+    var docViewBottom = docViewTop + $(`#espace_${window.espace_actif}_container`).height();
 
-    var elemTop = $(elem).offset().top;
+    var elemTop = $(elem).offset().top - $(`#espace_${window.espace_actif}_container`).offset().top;
     var elemBottom = elemTop + $(elem).height();
-    
+	
     var v = ((docViewBottom >= elemTop) && (elemBottom >= docViewTop));
 	
-	
-    var docViewLeft = $(window).scrollLeft();
-    var docViewRight = docViewLeft + $(window).width();
-
-    var elemLeft = $(elem).offset().left;
-    var elemRight = elemLeft + $(elem).width();
-    
-    var h = ((docViewRight >= elemLeft) && (elemRight >= docViewLeft));
-	
-	return (v && h)
+	return v
 }
 
 function allInView() {
 	
-	var elements_du_fil = document.getElementsByClassName(`panneau`);
+	var elements_du_fil = document.getElementsByClassName(`panneau_${window.espace_actif}`);
 
 	var visible_nav_els_set = new Set();
 	

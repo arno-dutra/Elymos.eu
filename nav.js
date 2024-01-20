@@ -74,12 +74,15 @@ function onNewActiveEspace(e) {
   for (let i=0; i < keys.length; i++) {
 	  var container = document.getElementById(`espace_${keys[i]}_container`);
 	  container.removeEventListener("scroll", synchronize_scroll_with_active_espace);
+  	  container.removeEventListener("scroll", synchronize_nav_cursor_with_active_espace);
   }
 	
   var container = document.getElementById(`espace_${e.detail.newEspace}_container`);
   
   container.addEventListener("scroll", synchronize_scroll_with_active_espace);
   container.addEventListener("scroll", synchronize_anchor_with_active_espace);
+  synchronize_nav_cursor_with_active_espace();
+  container.addEventListener("scroll", synchronize_nav_cursor_with_active_espace);
 }
 
 
