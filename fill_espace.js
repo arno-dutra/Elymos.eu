@@ -182,7 +182,7 @@ function make_carrousel(element, id) {
 
 			  <td width="${arrow_width}px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'left')">
-					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow_left.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left" width="${arrow_width}px">
+					<img id=${id.concat(`-btn-left`)} src="img/${element.espace}_carrousel_arrow.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_left" width="${arrow_width}px">
 				</a>
 				</td>
 			  <td width="66%" align="center" valign="top">
@@ -192,7 +192,7 @@ function make_carrousel(element, id) {
 				</td>
 			  <td width="${arrow_width}px" align="center" valign="center">
 				<a href="javascript:carrousel_slide('${id}', 'right')">
-					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow_right.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right" width="${arrow_width}px">
+					<img id=${id.concat(`-btn-right`)} src="img/${element.espace}_carrousel_arrow.svg" class="panneau_${element.espace}_arrow panneau_${element.espace}_arrow_right" width="${arrow_width}px" style="transform: scaleX(-1);">
 				</a>
 				</td>
 			</tr>
