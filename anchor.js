@@ -31,11 +31,20 @@ anchor_onLoad()
 function goSommaire() {
 	window.espace_actif = "sommaire";
 	
+	var espace_container = document.getElementById(`espace_sommaire_container`);
+	
 	window.scrollTo({
 		top: window.espaces["sommaire"].y,
 		left: window.espaces["sommaire"].x,
 		behavior: 'smooth',
 	});
+	
+	espace_container.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+	
+	
 	timetick_on();
 	
 	update_nav_top_position(0);

@@ -193,32 +193,20 @@ function go(id) {
 	window.espace_actif = window.content[id].espace;
 	
 	
-	if (window.espace_actif !== "sommaire") {
 		
-		window.scrollTo({
-			top: window.espaces[window.espace_actif].y + window.espaces.sommaire.height,
-			left: window.espaces[window.espace_actif].x,
-			behavior: 'smooth',
-		});
-	
-		var top_inside_container = top - (window.espaces[window.espace_actif].y + window.espaces.sommaire.height);
+	window.scrollTo({
+		top: window.espaces[window.espace_actif].y + window.espaces.sommaire.height,
+		left: window.espaces[window.espace_actif].x,
+		behavior: 'smooth',
+	});
+
+	var top_inside_container = top - (window.espaces[window.espace_actif].y + window.espaces.sommaire.height); // Note : This function is never called to go to the sommaire
+
+	espace_container.scrollTo({
+		top: top_inside_container,
+		behavior: 'smooth',
+	});
 		
-		espace_container.scrollTo({
-			top: top_inside_container,
-			behavior: 'smooth',
-		});
-		
-	} else {
-		
-		window.scrollTo({
-			top: window.espaces[window.espace_actif].y,
-			left: window.espaces[window.espace_actif].x,
-			behavior: 'smooth',
-		});
-	
-		var top_inside_container = 0;
-		
-	}
 //	
 //	window.scrollTo({
 //		top: espace_container.style.top,
