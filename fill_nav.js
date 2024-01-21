@@ -8,15 +8,6 @@ function nav_put_elements(content) {
 	make_nav(preprocessed_content);
 	
 	window.dispatchEvent(new CustomEvent("nav_filled", {}));
-//	
-//	var keys = Object.keys(content);
-//	console.log(keys);
-//	for (var i=0; i < keys.length; i++) {
-//		var k = keys[i];
-//		
-//		make_element(content[k], k);
-//		
-//	}
 	
 }
 
@@ -175,20 +166,18 @@ function go(id) {
 //	document.querySelector(`#${id}`).scrollIntoView({
 //  behavior: 'smooth'
 //});
-//	switch (window.content[id].nav_type) {
-//		case "timespan":
-//			var top = $(`#${id}`).offset().top - 200 - 2;
-//			break;
-//		case "instant":
-//			var top = $(`#${id}`).offset().top + (eval(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);
-//			break;
-//	}
+	switch (window.content[id].nav_type) {
+		case "timespan":
+			var top = $(`#${id}`).offset().top - 200 - 2;
+			break;
+		case "instant":
+			var top = $(`#${id}`).offset().top + (parseInt(window.getComputedStyle(document.getElementById(id)).getPropertyValue("height").replace("px", "")) / 2) - (window.innerHeight / 2);
+			break;
+	}
 //	var top = $(`#${id}`).offset().top - 200 - 2;
-	var top = $(`#${id}`).offset().top - 200 - 2;
 	
 	var espace = window.espaces[window.content[id].espace];
 	var espace_container = document.getElementById(`espace_${window.content[id].espace}_container`);
-//	console.log(window.content[id].espace);
 	if (window.content[id].espace == window.espace_actif) {var isEspaceChange = false} else {var isEspaceChange = true};
 	window.espace_actif = window.content[id].espace;
 	

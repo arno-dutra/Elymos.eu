@@ -51,8 +51,6 @@ function change_background_color() {
 	var y = window.scrollY;
 	
 	for (const [key, value] of Object.entries(window.espaces)) {
-//	for (var i = 0; i < window.espaces.length; i++) {
-//		console.log(key, value);
 		if ((value.left < x) & (x < value.left + value.width)) {
 			if (value.top < y) {
 				document.getElementById("body").style.backgroundColor = value.backgroundColor;

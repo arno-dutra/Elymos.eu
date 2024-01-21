@@ -147,13 +147,6 @@ function update_nav_top_position(top_inside_container) {
 	
 function _update_nav_top_position(espace_actif, duration, top_inside_container) {
 	
-//	var fil = document.getElementById(`espace_${espace_actif}_container`);
-//	
-//	$("#nav").animate({ 
-//        top: fil.style.top,
-//      }, 1000);
-//	console.log(`calc(${fil.style.top} - 10px)`);
-	
 	var container = document.getElementById(`espace_${espace_actif}_container`);
 	var top = parseFloat(container.style.top) - top_inside_container;
 	
@@ -173,17 +166,6 @@ function _update_nav_top_position(espace_actif, duration, top_inside_container) 
 						  duration
 						 );
 	}
-//	if (espace_actif != "sommaire") {
-//		$("#nav").animate({ 
-//        	top: fil.style.top,
-//        	paddingTop: `-10px`,
-//      	}, duration);
-//	} else {
-//		$("#nav").animate({ 
-//        	top: fil.style.top,
-//        	paddingTop: `75px`,
-//      	}, duration);
-//	}
 	
 }
 
