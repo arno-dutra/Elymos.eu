@@ -17,8 +17,13 @@ function anchor_onLoad() {
 	sommaire.style.top = `${window.espaces.sommaire.y}px`;
 	
 	window.scrollTo({
-		top: window.espaces[espace_actif].y,
-		left: window.espaces[espace_actif].x,
+		top: window.espaces["sommaire"].y,
+		left: window.espaces["sommaire"].x,
+		behavior: 'instant',
+	});
+	
+	sommaire.scrollTo({
+		top: 0,
 		behavior: 'instant',
 	});
 }

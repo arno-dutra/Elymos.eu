@@ -44,7 +44,7 @@ function update_hud() {
 	_update_nav_top_position(espace_courant, "instant");
 	update_left_position();
 	
-	anchor_onLoad();
+//	anchor_onLoad();
 }
 
 const hexToRgb = hex =>
