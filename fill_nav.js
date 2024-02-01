@@ -180,8 +180,6 @@ function go(id) {
 	var espace_container = document.getElementById(`espace_${window.content[id].espace}_container`);
 	if (window.content[id].espace == window.espace_actif) {var isEspaceChange = false} else {var isEspaceChange = true};
 	window.espace_actif = window.content[id].espace;
-	
-	
 		
 	window.scrollTo({
 		top: window.espaces[window.espace_actif].y + window.espaces.sommaire.height,

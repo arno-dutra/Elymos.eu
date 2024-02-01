@@ -108,10 +108,8 @@ function _move_home_top(espace_actif, duration, top_inside_container) {
 	
 	var element = document.getElementById('home_to_top');
     var style = window.getComputedStyle(element);
-    var top = eval(style.getPropertyValue('top').replace("px", ""));
-    var left = eval(style.getPropertyValue('left').replace("px", ""));
-	
-	
+    var top = parseFloat(style.getPropertyValue('top'));
+    var left = parseFloat(style.getPropertyValue('left'));
 	
 	if (espace_actif !== "sommaire") {
 		

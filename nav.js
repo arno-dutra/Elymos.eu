@@ -152,7 +152,8 @@ function _update_nav_top_position(espace_actif, duration, top_inside_container) 
 	
 	if (espace_actif != "sommaire") {
 		$("#nav").animate({ 
-							top: `${top}px`,
+							top: top,
+							left: window.espaces[espace_actif].x + window.prop * window.innerWidth,
 							paddingTop: `-10px`,
 						  }, 
 						  duration
@@ -160,7 +161,8 @@ function _update_nav_top_position(espace_actif, duration, top_inside_container) 
 						  
 	} else {
 		$("#nav").animate({ 
-							top: `${top}px`,
+							top: top,
+							left: window.espaces[espace_actif].x + window.prop * window.innerWidth,
 							paddingTop: `75px`,
 						  }, 
 						  duration

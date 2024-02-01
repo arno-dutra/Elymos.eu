@@ -28,11 +28,13 @@
 #home_to_top_button {
 	z-index: 2;
 	position: fixed;
+	top: 0;
 }
 
 #home_top_button {
 	z-index: 3;
 	position: absolute;
+	top: 0;
 }
 
 .anchor {

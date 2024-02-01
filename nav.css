@@ -27,7 +27,7 @@
 #nav_container {
 	position: absolute;
 	top: 0px;
-	left: 6000px;
+/*	left: 6000px;*/
 }
 
 .nav_container {
@@ -37,7 +37,7 @@
 }
 
 #nav {
-	position: relative;
+	position: absolute;
 	z-index: 1;
 	padding-top: 75px;
 }

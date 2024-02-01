@@ -30,7 +30,7 @@ function set_espace_height() {
 	
 }
 
-set_espace_height();
+//set_espace_height();
 
 function set_noise_size() {
 	
@@ -43,7 +43,7 @@ function set_noise_size() {
 	
 }
 
-set_noise_size()
+//set_noise_size()
 
 window.addEventListener('onEspaceChange', set_espace_height);
 window.addEventListener('onEspaceChange', set_noise_size);
