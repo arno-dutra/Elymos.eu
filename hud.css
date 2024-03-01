@@ -2,7 +2,7 @@
 /* CSS Document */
 
 :root {
-  --hud-element-color: #000;
+  --hud-element-color: #fbf2ea;
 }
 
 .hud_element_text {
@@ -10,5 +10,5 @@
 }
 
 .hud_element_svg {
-	filter: invert(0%);
+	filter: invert(89%) sepia(0%) saturate(5892%) hue-rotate(247deg) brightness(116%) contrast(90%);;
 }

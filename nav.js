@@ -119,7 +119,11 @@ function _update_hud_color(espace_courrant) {
 	
 	var brightness = Math.max(...hexToRgb(hex_color));
 	
-	if (brightness < 150) {
+	if (espace_courrant == "sommaire") {
+		document.documentElement.style.setProperty("--hud-element-color", "#fbf2ea");
+		home_to_top.style.filter = "invert(89%) sepia(0%) saturate(5892%) hue-rotate(247deg) brightness(116%) contrast(90%)";
+		home_top.style.filter = "invert(89%) sepia(0%) saturate(5892%) hue-rotate(247deg) brightness(116%) contrast(90%)";
+	} else if (brightness < 150) {
 		document.documentElement.style.setProperty("--hud-element-color", "#fff");
 		home_to_top.style.filter = "invert(100%)";
 		home_top.style.filter = "invert(100%)";
